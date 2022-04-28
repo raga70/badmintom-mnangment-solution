@@ -1,0 +1,17 @@
+C:\Users\ra408\Desktop\synthesisassignment-radoslavradev\Source\RealizationProvider\RealizationProvider\bin\Debug\net6.0\RealizationProvider.deps.json
+C:\Users\ra408\Desktop\synthesisassignment-radoslavradev\Source\RealizationProvider\RealizationProvider\bin\Debug\net6.0\RealizationProvider.dll
+C:\Users\ra408\Desktop\synthesisassignment-radoslavradev\Source\RealizationProvider\RealizationProvider\bin\Debug\net6.0\RealizationProvider.pdb
+C:\Users\ra408\Desktop\synthesisassignment-radoslavradev\Source\RealizationProvider\RealizationProvider\bin\Debug\net6.0\DAL.dll
+C:\Users\ra408\Desktop\synthesisassignment-radoslavradev\Source\RealizationProvider\RealizationProvider\bin\Debug\net6.0\Entities.dll
+C:\Users\ra408\Desktop\synthesisassignment-radoslavradev\Source\RealizationProvider\RealizationProvider\bin\Debug\net6.0\DAL.pdb
+C:\Users\ra408\Desktop\synthesisassignment-radoslavradev\Source\RealizationProvider\RealizationProvider\bin\Debug\net6.0\Entities.pdb
+C:\Users\ra408\Desktop\synthesisassignment-radoslavradev\Source\RealizationProvider\RealizationProvider\obj\Debug\net6.0\RealizationProvider.csproj.AssemblyReference.cache
+C:\Users\ra408\Desktop\synthesisassignment-radoslavradev\Source\RealizationProvider\RealizationProvider\obj\Debug\net6.0\RealizationProvider.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ra408\Desktop\synthesisassignment-radoslavradev\Source\RealizationProvider\RealizationProvider\obj\Debug\net6.0\RealizationProvider.AssemblyInfoInputs.cache
+C:\Users\ra408\Desktop\synthesisassignment-radoslavradev\Source\RealizationProvider\RealizationProvider\obj\Debug\net6.0\RealizationProvider.AssemblyInfo.cs
+C:\Users\ra408\Desktop\synthesisassignment-radoslavradev\Source\RealizationProvider\RealizationProvider\obj\Debug\net6.0\RealizationProvider.csproj.CoreCompileInputs.cache
+C:\Users\ra408\Desktop\synthesisassignment-radoslavradev\Source\RealizationProvider\RealizationProvider\obj\Debug\net6.0\RealizationProvider.csproj.CopyComplete
+C:\Users\ra408\Desktop\synthesisassignment-radoslavradev\Source\RealizationProvider\RealizationProvider\obj\Debug\net6.0\RealizationProvider.dll
+C:\Users\ra408\Desktop\synthesisassignment-radoslavradev\Source\RealizationProvider\RealizationProvider\obj\Debug\net6.0\refint\RealizationProvider.dll
+C:\Users\ra408\Desktop\synthesisassignment-radoslavradev\Source\RealizationProvider\RealizationProvider\obj\Debug\net6.0\RealizationProvider.pdb
+C:\Users\ra408\Desktop\synthesisassignment-radoslavradev\Source\RealizationProvider\RealizationProvider\obj\Debug\net6.0\ref\RealizationProvider.dll
