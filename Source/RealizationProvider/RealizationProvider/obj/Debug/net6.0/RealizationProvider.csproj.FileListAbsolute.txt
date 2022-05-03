@@ -12,6 +12,6 @@ C:\Users\ra408\Desktop\synthesisassignment-radoslavradev\Source\RealizationProvi
 C:\Users\ra408\Desktop\synthesisassignment-radoslavradev\Source\RealizationProvider\RealizationProvider\obj\Debug\net6.0\RealizationProvider.csproj.CoreCompileInputs.cache
 C:\Users\ra408\Desktop\synthesisassignment-radoslavradev\Source\RealizationProvider\RealizationProvider\obj\Debug\net6.0\RealizationProvider.csproj.CopyComplete
 C:\Users\ra408\Desktop\synthesisassignment-radoslavradev\Source\RealizationProvider\RealizationProvider\obj\Debug\net6.0\RealizationProvider.dll
-C:\Users\ra408\Desktop\synthesisassignment-radoslavradev\Source\RealizationProvider\RealizationProvider\obj\Debug\net6.0\refint\RealizationProvider.dll
 C:\Users\ra408\Desktop\synthesisassignment-radoslavradev\Source\RealizationProvider\RealizationProvider\obj\Debug\net6.0\RealizationProvider.pdb
 C:\Users\ra408\Desktop\synthesisassignment-radoslavradev\Source\RealizationProvider\RealizationProvider\obj\Debug\net6.0\ref\RealizationProvider.dll
+C:\Users\ra408\Desktop\synthesisassignment-radoslavradev\Source\RealizationProvider\RealizationProvider\bin\Debug\net6.0\ref\RealizationProvider.dll

@@ -12,6 +12,6 @@ C:\Users\ra408\Desktop\synthesisassignment-radoslavradev\Source\BLL\BLL\obj\Debu
 C:\Users\ra408\Desktop\synthesisassignment-radoslavradev\Source\BLL\BLL\obj\Debug\net6.0\BLL.csproj.CoreCompileInputs.cache
 C:\Users\ra408\Desktop\synthesisassignment-radoslavradev\Source\BLL\BLL\obj\Debug\net6.0\BLL.csproj.CopyComplete
 C:\Users\ra408\Desktop\synthesisassignment-radoslavradev\Source\BLL\BLL\obj\Debug\net6.0\BLL.dll
-C:\Users\ra408\Desktop\synthesisassignment-radoslavradev\Source\BLL\BLL\obj\Debug\net6.0\refint\BLL.dll
 C:\Users\ra408\Desktop\synthesisassignment-radoslavradev\Source\BLL\BLL\obj\Debug\net6.0\BLL.pdb
 C:\Users\ra408\Desktop\synthesisassignment-radoslavradev\Source\BLL\BLL\obj\Debug\net6.0\ref\BLL.dll
+C:\Users\ra408\Desktop\synthesisassignment-radoslavradev\Source\BLL\BLL\bin\Debug\net6.0\ref\BLL.dll

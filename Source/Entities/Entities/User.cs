@@ -14,7 +14,15 @@ namespace Entities
 
         public AccTypes accType;
 
-       
+        
+        
+        //only used for game 
+        int _points;
+        public int points
+        {
+            get { return _points;}
+            init { _points = value; }
+        }
         public User(){}
         
         
@@ -30,5 +38,12 @@ namespace Entities
             this.phoneNumber = r.phoneNumber;
             this.accType = AccTypes.Athlete;
         }
+
+        public void IncresePoints()
+        {
+            _points++;
+        }
+        
+        
     }
 }

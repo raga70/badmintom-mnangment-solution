@@ -28,7 +28,7 @@ C:\Users\ra408\Desktop\synthesisassignment-radoslavradev\Source\WFA\WFA\obj\Debu
 C:\Users\ra408\Desktop\synthesisassignment-radoslavradev\Source\WFA\WFA\obj\Debug\net6.0-windows\WFA.csproj.CoreCompileInputs.cache
 C:\Users\ra408\Desktop\synthesisassignment-radoslavradev\Source\WFA\WFA\obj\Debug\net6.0-windows\WFA.csproj.CopyComplete
 C:\Users\ra408\Desktop\synthesisassignment-radoslavradev\Source\WFA\WFA\obj\Debug\net6.0-windows\WFA.dll
-C:\Users\ra408\Desktop\synthesisassignment-radoslavradev\Source\WFA\WFA\obj\Debug\net6.0-windows\refint\WFA.dll
 C:\Users\ra408\Desktop\synthesisassignment-radoslavradev\Source\WFA\WFA\obj\Debug\net6.0-windows\WFA.pdb
 C:\Users\ra408\Desktop\synthesisassignment-radoslavradev\Source\WFA\WFA\obj\Debug\net6.0-windows\WFA.genruntimeconfig.cache
 C:\Users\ra408\Desktop\synthesisassignment-radoslavradev\Source\WFA\WFA\obj\Debug\net6.0-windows\ref\WFA.dll
+C:\Users\ra408\Desktop\synthesisassignment-radoslavradev\Source\WFA\WFA\bin\Debug\net6.0-windows\ref\WFA.dll

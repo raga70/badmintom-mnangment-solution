@@ -7,6 +7,7 @@ namespace WFA
     public partial class Form1 : Form
     {
         private TournamentManager tournamentManager;
+        private GameManager _gameManager;
 
         public Form1()
         {
@@ -15,6 +16,7 @@ namespace WFA
             lbTournamentUpdater();
             cbSportType.DataSource = Enum.GetValues(typeof(sportTypes));
             cbTournamentSystem.DataSource = Enum.GetValues(typeof(TournamentSystems));
+            
         }
 
         public void lbTournamentUpdater()
@@ -33,6 +35,7 @@ namespace WFA
 
         private void lbTournaments_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //CRUD Tournament
             if (lbTournaments.SelectedIndex != -1)
             {
                 if (lbTournaments.SelectedItem.ToString() == "NEW")
@@ -71,7 +74,23 @@ namespace WFA
                 }
             }
 
-
+            //Play tournament
+            if (tabControl1.SelectedIndex == 1)
+            {
+                if (tournamentManager.AllTournaments[lbTournaments.SelectedIndex - 1].isGameStartable())
+                {
+                    _gameManager = new GameManager(tournamentManager.AllTournaments[lbTournaments.SelectedIndex - 1]);
+                    lbRound.Items.Clear();
+                    foreach (var r in _gameManager.AllRounds)
+                    {
+                        lbRound.Items.Add(r.RoundNumber);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("non enough players to start the match");
+                }
+            }
 
         }
 
@@ -165,5 +184,83 @@ namespace WFA
 
 
         }
+
+        private void lbRound_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lbRound.Items.Count >= 1 && lbRound.SelectedIndex != -1)
+            {
+                foreach (var f in _gameManager.AllRounds[lbRound.SelectedIndex].Fights)
+                {
+                    lbFight.Items.Add($"{f.Player1.Player.firstName},{f.Player1.Player.lastName} vs {f.Player2.Player.firstName},{f.Player2.Player.lastName}");
+                }
+            }
+            _gameManager.UpdatePlayerScore(_gameManager.AllRounds[_previouslbRoundIndx], _gameManager.AllRounds[_previouslbRoundIndx].Fights[_previoslbFightsIndx], Convert.ToInt32(cbPlayer1Score.Value), Convert.ToInt32(cbPlayer2Score.Value));
+
+            _previouslbRoundIndx = lbRound.SelectedIndex;
+        }
+
+        private int _previoslbFightsIndx;
+        private int _previouslbRoundIndx;
+
+
+        private void lbFight_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            _gameManager.UpdatePlayerScore(_gameManager.AllRounds[_previouslbRoundIndx],_gameManager.AllRounds[_previouslbRoundIndx].Fights[_previoslbFightsIndx], Convert.ToInt32(cbPlayer1Score.Value), Convert.ToInt32(cbPlayer2Score.Value));
+
+            labContestant1.Text = _gameManager.AllRounds[lbRound.SelectedIndex].Fights[lbFight.SelectedIndex].Player1.Player
+                .firstName;
+            cbPlayer1Score.Value = _gameManager.AllRounds[lbRound.SelectedIndex].Fights[lbFight.SelectedIndex].Player1
+                .Score;
+
+            labContestant1.Text = _gameManager.AllRounds[lbRound.SelectedIndex].Fights[lbFight.SelectedIndex].Player2.Player
+                .firstName;
+            cbPlayer1Score.Value = _gameManager.AllRounds[lbRound.SelectedIndex].Fights[lbFight.SelectedIndex].Player2
+                .Score;
+            _previoslbFightsIndx = lbFight.SelectedIndex;
+        }
+
+        //btSaveGame
+        private void button1_Click(object sender, EventArgs e)
+        {
+            bool trownEX = false;
+            _gameManager.UpdatePlayerScore(_gameManager.AllRounds[lbRound.SelectedIndex], _gameManager.AllRounds[lbRound.SelectedIndex].Fights[lbFight.SelectedIndex], Convert.ToInt32(cbPlayer1Score.Value), Convert.ToInt32(cbPlayer2Score.Value));
+            try
+            {
+                _gameManager.saveGame();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                trownEX = true;
+            }
+            if(trownEX == false)
+            MessageBox.Show("game Saved");
+        }
+
+
+        private void tabControl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tabControl1.SelectedIndex == 1)
+            {
+                if (tournamentManager.AllTournaments[lbTournaments.SelectedIndex - 1].isGameStartable())
+                {
+                    _gameManager = new GameManager(tournamentManager.AllTournaments[lbTournaments.SelectedIndex - 1]);
+                    lbRound.Items.Clear();
+                    foreach (var r in _gameManager.AllRounds)
+                    {
+                        lbRound.Items.Add(r.RoundNumber);
+                    }
+                }
+            }
+        }
+
+
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }

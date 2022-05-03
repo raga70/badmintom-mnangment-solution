@@ -1,0 +1,65 @@
+﻿
+
+@page
+@using Entities
+@model WebApp.Pages.Tournaments
+@{
+}
+<table class="table">
+    <thead class="thead-dark">
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Sport</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Start At</th>
+        <th scope="col">End At</th>
+        <th scope="col">Players</th>    
+        <th scope="col">Location</th>
+        <th scope="col">Description</th>
+        
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var t in Model.Tournamentss)
+        {
+            
+            
+                <tr>
+                    @if (t.Players.Count >= t.MinPlayers)
+                    {
+                        <th scope="row">
+                            
+                            <form method="post" asp-page-handler="Schedule"><button asp-page-handler="Schedule" type="submit" class="btn btn-primary" asp-route-TorID="@t.Tournamnet_id">Schedule</button> </form>
+                            @if (t.isEnded() == false)
+                            {
+                                <form style="margin-top: 5px;" method="post" asp-page-handler="Results"><button asp-page-handler="Results" type="submit" class="btn btn-primary" asp-route-TorID="@t.Tournamnet_id">Results</button> </form>
+
+                            }
+                            
+                        </th>
+                    }
+                    else
+                    {
+                        <th scope="row"><button type="submit" class="btn btn-secondary" asp-route-TorID="@t.Tournamnet_id">Schedule is not yet available</button></th>
+                    }
+                    <td>@t.SportType</td>
+                    @if (t.Gender == 0)
+                    {
+                        <td>Male</td>
+                    }
+                    else
+                    {
+                        <td>Female</td>
+
+                    }
+                    <td>@t.StartDate.ToString("dd/MM/yyyy HH:mm")</td>
+                    <td>@t.EndDate.ToString("dd/MM/yyyy HH:mm")</td>
+                    <td>@t.Players.Count / @t.MaxPlayers</td>
+                    <td>@t.Location</td>
+                    <td>@t.Description</td>
+
+                </tr>
+            
+        }
+    </tbody>
+</table>

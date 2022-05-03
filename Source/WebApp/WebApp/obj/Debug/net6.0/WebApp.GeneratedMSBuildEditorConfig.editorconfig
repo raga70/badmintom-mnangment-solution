@@ -15,6 +15,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\ra408\Desktop\synthesisassignment-radoslavradev\Source\WebApp\WebApp
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/ra408/Desktop/synthesisassignment-radoslavradev/Source/WebApp/WebApp/Pages/ErroDataIsEMpty.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb0RhdGFJc0VNcHR5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/ra408/Desktop/synthesisassignment-radoslavradev/Source/WebApp/WebApp/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -45,6 +49,18 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/ra408/Desktop/synthesisassignment-radoslavradev/Source/WebApp/WebApp/Pages/SignUpForTournament.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2lnblVwRm9yVG91cm5hbWVudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ra408/Desktop/synthesisassignment-radoslavradev/Source/WebApp/WebApp/Pages/Tournaments.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVG91cm5hbWVudHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ra408/Desktop/synthesisassignment-radoslavradev/Source/WebApp/WebApp/Pages/tResults.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdFJlc3VsdHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ra408/Desktop/synthesisassignment-radoslavradev/Source/WebApp/WebApp/Pages/tSchedule.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdFNjaGVkdWxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/ra408/Desktop/synthesisassignment-radoslavradev/Source/WebApp/WebApp/Pages/_ViewImports.cshtml]

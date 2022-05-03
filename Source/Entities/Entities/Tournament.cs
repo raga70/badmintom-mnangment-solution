@@ -93,6 +93,12 @@ namespace Entities
             }
         }
 
+        public bool isGameStartable()
+        {
+            if (MinPlayers <= Players.Count) return true;
+            else return false;
+        }
+
 
         public void AddPlayr(User player)
         {

@@ -27,7 +27,6 @@ C:\Users\ra408\Desktop\synthesisassignment-radoslavradev\Source\WebApp\WebApp\ob
 C:\Users\ra408\Desktop\synthesisassignment-radoslavradev\Source\WebApp\WebApp\obj\Debug\net6.0\scopedcss\projectbundle\WebApp.bundle.scp.css
 C:\Users\ra408\Desktop\synthesisassignment-radoslavradev\Source\WebApp\WebApp\obj\Debug\net6.0\WebApp.csproj.CopyComplete
 C:\Users\ra408\Desktop\synthesisassignment-radoslavradev\Source\WebApp\WebApp\obj\Debug\net6.0\WebApp.dll
-C:\Users\ra408\Desktop\synthesisassignment-radoslavradev\Source\WebApp\WebApp\obj\Debug\net6.0\refint\WebApp.dll
 C:\Users\ra408\Desktop\synthesisassignment-radoslavradev\Source\WebApp\WebApp\obj\Debug\net6.0\WebApp.pdb
 C:\Users\ra408\Desktop\synthesisassignment-radoslavradev\Source\WebApp\WebApp\obj\Debug\net6.0\WebApp.genruntimeconfig.cache
 C:\Users\ra408\Desktop\synthesisassignment-radoslavradev\Source\WebApp\WebApp\obj\Debug\net6.0\ref\WebApp.dll
@@ -53,3 +52,4 @@ C:\Users\ra408\Desktop\synthesisassignment-radoslavradev\Source\WebApp\WebApp\bi
 C:\Users\ra408\Desktop\synthesisassignment-radoslavradev\Source\WebApp\WebApp\bin\Debug\net6.0\RealizationProvider.dll
 C:\Users\ra408\Desktop\synthesisassignment-radoslavradev\Source\WebApp\WebApp\bin\Debug\net6.0\RealizationProvider.pdb
 C:\Users\ra408\Desktop\synthesisassignment-radoslavradev\Source\WebApp\WebApp\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\ra408\Desktop\synthesisassignment-radoslavradev\Source\WebApp\WebApp\bin\Debug\net6.0\ref\WebApp.dll
