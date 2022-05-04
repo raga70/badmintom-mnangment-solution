@@ -1,7 +1,7 @@
 ﻿namespace Entities;
 
-public class Round
+public struct Round
 {
-    public int RoundNumber;
-    public List<Fight> Fights;
+    public int RoundNumber { get; init; }
+    public List<Fight> Fights { get; init; }
 }

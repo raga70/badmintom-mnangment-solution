@@ -24,19 +24,25 @@
         {
             
             
-                <tr>
-                    @if (t.Players.Count >= t.MinPlayers)
+                <tr>    
+                    @if (t.Players.Count <= t.MinPlayers && t.isEnded() == true)
+                    {
+
+                        <th scope="row"><button type="submit" class="btn btn-secondary" asp-route-TorID="@t.Tournamnet_id">Tournament was cancelled</button></th>
+                    }
+                    else if (t.isEnded() == true)
                     {
                         <th scope="row">
                             
-                            <form method="post" asp-page-handler="Schedule"><button asp-page-handler="Schedule" type="submit" class="btn btn-primary" asp-route-TorID="@t.Tournamnet_id">Schedule</button> </form>
-                            @if (t.isEnded() == false)
-                            {
-                                <form style="margin-top: 5px;" method="post" asp-page-handler="Results"><button asp-page-handler="Results" type="submit" class="btn btn-primary" asp-route-TorID="@t.Tournamnet_id">Results</button> </form>
-
-                            }
+                        <form style="margin-top: 5px;" method="post" asp-page-handler="Results"><button asp-page-handler="Results" type="submit" class="btn btn-primary" asp-route-TorID="@t.Tournamnet_id">Results</button> </form>
+                            
                             
                         </th>
+                    }
+                    else if (t.Players.Count >= t.MinPlayers)
+                    {<th scope="row">
+                            <form method="post" asp-page-handler="Schedule"><button asp-page-handler="Schedule" type="submit" class="btn btn-primary" asp-route-TorID="@t.Tournamnet_id">Schedule</button> </form>
+                     </th>
                     }
                     else
                     {

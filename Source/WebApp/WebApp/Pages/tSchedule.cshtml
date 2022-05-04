@@ -7,7 +7,7 @@
 <table class="table">
     <thead class="thead-dark">
     <tr>
-    <th scope="col">#</th>
+    <th scope="col">Round-#</th>
         <th scope="col">Player1</th>
         <th scope="col"> </th>
         <th scope="col">Player2</th>
@@ -18,15 +18,19 @@
     {
         <tr>
             <th scope="row">@r.RoundNumber</th>
-        </tr>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            </tr>
+
         <tr>
             @foreach (var f in r.Fights)
             {
                 @if(f.isB == false)  {
-                    <td> </td>
-                    <td>@f.Player1.Player.firstName ,  @f.Player1.Player.lastName</td>
+                    <td style="width: 15%;"> </td>
+                    <td style="width: 20%;">@f.Player1.Player.firstName ,  @f.Player1.Player.lastName</td>
                     <td>vs</td>
-                    <td>@f.Player2.Player.firstName ,  @f.Player2.Player.lastName</td>
+                    <td >@f.Player2.Player.firstName ,  @f.Player2.Player.lastName</td>
                 
                 }
             }

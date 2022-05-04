@@ -85,14 +85,21 @@ namespace WFA
                     {
                         lbRound.Items.Add(r.RoundNumber);
                     }
+
+                    enoughPlayers = true;
                 }
                 else
                 {
                     MessageBox.Show("non enough players to start the match");
+                    enoughPlayers = false;
+                    lbRound.Items.Clear();
+                    lbFight.Items.Clear();
                 }
             }
 
         }
+
+        private bool enoughPlayers;
 
         private void btCreate_Click(object sender, EventArgs e)
         {
@@ -151,7 +158,7 @@ namespace WFA
             {
                 gendr = 1;
             }
-
+            
             Tournament newT = new Tournament()
             {
                 SportType = (sportTypes)cbSportType.SelectedItem,
@@ -187,7 +194,8 @@ namespace WFA
 
         private void lbRound_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (lbRound.Items.Count >= 1 && lbRound.SelectedIndex != -1)
+            lbFight.Items.Clear();
+            if (lbRound.Items.Count >= 1 && lbRound.SelectedIndex != -1 && enoughPlayers == true)
             {
                 foreach (var f in _gameManager.AllRounds[lbRound.SelectedIndex].Fights)
                 {

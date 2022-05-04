@@ -42,7 +42,6 @@ public class TournamentManager
 
     public void UpdateTournament(Tournament tournament)
     {
-        tournamentDB.UpdateTournament(tournament);
         foreach (var localT in Tournaments)
         {
             if (localT.Tournamnet_id == tournament.Tournamnet_id)
@@ -50,9 +49,11 @@ public class TournamentManager
                 Tournaments.Remove(localT);
                 Tournaments.Add(tournament);
                 Tournaments.OrderBy(t => t.Tournamnet_id);
+                break;
             }
                 
         }
+        tournamentDB.UpdateTournament(tournament);
     }
 
     public void AddPlayerToTournament(Tournament tournament, User player)

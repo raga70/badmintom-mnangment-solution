@@ -1,9 +1,9 @@
 ﻿namespace Entities;
 
-public class GamePlayer
+public struct GamePlayer
 {
-    public int id;
-    public User Player;
-    public int Score;
-    public bool isB;
+    public int id { get; init; }
+    public User Player { get; init; }
+    public int Score { get; set; }
+    public bool isB{get; init; }
 }

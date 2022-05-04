@@ -2,8 +2,8 @@
 
 public struct Fight
 {
-    public int id;
-    public GamePlayer Player1;
-    public GamePlayer Player2;
-    public bool isB;
+    public int id { get; init; }
+    public GamePlayer Player1 { get; init; }
+    public GamePlayer Player2 { get; init; }
+    public bool isB { get; init; }
 }

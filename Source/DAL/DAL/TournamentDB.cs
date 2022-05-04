@@ -43,13 +43,13 @@ namespace DAL
                     "UPDATE tournaments SET sportType = @sportType, startDate = @startDate, endDate = @endDate, minPlayers = @minPlayers, maxPlayers = @maxPlayers, location = @location, tournamentSystem = @tournamentSystem, description = @description, gender = @gender WHERE id = @id",
                     mysql);
                 cmd.Parameters.AddWithValue("@id", tournament.Tournamnet_id);
-                cmd.Parameters.AddWithValue("@sportType", tournament.SportType);
-                cmd.Parameters.AddWithValue("@startDate", tournament.StartDate);
-                cmd.Parameters.AddWithValue("@endDate", tournament.EndDate);
+                cmd.Parameters.AddWithValue("@sportType", tournament.SportType.ToString());
+                cmd.Parameters.AddWithValue("@startDate", tournament.StartDate.ToString(format: "yyyy/MM/dd HH:mm:ss"));
+                cmd.Parameters.AddWithValue("@endDate", tournament.EndDate.ToString(format: "yyyy/MM/dd HH:mm:ss"));
                 cmd.Parameters.AddWithValue("@minPlayers", tournament.MinPlayers);
                 cmd.Parameters.AddWithValue("@maxPlayers", tournament.MaxPlayers);
                 cmd.Parameters.AddWithValue("@location", tournament.Location);
-                cmd.Parameters.AddWithValue("@tournamentSystem", tournament.TournamentSystem);
+                cmd.Parameters.AddWithValue("@tournamentSystem", tournament.TournamentSystem.ToString());
                 cmd.Parameters.AddWithValue("@description", tournament.Description);
                 cmd.Parameters.AddWithValue("@gender", tournament.Gender);
                 cmd.ExecuteNonQuery();

@@ -39,18 +39,20 @@
 
      public List<Round> CreteSchedule()
       {
+         if (_players.Count() <= 1) return null;
           List <Round> rounds  = new List<Round>();
          List<GamePlayer> athletes = new List<GamePlayer>();
          
          athletes.AddRange(_players);
          athletes.RemoveAt(0); // i will deal with the first player separately 
-        
          //round
          for (int i = 0; i < _players.Count-1; i++)
          {
-             Round r = new Round();
-             r.RoundNumber = i + 1;
-             r.Fights = new List<Fight>();
+             Round r = new Round()
+             {
+                 RoundNumber = i + 1,
+                 Fights = new List<Fight>()
+             };
              //fights with the first athlete , which we skip to add in athletes collection
              int playerIdx = i % athletes.Count;
              bool firstFightIsB;
@@ -60,15 +62,27 @@
              
              
              //the rest of the fights   
-             for (int j = 1; j < _players.Count/2; j++)
-             {               
-                 int firstFighterIndex = (i + j) % athletes.Count; //round + iteration shifts the positions in increasing direction with one, the integer leftover division loops over to the first one when we go out of range of the collection  
-                 int secondFighterIndex = (i  + athletes.Count - j) % athletes.Count; // direction is reversed (decreasing)
+             for (int j = 1; j < _players.Count / 2; j++)
+             {
+                 int
+                     firstFighterIndex =
+                         (i + j) % athletes
+                             .Count; //round + iteration shifts the positions in increasing direction with one, the integer leftover division loops over to the first one when we go out of range of the collection  
+                 int secondFighterIndex =
+                     (i + athletes.Count - j) % athletes.Count; // direction is reversed (decreasing)
                  bool fighthIsB;
                  if (athletes[firstFighterIndex].isB || _players[secondFighterIndex].isB) fighthIsB = true;
-                 else fighthIsB = false; 
-                 r.Fights.Add(new Fight(){id = j,isB = fighthIsB,Player1 = athletes[firstFighterIndex],Player2 = athletes[secondFighterIndex]});
+                 else
+                 {
+                     fighthIsB = false;
+                     r.Fights.Add(new Fight()
+                     {
+                         id = j, isB = fighthIsB, Player1 = athletes[firstFighterIndex],
+                         Player2 = athletes[secondFighterIndex]
+                     });
+                 }
              }
+
              rounds.Add(r);
          }
 
