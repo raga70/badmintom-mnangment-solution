@@ -13,3 +13,18 @@ C:\Users\ra408\Desktop\synthesisassignment-radoslavradev\Source\DAL\DAL\obj\Debu
 C:\Users\ra408\Desktop\synthesisassignment-radoslavradev\Source\DAL\DAL\obj\Debug\net6.0\DAL.pdb
 C:\Users\ra408\Desktop\synthesisassignment-radoslavradev\Source\DAL\DAL\obj\Debug\net6.0\ref\DAL.dll
 C:\Users\ra408\Desktop\synthesisassignment-radoslavradev\Source\DAL\DAL\bin\Debug\net6.0\ref\DAL.dll
+C:\Users\ra408\OneDrive\Работен плот\synthesisassignment-radoslavradev\Source\DAL\DAL\bin\Debug\net6.0\DAL.deps.json
+C:\Users\ra408\OneDrive\Работен плот\synthesisassignment-radoslavradev\Source\DAL\DAL\bin\Debug\net6.0\DAL.dll
+C:\Users\ra408\OneDrive\Работен плот\synthesisassignment-radoslavradev\Source\DAL\DAL\bin\Debug\net6.0\DAL.pdb
+C:\Users\ra408\OneDrive\Работен плот\synthesisassignment-radoslavradev\Source\DAL\DAL\bin\Debug\net6.0\Entities.dll
+C:\Users\ra408\OneDrive\Работен плот\synthesisassignment-radoslavradev\Source\DAL\DAL\bin\Debug\net6.0\Entities.pdb
+C:\Users\ra408\OneDrive\Работен плот\synthesisassignment-radoslavradev\Source\DAL\DAL\obj\Debug\net6.0\DAL.csproj.AssemblyReference.cache
+C:\Users\ra408\OneDrive\Работен плот\synthesisassignment-radoslavradev\Source\DAL\DAL\obj\Debug\net6.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ra408\OneDrive\Работен плот\synthesisassignment-radoslavradev\Source\DAL\DAL\obj\Debug\net6.0\DAL.AssemblyInfoInputs.cache
+C:\Users\ra408\OneDrive\Работен плот\synthesisassignment-radoslavradev\Source\DAL\DAL\obj\Debug\net6.0\DAL.AssemblyInfo.cs
+C:\Users\ra408\OneDrive\Работен плот\synthesisassignment-radoslavradev\Source\DAL\DAL\obj\Debug\net6.0\DAL.csproj.CoreCompileInputs.cache
+C:\Users\ra408\OneDrive\Работен плот\synthesisassignment-radoslavradev\Source\DAL\DAL\obj\Debug\net6.0\DAL.csproj.CopyComplete
+C:\Users\ra408\OneDrive\Работен плот\synthesisassignment-radoslavradev\Source\DAL\DAL\obj\Debug\net6.0\DAL.dll
+C:\Users\ra408\OneDrive\Работен плот\synthesisassignment-radoslavradev\Source\DAL\DAL\obj\Debug\net6.0\refint\DAL.dll
+C:\Users\ra408\OneDrive\Работен плот\synthesisassignment-radoslavradev\Source\DAL\DAL\obj\Debug\net6.0\DAL.pdb
+C:\Users\ra408\OneDrive\Работен плот\synthesisassignment-radoslavradev\Source\DAL\DAL\obj\Debug\net6.0\ref\DAL.dll

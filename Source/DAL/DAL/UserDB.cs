@@ -4,7 +4,9 @@ using RealizationProvider;
 
 namespace DAL
 {
-    public class UserDB
+   
+
+    public class UserDB : IUserDB
     {
         public bool AddUser(User user)
         {

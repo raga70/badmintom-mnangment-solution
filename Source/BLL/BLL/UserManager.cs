@@ -6,7 +6,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using DAL;
-using DataAcess;
+
 using Entities;
 namespace BLL
 {
@@ -25,10 +25,10 @@ namespace BLL
 
         
 
-        private UserDB userDB; 
-        public UserManager()
+        private IUserDB userDB; 
+        public UserManager(IUserDB passed)
         {
-             userDB = new UserDB();
+             userDB = passed;
         }
 
 

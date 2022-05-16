@@ -1,4 +1,5 @@
 ﻿using BLL;
+using DAL;
 using Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -13,9 +14,9 @@ public class Tournaments : PageModel
     public User logedInPLayer{ get; set; }
 
 
-    public Tournaments()
+    public Tournaments(ITournamentDB _tournamentDb)
     {
-        tournamentManager = new TournamentManager();
+        tournamentManager = new TournamentManager(_tournamentDb);
         Tournamentss = tournamentManager.AllTournaments.ToList();
     }
     

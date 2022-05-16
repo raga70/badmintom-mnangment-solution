@@ -15,7 +15,7 @@
  {
      private List<User> tournamentPlayers;
      private int round =0;
-     private List<GamePlayer> _players = new List<GamePlayer>();
+     private List<GamePlayer> _players = new List<GamePlayer>(); 
 
      
      public RoundRobin(Tournament t)
@@ -88,72 +88,11 @@
 
          return rounds;
       }
-     
-     
-     
-     
-     
-     
-     
-     
-     // public List<Round> createRoundSchedule()
-     // {
-     //     
-     //    
-     //     
-     //     List<GamePlayer> topRow = new List<GamePlayer>();
-     //     List<GamePlayer> bottomRow = new List<GamePlayer>();
-     //     List<Round> rounds = new List<Round>();
-     //     
-     //     ///loop
-     //     
-     //     for (int i = 0; i <= _players.Count /2 ; i++)
-     //     {
-     //         topRow.Add(_players[i]);
-     //     }  
-     //     for (int i = _players.Count; i > _players.Count / 2; i--)
-     //     {
-     //         bottomRow.Add(_players[i]);
-     //     }
-     //     
-     //     
-     //     ///crete first round
-     //     for (int i = 0; i < _players.Count / 2; i++)
-     //     {
-     //         Round r = new Round();
-     //         r.RoundNumber = i;
-     //         r.Fights = new List<Fight>();
-     //         for (int j = 0; j < topRow.Count; j++)
-     //         {
-     //             Fight f = new Fight();
-     //             f.id = j;
-     //             f.Player1 = topRow[j];
-     //             f.Player2 = bottomRow[j];
-     //             f.Score1 = 0;
-     //             f.Score2 = 0;
-     //             f.isB = false;
-     //             r.Fights.Add(f);
-     //         }
-     //         rounds.Add(r);
-     //         //rotate players to fight different players, every player needs to fight every other player
-     //         
-     //         
-     //         
-     //         
-     //     }
-     //     
-     //     //rotate players
-     //         GamePlayer temp = topRow[0]; //dont move this
-     //         List<GamePlayer> tempTopRow = new List<GamePlayer>();
-     //         List<GamePlayer> tempBottomRow = new List<GamePlayer>();
-     //         
-     //         for (int i = 0; i < _players.Count -1; i++)
-     //     {   
-     //         
-     //     }
-     //     
-     //     
-     //     
-     // }
 
- }
+
+   
+
+
+
+
+}

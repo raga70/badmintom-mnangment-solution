@@ -37,7 +37,7 @@ namespace Entities
             }
         }
 
-        [Required,Range(1,100)]
+        [Required,Range(2,100)]
         public int MinPlayers { get; init; }
 
         [Required, Range(0, 100)]
@@ -109,9 +109,29 @@ namespace Entities
         {
             Players.Remove(player);
         }
+
+
+        //asp tournament displyment options
+        public bool TournamentWasCancelled()
+        {
+            if (Players.Count < MinPlayers && isEnded() == true) return true;
+            return false;
+        }
+
+        public bool ResultsAreAvailable()
+        {
+            if (isEnded() == true) return true;
+            return false;
+        }
+
+        public bool ScheduleIsAvailable()
+        {
+            if (Players.Count >= MinPlayers) return true;
+            return false;
+        }
+
         
-        
-        
+
     }
 }
             

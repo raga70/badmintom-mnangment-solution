@@ -1,5 +1,6 @@
+using DAL;
 using Microsoft.AspNetCore.Authentication.Cookies;
-
+using RealizationProvider;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -9,19 +10,16 @@ builder.Services.AddRazorPages();
 
 
 
-//dependency injection harddd
-//IServiceCollection _servicess = serviceProviderrr.Get();
-//IServiceProvider _provider = _servicess.BuildServiceProvider();
-//var _userDB = _provider.GetService<IuserDB>();
-//var _orderDB = _provider.GetService<IorderDb>();
-//var _messagesDB = _provider.GetService<ImessagesDB>();
-//var _productDB = _provider.GetService<IproductDb>();
-//var _specialProductDB = _provider.GetService<IspecialProductsDB>();
-//builder.Services.AddSingleton<IuserDB>(_userDB);
-//builder.Services.AddSingleton<IorderDb>(_orderDB);
-//builder.Services.AddSingleton<ImessagesDB>(_messagesDB);
-//builder.Services.AddSingleton<IproductDb>(_productDB);
-//builder.Services.AddSingleton<IspecialProductsDB>(_specialProductDB);
+//dependency injection
+IServiceCollection _servicess = serviceProviderrr.Get();
+IServiceProvider _provider = _servicess.BuildServiceProvider();
+var _userDB = _provider.GetService<IUserDB>();
+var _gameDB = _provider.GetService<IGameDB>();
+var _tournamentDB = _provider.GetService<ITournamentDB>();
+builder.Services.AddSingleton<IUserDB>(_userDB);
+builder.Services.AddSingleton<IGameDB>(_gameDB);
+builder.Services.AddSingleton<ITournamentDB>(_tournamentDB);
+
 //System.Diagnostics.Debug.WriteLine(_orderDB.GetType().Name);
 //string a = _orderDB.GetType().Name;
 

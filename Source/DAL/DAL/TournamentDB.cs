@@ -5,7 +5,7 @@ using RealizationProvider;
 namespace DAL
 {
 
-    public class TournamentDB
+    public class TournamentDB : ITournamentDB
     {
         public void AddTournament(Tournament tournament)
         {
@@ -95,38 +95,8 @@ namespace DAL
                 MySqlDataReader reader_tournaments = cmd_getTournament.ExecuteReader();
                 while (reader_tournaments.Read())
                 {
-                    //creating this terrible peace of code and opening a reader inside a reader  just because no methane what circumstance we are not allowed to break the information hiding principal  
-                    MySqlConnection THISISATERIBLEIDEA = new MySqlConnection(Connection.conString);
-                    try
-                    {
-                        THISISATERIBLEIDEA.Open();
-                        MySqlCommand cmd_getPlayers = new MySqlCommand(
-                            "SELECT * FROM users u INNER JOIN tournaments_users tu on u.username = tu.users_username WHERE tu.tournaments_id = @tournament_id",
-                            THISISATERIBLEIDEA);
-                        cmd_getPlayers.Parameters.AddWithValue("@tournament_id", reader_tournaments.GetInt32("id"));
-
-                        MySqlDataReader reader_players = cmd_getPlayers.ExecuteReader();
-                          Players  = new List<User>();
-                        while (reader_players.Read())
-                        {
-                            Players.Add(new User
-                            {
-                                username = reader_players.GetString("username"),
-                                password = reader_players.GetString("password"),
-                                firstName = reader_players.GetString("firstName"),
-                                lastName = reader_players.GetString("lastName"),
-                                birthdayDate = reader_players.GetDateTime("birthdayDate"),
-                                gender = reader_players.GetInt32("gender"),
-                                email = reader_players.GetString("email"),
-                                phoneNumber = reader_players.GetString("phoneNumber"),
-                                accType = Enum.Parse<AccTypes>(reader_players.GetString("accType"))
-                            });
-                        }
-                    }
-                    finally
-                    {
-                        THISISATERIBLEIDEA.Close();
-                    }
+                      
+                    Players = GetAllPlayerPerTournament(reader_tournaments.GetInt32("id"));
 
                     tournaments.Add(new Tournament()
                     {
@@ -153,6 +123,49 @@ namespace DAL
                 mysql.Close();
             }
         }
+
+
+        List<User> GetAllPlayerPerTournament(int tournamentID)
+        {
+            List<User>Players = new List<User>();
+            MySqlConnection mysql_plr = new MySqlConnection(Connection.conString);
+            try
+            {
+                mysql_plr.Open();
+                MySqlCommand cmd_getPlayers = new MySqlCommand(
+                    "SELECT * FROM users u INNER JOIN tournaments_users tu on u.username = tu.users_username WHERE tu.tournaments_id = @tournament_id",
+                    mysql_plr);
+                cmd_getPlayers.Parameters.AddWithValue("@tournament_id", tournamentID);
+
+                MySqlDataReader reader_players = cmd_getPlayers.ExecuteReader();
+                Players = new List<User>();
+                while (reader_players.Read())
+                {
+                    Players.Add(new User
+                    {
+                        username = reader_players.GetString("username"),
+                        password = reader_players.GetString("password"),
+                        firstName = reader_players.GetString("firstName"),
+                        lastName = reader_players.GetString("lastName"),
+                        birthdayDate = reader_players.GetDateTime("birthdayDate"),
+                        gender = reader_players.GetInt32("gender"),
+                        email = reader_players.GetString("email"),
+                        phoneNumber = reader_players.GetString("phoneNumber"),
+                        accType = Enum.Parse<AccTypes>(reader_players.GetString("accType"))
+                    });
+                }
+            }
+            finally
+            {
+                mysql_plr.Close();
+            }
+
+            return Players;
+        }
+
+
+
+
 
 
         public void AddPlayerToTournament(Tournament tournament, User player)

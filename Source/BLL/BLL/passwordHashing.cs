@@ -1,29 +1,12 @@
 ﻿using System.Text;
 using System.Security.Cryptography;
-using DataAcess;
 
-namespace DataAcess
+
+namespace BLL
 {
     public class passwordHashing
     {
-        // private IuserDB _userDb;
-        // public passwordHashing(IuserDB passed)
-        // {
-        //     _userDb = passed;
-        // }
-        //
-        // public bool Handler(string user, string pass)
-        // {
-        //     userEntity u = _userDb.GetUser(user);
-        //     if (u is not null)
-        //     {
-        //         byte[] bpass = Convert.FromBase64String(u.pass);
-        //         if (bpass.Length != 36) return false; // prevent trowing an exception if the user inputs a wrong pass 
-        //         return Validate(pass, u.pass);
-        //     }
-        //
-        //     return false;
-        // }
+      
 
 
 

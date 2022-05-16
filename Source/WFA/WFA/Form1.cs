@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using BLL;
+using DAL;
 using Entities;
 
 namespace WFA
@@ -8,11 +9,12 @@ namespace WFA
     {
         private TournamentManager tournamentManager;
         private GameManager _gameManager;
-
-        public Form1()
+        private IGameDB gameDB;
+        public Form1(IUserDB userDB, IGameDB gameDB, ITournamentDB tournamentDB)
         {
+        
             InitializeComponent();
-            tournamentManager = new TournamentManager();
+            tournamentManager = new TournamentManager(tournamentDB);
             lbTournamentUpdater();
             cbSportType.DataSource = Enum.GetValues(typeof(sportTypes));
             cbTournamentSystem.DataSource = Enum.GetValues(typeof(TournamentSystems));
@@ -79,7 +81,7 @@ namespace WFA
             {
                 if (tournamentManager.AllTournaments[lbTournaments.SelectedIndex - 1].isGameStartable())
                 {
-                    _gameManager = new GameManager(tournamentManager.AllTournaments[lbTournaments.SelectedIndex - 1]);
+                    _gameManager = new GameManager(gameDB,tournamentManager.AllTournaments[lbTournaments.SelectedIndex - 1]);
                     lbRound.Items.Clear();
                     foreach (var r in _gameManager.AllRounds)
                     {
@@ -234,7 +236,7 @@ namespace WFA
             _gameManager.UpdatePlayerScore(_gameManager.AllRounds[lbRound.SelectedIndex], _gameManager.AllRounds[lbRound.SelectedIndex].Fights[lbFight.SelectedIndex], Convert.ToInt32(cbPlayer1Score.Value), Convert.ToInt32(cbPlayer2Score.Value));
             try
             {
-                _gameManager.saveGame();
+                _gameManager.SaveGame();
             }
             catch (Exception ex)
             {
@@ -252,7 +254,7 @@ namespace WFA
             {
                 if (tournamentManager.AllTournaments[lbTournaments.SelectedIndex - 1].isGameStartable())
                 {
-                    _gameManager = new GameManager(tournamentManager.AllTournaments[lbTournaments.SelectedIndex - 1]);
+                    _gameManager = new GameManager(gameDB ,tournamentManager.AllTournaments[lbTournaments.SelectedIndex - 1]);
                     lbRound.Items.Clear();
                     foreach (var r in _gameManager.AllRounds)
                     {

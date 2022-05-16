@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ra408\\Desktop\\synthesisassignment-radoslavradev\\Source\\RealizationProvider\\RealizationProvider\\RealizationProvider.csproj": {}
+    "C:\\Users\\ra408\\OneDrive\\Работен плот\\synthesisassignment-radoslavradev\\Source\\RealizationProvider\\RealizationProvider\\RealizationProvider.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ra408\\Desktop\\synthesisassignment-radoslavradev\\Source\\DAL\\DAL\\DAL.csproj": {
+    "C:\\Users\\ra408\\OneDrive\\Работен плот\\synthesisassignment-radoslavradev\\Source\\DAL\\DAL\\DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ra408\\Desktop\\synthesisassignment-radoslavradev\\Source\\DAL\\DAL\\DAL.csproj",
+        "projectUniqueName": "C:\\Users\\ra408\\OneDrive\\Работен плот\\synthesisassignment-radoslavradev\\Source\\DAL\\DAL\\DAL.csproj",
         "projectName": "DAL",
-        "projectPath": "C:\\Users\\ra408\\Desktop\\synthesisassignment-radoslavradev\\Source\\DAL\\DAL\\DAL.csproj",
+        "projectPath": "C:\\Users\\ra408\\OneDrive\\Работен плот\\synthesisassignment-radoslavradev\\Source\\DAL\\DAL\\DAL.csproj",
         "packagesPath": "C:\\Users\\ra408\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ra408\\Desktop\\synthesisassignment-radoslavradev\\Source\\DAL\\DAL\\obj\\",
+        "outputPath": "C:\\Users\\ra408\\OneDrive\\Работен плот\\synthesisassignment-radoslavradev\\Source\\DAL\\DAL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ra408\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -21,15 +21,15 @@
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://www.nuget.org/": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\ra408\\Desktop\\synthesisassignment-radoslavradev\\Source\\Entities\\Entities\\Entities.csproj": {
-                "projectPath": "C:\\Users\\ra408\\Desktop\\synthesisassignment-radoslavradev\\Source\\Entities\\Entities\\Entities.csproj"
+              "C:\\Users\\ra408\\OneDrive\\Работен плот\\synthesisassignment-radoslavradev\\Source\\Entities\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\ra408\\OneDrive\\Работен плот\\synthesisassignment-radoslavradev\\Source\\Entities\\Entities\\Entities.csproj"
               }
             }
           }
@@ -64,18 +64,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300-preview.22204.3\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\ra408\\Desktop\\synthesisassignment-radoslavradev\\Source\\Entities\\Entities\\Entities.csproj": {
+    "C:\\Users\\ra408\\OneDrive\\Работен плот\\synthesisassignment-radoslavradev\\Source\\Entities\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ra408\\Desktop\\synthesisassignment-radoslavradev\\Source\\Entities\\Entities\\Entities.csproj",
+        "projectUniqueName": "C:\\Users\\ra408\\OneDrive\\Работен плот\\synthesisassignment-radoslavradev\\Source\\Entities\\Entities\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "C:\\Users\\ra408\\Desktop\\synthesisassignment-radoslavradev\\Source\\Entities\\Entities\\Entities.csproj",
+        "projectPath": "C:\\Users\\ra408\\OneDrive\\Работен плот\\synthesisassignment-radoslavradev\\Source\\Entities\\Entities\\Entities.csproj",
         "packagesPath": "C:\\Users\\ra408\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ra408\\Desktop\\synthesisassignment-radoslavradev\\Source\\Entities\\Entities\\obj\\",
+        "outputPath": "C:\\Users\\ra408\\OneDrive\\Работен плот\\synthesisassignment-radoslavradev\\Source\\Entities\\Entities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ra408\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -85,8 +85,8 @@
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://www.nuget.org/": {}
         },
         "frameworks": {
           "net6.0": {
@@ -118,18 +118,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300-preview.22204.3\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\ra408\\Desktop\\synthesisassignment-radoslavradev\\Source\\RealizationProvider\\RealizationProvider\\RealizationProvider.csproj": {
+    "C:\\Users\\ra408\\OneDrive\\Работен плот\\synthesisassignment-radoslavradev\\Source\\RealizationProvider\\RealizationProvider\\RealizationProvider.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ra408\\Desktop\\synthesisassignment-radoslavradev\\Source\\RealizationProvider\\RealizationProvider\\RealizationProvider.csproj",
+        "projectUniqueName": "C:\\Users\\ra408\\OneDrive\\Работен плот\\synthesisassignment-radoslavradev\\Source\\RealizationProvider\\RealizationProvider\\RealizationProvider.csproj",
         "projectName": "RealizationProvider",
-        "projectPath": "C:\\Users\\ra408\\Desktop\\synthesisassignment-radoslavradev\\Source\\RealizationProvider\\RealizationProvider\\RealizationProvider.csproj",
+        "projectPath": "C:\\Users\\ra408\\OneDrive\\Работен плот\\synthesisassignment-radoslavradev\\Source\\RealizationProvider\\RealizationProvider\\RealizationProvider.csproj",
         "packagesPath": "C:\\Users\\ra408\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ra408\\Desktop\\synthesisassignment-radoslavradev\\Source\\RealizationProvider\\RealizationProvider\\obj\\",
+        "outputPath": "C:\\Users\\ra408\\OneDrive\\Работен плот\\synthesisassignment-radoslavradev\\Source\\RealizationProvider\\RealizationProvider\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ra408\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -139,15 +139,15 @@
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://www.nuget.org/": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\ra408\\Desktop\\synthesisassignment-radoslavradev\\Source\\DAL\\DAL\\DAL.csproj": {
-                "projectPath": "C:\\Users\\ra408\\Desktop\\synthesisassignment-radoslavradev\\Source\\DAL\\DAL\\DAL.csproj"
+              "C:\\Users\\ra408\\OneDrive\\Работен плот\\synthesisassignment-radoslavradev\\Source\\DAL\\DAL\\DAL.csproj": {
+                "projectPath": "C:\\Users\\ra408\\OneDrive\\Работен плот\\synthesisassignment-radoslavradev\\Source\\DAL\\DAL\\DAL.csproj"
               }
             }
           }
@@ -161,6 +161,12 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[7.0.0-preview.3.22175.4, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -176,7 +182,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300-preview.22204.3\\RuntimeIdentifierGraph.json"
         }
       }
     }

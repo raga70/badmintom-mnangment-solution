@@ -1,4 +1,5 @@
 ﻿using BLL;
+using DAL;
 using Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -13,22 +14,25 @@ public class SignUpForTournament : PageModel
     public List<Tournament> Tournaments { get;set; }
     public User logedInPLayer{ get; set; }
 
-
-    public SignUpForTournament()
+    private IUserDB _userDb;
+    public SignUpForTournament(ITournamentDB _tournamentDb, IUserDB _userDb)
+    
     {
-        tournamentManager = new TournamentManager();
+        this._userDb = _userDb;
+        tournamentManager = new TournamentManager(_tournamentDb);
         Tournaments = tournamentManager.AllTournaments.ToList();
     }
 
 
     public void OnGet()
     {
-        
-        
 
-        if (HttpContext.Session.GetObject<User>("User") is null)
+
+        logedInPLayer = HttpContext.Session.GetObject<User>("User");
+
+        if (logedInPLayer is null)
         {
-            UserManager userManager = new UserManager();
+            UserManager userManager = new UserManager(_userDb);
             HttpContext.Session.SetObject("User",userManager.GetUser(User.Identity.Name));
         }
         logedInPLayer = HttpContext.Session.GetObject<User>("User");
@@ -45,6 +49,7 @@ public class SignUpForTournament : PageModel
     
     public void OnPostUnJoin(string TorID)
     {
+        logedInPLayer = HttpContext.Session.GetObject<User>("User");
         Tournament t = tournamentManager.GetTournamentByID(Convert.ToInt32(TorID));
         tournamentManager.RemovePlayerFromTournament(t, logedInPLayer);
     }

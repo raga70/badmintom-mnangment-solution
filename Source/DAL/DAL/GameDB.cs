@@ -4,7 +4,7 @@ using RealizationProvider;
 
 namespace DAL;
 
-public class GameDB
+public class GameDB : IGameDB
 {
 
     public void PushTournament(Tournament t, List<Round> rounds)

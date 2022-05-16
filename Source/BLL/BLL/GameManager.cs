@@ -22,12 +22,12 @@ public class GameManager
     }
 
 
-    GameDB _gameDB;
-    public GameManager(Tournament t)
+    IGameDB _gameDB;
+    public GameManager(IGameDB passed,Tournament t)
     {
         _tournament = t;
         if (t.TournamentSystem == TournamentSystems.RoundRobin) _tournamentSystemManager = new RoundRobin(t);
-        _gameDB = new GameDB();
+        _gameDB = passed;
     }
 
 
@@ -48,14 +48,14 @@ public class GameManager
         
     }
 
-    public void saveGame()
+    public void SaveGame()
     {
         //check if badminton rules are followed corectly
         foreach (var r in _rounds)
         {
             foreach (var f in r.Fights)
             {
-                if (f.Player1.Score != 21 && f.Player2.Score != 21)
+                if (f.Player1.Score != 21 && f.Player2.Score != 21 )
                 {
                     if (f.Player1.Score - f.Player2.Score != 2 && f.Player1.Score - f.Player2.Score != -2)
                     {

@@ -16,11 +16,11 @@ public class TournamentManager
         }
     }
 
-    TournamentDB tournamentDB;
+    ITournamentDB tournamentDB;
 
-    public TournamentManager()
+    public TournamentManager(ITournamentDB passed)
     {
-        tournamentDB = new TournamentDB();
+        tournamentDB = passed;
     }
 
     public void UpdateAllTournaments()

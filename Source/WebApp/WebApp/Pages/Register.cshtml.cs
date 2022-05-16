@@ -5,7 +5,8 @@ using Entities.DTO;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using BLL;
-using DataAcess;
+using DAL;
+
 using Entities;
 
 namespace WebApp.Pages
@@ -13,7 +14,7 @@ namespace WebApp.Pages
     public class RegisterModel : PageModel
     {
         private passwordHashing passHasher = new passwordHashing();
-        private UserManager userManager = new UserManager();
+        private UserManager userManager;
         [BindProperty]
         public Register bRegister { get; set; }
         public string errMsg { get;private set; }
@@ -21,7 +22,10 @@ namespace WebApp.Pages
         {
         }
 
-
+        public RegisterModel(IUserDB _userDb)
+        {
+            userManager = new UserManager(_userDb);
+        }
 
         public async void Auth(string user)
         {

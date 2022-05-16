@@ -4,14 +4,21 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using BLL;
+using DAL;
+
 namespace WebApp.Pages
 {
     public class loginModel : PageModel
     {
-
-        UserManager um = new UserManager();
+        private UserManager um;
         public string errMsg { get; private set; }
-        
+
+
+        public loginModel(IUserDB _userDb)
+        {
+            um = new UserManager(_userDb);
+        }
+
         public void OnGet()
         {
         }
