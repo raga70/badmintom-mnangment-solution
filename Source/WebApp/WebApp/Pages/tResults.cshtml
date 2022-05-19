@@ -1,48 +1,56 @@
 ﻿@page
 @model WebApp.Pages.tResults
 @{
-    int br=0;
-    string tittle = "";
+    var br = 0;
+    var tittle = "";
 }
 
 
 <h4>@Model.Data.tournament.SportType</h4>
 <p>TournamentSystem: @Model.Data.tournament.TournamentSystem</p>
-<p>Gender: @if(Model.Data.tournament.Gender == 0){<a>Male</a>}else{<a>Female</a>} </p>
+<p>
+    Gender:
+    @if (Model.Data.tournament.Gender == 0)
+    {
+        <a>Male</a>
+    }
+    else
+    {
+        <a>Female</a>
+    }
+</p>
 <p>Location: @Model.Data.tournament.Location</p>
 <p>Description: @Model.Data.tournament.Description</p>
 
 
 <table class="table">
-  <thead class="thead-dark">
+    <thead class="thead-dark">
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">Player</th>
-      <th scope="col">Points</th>
-      <th scope="col">Tittle</th>
+        <th scope="col">#</th>
+        <th scope="col">Player</th>
+        <th scope="col">Points</th>
+        <th scope="col">Tittle</th>
     </tr>
-  </thead>
-  <tbody>
-  @foreach (var p in Model.Data.tournament.Players)
-  {
-      br++;
-      if(br == 1 ) tittle = "Gold";
-      else if(br == 2 ) tittle = "Silver";
-      else if(br == 3 ) tittle = "Bronze";
-      else  tittle = " ";
-      
-      
-      
-      
-      <tr>
-          <th scope="row">@br</th>
-          <td style="width: 25%;">@p.firstName @p.lastName</td>
-          <td>@p.points</td>
-          <td>@tittle</td>
-      </tr>
-  }
+    </thead>
+    <tbody>
+    @foreach (var p in Model.Data.tournament.Players)
+    {
+        br++;
+        if (br == 1) tittle = "Gold";
+        else if (br == 2) tittle = "Silver";
+        else if (br == 3) tittle = "Bronze";
+        else tittle = " ";
 
-  </tbody>
+
+        <tr>
+            <th scope="row">@br</th>
+            <td style="width: 25%;">@p.firstName @p.lastName</td>
+            <td>@p.points</td>
+            <td>@tittle</td>
+        </tr>
+    }
+
+    </tbody>
 </table>
 
 
@@ -50,21 +58,21 @@
 <table class="table table-bordered">
     <thead>
     <tr>
-        
+
         <th scope="col">Player</th>
         <th scope="col">Result</th>
         <th scope="col">Oponent</th>
     </tr>
     </thead>
     <tbody>
-        @foreach (var fd in Model.Data.fightsData)
-        {
-            <tr>
-                <td>@fd.playerFirstName @fd.playerLastName</td>
-                <td>@fd.fightScore</td>
-                <td>@fd.oponentFirstName @fd.oponentLastName</td>
-            </tr>
-        }
-    
+    @foreach (var fd in Model.Data.fightsData)
+    {
+        <tr>
+            <td>@fd.playerFirstName @fd.playerLastName</td>
+            <td>@fd.fightScore</td>
+            <td>@fd.oponentFirstName @fd.oponentLastName</td>
+        </tr>
+    }
+
     </tbody>
 </table>

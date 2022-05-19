@@ -6,62 +6,52 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using BLL;
 using DAL;
 
-namespace WebApp.Pages
+namespace WebApp.Pages;
+
+public class loginModel : PageModel
 {
-    public class loginModel : PageModel
+    private UserManager um;
+    public string errMsg { get; private set; }
+
+
+    public loginModel(IUserDB _userDb)
     {
-        private UserManager um;
-        public string errMsg { get; private set; }
+        um = new UserManager(_userDb);
+    }
+
+    public void OnGet()
+    {
+    }
 
 
-        public loginModel(IUserDB _userDb)
+    public async void Auth(string user)
+    {
+        var authProperties = new AuthenticationProperties
         {
-            um = new UserManager(_userDb);
+            ExpiresUtc = DateTimeOffset.UtcNow.AddMinutes(28)
+            //IsPersistent = false,
+        };
+
+        var claimsss = new List<Claim>();
+        claimsss.Add(new Claim(ClaimTypes.Name, user));
+
+        var claimsIdentity = new ClaimsIdentity(claimsss, CookieAuthenticationDefaults.AuthenticationScheme);
+
+
+        await HttpContext.SignInAsync(new ClaimsPrincipal(claimsIdentity), authProperties);
+    }
+
+    public ActionResult OnPostLogin()
+    {
+        var user = Request.Form["user"];
+        var pass = Request.Form["pass"];
+        if (um.Login(user, pass))
+        {
+            Auth(user);
+            return RedirectToPage("/index");
         }
 
-        public void OnGet()
-        {
-        }
-
-
-        public async void Auth(string user)
-        {
-
-            var authProperties = new AuthenticationProperties
-            {
-
-
-                ExpiresUtc = DateTimeOffset.UtcNow.AddMinutes(28),
-                //IsPersistent = false,
-
-            };
-
-            List<Claim> claimsss = new List<Claim>();
-            claimsss.Add(new Claim(ClaimTypes.Name, user));
-
-            var claimsIdentity = new ClaimsIdentity(claimsss, CookieAuthenticationDefaults.AuthenticationScheme);
-
-
-            await HttpContext.SignInAsync(new ClaimsPrincipal(claimsIdentity), authProperties);
-
-
-
-        }
-
-        public ActionResult OnPostLogin()
-        {
-            var user = Request.Form["user"];
-            var pass = Request.Form["pass"];
-            if (um.Login(user, pass))
-            {
-                Auth(user);
-                return RedirectToPage("/index");
-            }
-
-            errMsg = "Wrong Credentials";
-            return Page();
-        }
-
-
+        errMsg = "Wrong Credentials";
+        return Page();
     }
 }

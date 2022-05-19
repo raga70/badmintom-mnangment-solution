@@ -1,12 +1,10 @@
 ﻿namespace Entities;
 
-public record GameResultData
+public class GameResultData
 {
-    public Tournament tournament { get;init; }
-    public List<fightData> fightsData { get;init; }
-
+    public Tournament tournament { get; init; }
+    public List<fightData> fightsData { get; init; }
 }
-
 
 public struct fightData
 {
@@ -15,5 +13,4 @@ public struct fightData
     public string fightScore;
     public string oponentFirstName;
     public string oponentLastName;
-
 }

@@ -6,6 +6,5 @@ public class ErroDataIsEMpty : PageModel
 {
     public void OnGet()
     {
-        
     }
 }

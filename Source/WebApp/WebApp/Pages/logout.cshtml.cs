@@ -3,17 +3,15 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace aspUser.Pages
-{
+namespace WebApp.Pages;
 
-    [Authorize]
-    public class logoutModel : PageModel
+[Authorize]
+public class logoutModel : PageModel
+{
+    public IActionResult OnGet()
     {
-        public IActionResult OnGet()
-        {
-            HttpContext.SignOutAsync();
-            HttpContext.Session.Clear();
-            return RedirectToPage("/index");
-        }
+        HttpContext.SignOutAsync();
+        HttpContext.Session.Clear();
+        return RedirectToPage("/index");
     }
 }

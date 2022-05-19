@@ -1,5 +1,7 @@
 ﻿namespace DAL;
+
 using Entities;
+
 public interface IUserDB
 {
     bool AddUser(User user);

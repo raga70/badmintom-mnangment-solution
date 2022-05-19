@@ -3,4 +3,5 @@
 public enum TournamentSystems
 {
     RoundRobin,
+    SingleElimination
 }

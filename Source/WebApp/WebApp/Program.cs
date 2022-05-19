@@ -1,17 +1,15 @@
 using DAL;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using RealizationProvider;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 
 
-
-
-
 //dependency injection
-IServiceCollection _servicess = serviceProviderrr.Get();
+var _servicess = serviceProviderrr.Get();
 IServiceProvider _provider = _servicess.BuildServiceProvider();
 var _userDB = _provider.GetService<IUserDB>();
 var _gameDB = _provider.GetService<IGameDB>();
@@ -34,11 +32,7 @@ builder.Services.AddSession(options =>
 
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-    .AddCookie(options =>
-        {
-            options.LoginPath = new PathString("/login");
-
-        }
+    .AddCookie(options => { options.LoginPath = new PathString("/login"); }
     );
 var app = builder.Build();
 
@@ -49,7 +43,6 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
-
 
 
 app.UseHttpsRedirection();

@@ -5,7 +5,7 @@ namespace BLL;
 
 public class TournamentManager
 {
-    private List<Tournament> Tournaments = new List<Tournament>();
+    private List<Tournament> Tournaments = new();
 
     public IList<Tournament> AllTournaments
     {
@@ -16,7 +16,7 @@ public class TournamentManager
         }
     }
 
-    ITournamentDB tournamentDB;
+    private ITournamentDB tournamentDB;
 
     public TournamentManager(ITournamentDB passed)
     {
@@ -43,7 +43,6 @@ public class TournamentManager
     public void UpdateTournament(Tournament tournament)
     {
         foreach (var localT in Tournaments)
-        {
             if (localT.Tournamnet_id == tournament.Tournamnet_id)
             {
                 Tournaments.Remove(localT);
@@ -51,36 +50,27 @@ public class TournamentManager
                 Tournaments.OrderBy(t => t.Tournamnet_id);
                 break;
             }
-                
-        }
+
         tournamentDB.UpdateTournament(tournament);
     }
 
     public void AddPlayerToTournament(Tournament tournament, User player)
-    { 
+    {
         tournamentDB.AddPlayerToTournament(tournament, player);
-        Tournaments.Find(t => t.Tournamnet_id == tournament.Tournamnet_id).AddPlayr(player);        
-
+        Tournaments.Find(t => t.Tournamnet_id == tournament.Tournamnet_id).AddPlayr(player);
     }
 
     public void RemovePlayerFromTournament(Tournament tournament, User player)
     {
-         tournamentDB.RemovePlayerFromTournament(tournament, player);
-         Tournaments.Find(t => t.Tournamnet_id == tournament.Tournamnet_id).RemovePlayer(player);
-                   
+        tournamentDB.RemovePlayerFromTournament(tournament, player);
+        Tournaments.Find(t => t.Tournamnet_id == tournament.Tournamnet_id).RemovePlayer(player);
     }
-    
+
     public Tournament GetTournamentByID(int id)
     {
-        
-
         foreach (var t in Tournaments)
-        {
             if (t.Tournamnet_id == id)
-            {
                 return t;
-            }
-        }
         return null;
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+
 namespace WebApp;
 
 public static class SessionExtensions

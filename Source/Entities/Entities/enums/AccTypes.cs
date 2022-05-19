@@ -2,7 +2,7 @@
 
 public enum AccTypes
 {
-Athlete,
-Staff,
-Admin
+    Athlete,
+    Staff,
+    Admin
 }

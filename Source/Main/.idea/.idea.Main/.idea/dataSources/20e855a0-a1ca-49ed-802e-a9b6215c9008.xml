@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="synthesys-remotesql">
   <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.39">
-    <root id="1"/>
+    <root id="1">
+      <DefaultCasing>exact</DefaultCasing>
+      <DefaultEngine>InnoDB</DefaultEngine>
+      <DefaultTmpEngine>InnoDB</DefaultTmpEngine>
+      <Grants>3dzxuKGkH2|schema||3dzxuKGkH2||ALTER|G
+3dzxuKGkH2|schema||3dzxuKGkH2||CREATE|G
+3dzxuKGkH2|schema||3dzxuKGkH2||DELETE|G
+3dzxuKGkH2|schema||3dzxuKGkH2||DROP|G
+3dzxuKGkH2|schema||3dzxuKGkH2||INDEX|G
+3dzxuKGkH2|schema||3dzxuKGkH2||INSERT|G
+3dzxuKGkH2|schema||3dzxuKGkH2||REFERENCES|G
+3dzxuKGkH2|schema||3dzxuKGkH2||SELECT|G
+3dzxuKGkH2|schema||3dzxuKGkH2||UPDATE|G</Grants>
+      <ServerVersion>8.0.13</ServerVersion>
+    </root>
     <collation id="2" parent="1" name="armscii8_bin">
       <Charset>armscii8</Charset>
     </collation>
@@ -886,8 +900,8 @@
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="281" parent="275" name="playerUsername">
-      <DataType>varchar(45)|0s</DataType>
+    <column id="281" parent="275" name="player_id">
+      <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
@@ -896,206 +910,266 @@
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="283" parent="275" name="oponent">
-      <DataType>varchar(45)|0s</DataType>
+    <column id="283" parent="275" name="oponent_id">
+      <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <foreign-key id="284" parent="275" name="gameFights_ibfk_1">
+    <column id="284" parent="275" name="id">
+      <AutoIncrement>5</AutoIncrement>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <foreign-key id="285" parent="275" name="gameFights_ibfk_1">
       <ColNames>tournament_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>tournaments</RefTableName>
     </foreign-key>
-    <index id="285" parent="275" name="tournament_id">
-      <ColNames>tournament_id</ColNames>
+    <foreign-key id="286" parent="275" name="gameFights_ibfk_2">
+      <ColNames>player_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>users</RefTableName>
+    </foreign-key>
+    <foreign-key id="287" parent="275" name="gameFights_ibfk_3">
+      <ColNames>oponent_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>users</RefTableName>
+    </foreign-key>
+    <index id="288" parent="275" name="ui_dupliii">
+      <ColNames>tournament_id
+player_id
+oponent_id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="289" parent="275" name="player_id">
+      <ColNames>player_id</ColNames>
       <Type>btree</Type>
     </index>
-    <column id="286" parent="276" name="tournament_id">
+    <index id="290" parent="275" name="oponent_id">
+      <ColNames>oponent_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="291" parent="275" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
+    <key id="292" parent="275" name="ui_dupliii">
+      <ColNames>tournament_id
+player_id
+oponent_id</ColNames>
+      <UnderlyingIndexName>ui_dupliii</UnderlyingIndexName>
+    </key>
+    <column id="293" parent="276" name="tournament_id">
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="287" parent="276" name="playerUsername">
-      <DataType>varchar(45)|0s</DataType>
+    <column id="294" parent="276" name="player_id">
+      <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="288" parent="276" name="points">
+    <column id="295" parent="276" name="points">
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="289" parent="276" name="id">
-      <AutoIncrement>1</AutoIncrement>
+    <column id="296" parent="276" name="id">
+      <AutoIncrement>5</AutoIncrement>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <foreign-key id="290" parent="276" name="gameResults_ibfk_1">
+    <foreign-key id="297" parent="276" name="gameResults_ibfk_1">
       <ColNames>tournament_id</ColNames>
       <OnDelete>cascade</OnDelete>
       <OnUpdate>cascade</OnUpdate>
       <RefColNames>id</RefColNames>
       <RefTableName>tournaments</RefTableName>
     </foreign-key>
-    <foreign-key id="291" parent="276" name="gameResults_ibfk_2">
-      <ColNames>playerUsername</ColNames>
-      <RefColNames>username</RefColNames>
+    <foreign-key id="298" parent="276" name="gameResults_ibfk_2">
+      <ColNames>player_id</ColNames>
+      <RefColNames>id</RefColNames>
       <RefTableName>users</RefTableName>
     </foreign-key>
-    <index id="292" parent="276" name="gameResults_ibfk_1">
-      <ColNames>tournament_id</ColNames>
+    <index id="299" parent="276" name="ui_dupli">
+      <ColNames>tournament_id
+player_id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="300" parent="276" name="player_id">
+      <ColNames>player_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="293" parent="276" name="playerUsername">
-      <ColNames>playerUsername</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="294" parent="276" name="PRIMARY">
+    <key id="301" parent="276" name="PRIMARY">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <column id="295" parent="277" name="sportType">
-      <DataType>enum(&apos;Badminton&apos;)|0e</DataType>
+    <key id="302" parent="276" name="ui_dupli">
+      <ColNames>tournament_id
+player_id</ColNames>
+      <UnderlyingIndexName>ui_dupli</UnderlyingIndexName>
+    </key>
+    <column id="303" parent="277" name="sportType">
+      <DataType>enum(&apos;Badminton&apos;, &apos;&apos;)|0e</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="296" parent="277" name="startDate">
+    <column id="304" parent="277" name="startDate">
       <DataType>datetime|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="297" parent="277" name="endDate">
+    <column id="305" parent="277" name="endDate">
       <DataType>datetime|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="298" parent="277" name="minPlayers">
+    <column id="306" parent="277" name="minPlayers">
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="299" parent="277" name="maxPlayers">
+    <column id="307" parent="277" name="maxPlayers">
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="300" parent="277" name="location">
+    <column id="308" parent="277" name="location">
       <DataType>text|0s</DataType>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
-    <column id="301" parent="277" name="tournamentSystem">
+    <column id="309" parent="277" name="tournamentSystem">
       <DataType>enum(&apos;RoundRobin&apos;)|0e</DataType>
       <NotNull>1</NotNull>
       <Position>7</Position>
     </column>
-    <column id="302" parent="277" name="description">
+    <column id="310" parent="277" name="description">
       <DataType>text|0s</DataType>
       <NotNull>1</NotNull>
       <Position>8</Position>
     </column>
-    <column id="303" parent="277" name="gender">
+    <column id="311" parent="277" name="gender">
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>9</Position>
     </column>
-    <column id="304" parent="277" name="id">
-      <AutoIncrement>1</AutoIncrement>
+    <column id="312" parent="277" name="id">
+      <AutoIncrement>7</AutoIncrement>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>10</Position>
     </column>
-    <key id="305" parent="277" name="PRIMARY">
+    <key id="313" parent="277" name="PRIMARY">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <column id="306" parent="278" name="tournaments_id">
+    <column id="314" parent="278" name="tournaments_id">
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="307" parent="278" name="users_username">
-      <DataType>varchar(45)|0s</DataType>
+    <column id="315" parent="278" name="users_id">
+      <DataType>int(45)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <foreign-key id="308" parent="278" name="tournaments_users_ibfk_1">
+    <foreign-key id="316" parent="278" name="tournaments_users_ibfk_1">
       <ColNames>tournaments_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>tournaments</RefTableName>
     </foreign-key>
-    <foreign-key id="309" parent="278" name="tournaments_users_ibfk_2">
-      <ColNames>users_username</ColNames>
-      <RefColNames>username</RefColNames>
+    <foreign-key id="317" parent="278" name="tournaments_users_ibfk_2">
+      <ColNames>users_id</ColNames>
+      <RefColNames>id</RefColNames>
       <RefTableName>users</RefTableName>
     </foreign-key>
-    <index id="310" parent="278" name="uq_noDuplicateUsersInTournament">
+    <index id="318" parent="278" name="uq_noDuplicateUsersInTournament">
       <ColNames>tournaments_id
-users_username</ColNames>
+users_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="311" parent="278" name="users_username">
-      <ColNames>users_username</ColNames>
+    <index id="319" parent="278" name="users_id">
+      <ColNames>users_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="312" parent="278" name="uq_noDuplicateUsersInTournament">
+    <key id="320" parent="278" name="uq_noDuplicateUsersInTournament">
       <ColNames>tournaments_id
-users_username</ColNames>
+users_id</ColNames>
       <UnderlyingIndexName>uq_noDuplicateUsersInTournament</UnderlyingIndexName>
     </key>
-    <column id="313" parent="279" name="username">
+    <column id="321" parent="279" name="username">
       <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="314" parent="279" name="password">
+    <column id="322" parent="279" name="password">
       <DataType>text|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="315" parent="279" name="firstName">
+    <column id="323" parent="279" name="firstName">
       <DataType>text|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="316" parent="279" name="lastName">
+    <column id="324" parent="279" name="lastName">
       <DataType>text|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="317" parent="279" name="birthdayDate">
+    <column id="325" parent="279" name="birthdayDate">
       <DataType>date|0s</DataType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="318" parent="279" name="gender">
+    <column id="326" parent="279" name="gender">
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
-    <column id="319" parent="279" name="email">
+    <column id="327" parent="279" name="email">
       <DataType>text|0s</DataType>
       <NotNull>1</NotNull>
       <Position>7</Position>
     </column>
-    <column id="320" parent="279" name="phoneNumber">
+    <column id="328" parent="279" name="phoneNumber">
       <DataType>text|0s</DataType>
       <NotNull>1</NotNull>
       <Position>8</Position>
     </column>
-    <column id="321" parent="279" name="accType">
+    <column id="329" parent="279" name="accType">
       <DataType>enum(&apos;Athlete&apos;, &apos;Staff&apos;, &apos;Admin&apos;)|0e</DataType>
       <NotNull>1</NotNull>
       <Position>9</Position>
     </column>
-    <key id="322" parent="279" name="PRIMARY">
+    <column id="330" parent="279" name="id">
+      <AutoIncrement>4</AutoIncrement>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>10</Position>
+    </column>
+    <index id="331" parent="279" name="ui_username">
       <ColNames>username</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="332" parent="279" name="PRIMARY">
+      <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
+    </key>
+    <key id="333" parent="279" name="ui_username">
+      <ColNames>username</ColNames>
+      <UnderlyingIndexName>ui_username</UnderlyingIndexName>
     </key>
   </database-model>
 </dataSource>
