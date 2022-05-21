@@ -12,7 +12,6 @@ namespace WebApp.Pages;
 
 public class RegisterModel : PageModel
 {
-    private passwordHashing passHasher = new();
     private UserManager userManager;
     [BindProperty] public Register bRegister { get; set; }
     public string errMsg { get; private set; }
@@ -47,7 +46,7 @@ public class RegisterModel : PageModel
     {
         if (ModelState.IsValid)
         {
-            bRegister.password = passHasher.Hash(bRegister.password);
+            bRegister.password = passwordHashing.Hash(bRegister.password);
             if (!userManager.RegisterUser(new User(bRegister)))
             {
                 errMsg = "the username is taken";

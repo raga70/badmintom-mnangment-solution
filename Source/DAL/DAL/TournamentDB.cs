@@ -97,7 +97,14 @@ public class TournamentDB : ITournamentDB
             {
                 Players = GetAllPlayerPerTournament(reader_tournaments.GetInt32("id"));
 
-                tournaments.Add(new Tournament()
+
+                TournamentSystems TournamentType = Enum.Parse<TournamentSystems>(reader_tournaments.GetString("tournamentSystem"));
+
+                
+                
+                
+                
+                Tournament t = new Tournament()  
                 {
                     SportType = Enum.Parse<sportTypes>(reader_tournaments.GetString("sportType")),
                     StartDate = reader_tournaments.GetDateTime("startDate"),
@@ -110,8 +117,11 @@ public class TournamentDB : ITournamentDB
                     Description = reader_tournaments.GetString("description"),
                     Gender = reader_tournaments.GetInt32("gender"),
                     Players = Players
-                });
-            }
+                };
+                if(t.TournamentSystem == TournamentSystems.RoundRobin) tournaments.Add(new TournamentRR(t));
+                else if(t.TournamentSystem == TournamentSystems.SingleElimination) tournaments.Add(new TournamentSE(t));
+                else throw new ArgumentException("tournamentSystem unrecognized");
+                }
 
             return tournaments;
         }

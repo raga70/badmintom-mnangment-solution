@@ -9,16 +9,16 @@ namespace WebApp.Pages;
 public class tSchedule : PageModel
 {
     private TournamentManager _tournamentManager;
-    private GameManager _gameManager;
+    //private GameManager _gameManager;
     public Tournament Tournament { get; set; }
     public List<Round> Rounds { get; set; }
 
-    private IGameDB _gameDB;
+    public string ErrMsg { get; set; }
 
     public tSchedule(IGameDB gameDb, ITournamentDB tournamentDb)
     {
-        _gameDB = gameDb;
-        _tournamentManager = new TournamentManager(tournamentDb);
+       
+        _tournamentManager = new TournamentManager(tournamentDb,gameDb);
     }
 
     public ActionResult OnGet(string TorID)
@@ -26,8 +26,17 @@ public class tSchedule : PageModel
         if (TorID is null) RedirectToPage("/index");
         _tournamentManager.UpdateAllTournaments();
         Tournament = _tournamentManager.GetTournamentByID(Convert.ToInt32(TorID));
-        _gameManager = new GameManager(_gameDB, Tournament);
-        Rounds = _gameManager.GetSchedule();
+        _tournamentManager.UpdateAllTournaments();
+        if (((TournamentInPlay)_tournamentManager.GetTournamentByID(Convert.ToInt32(TorID))).GetType() ==
+            typeof(TournamentSE))
+        {
+            ErrMsg = "This tournament uses a single-elimination TournamentSystem and cannot generate the full schedule (i didnt had enough time to implement TimeTravel :)";
+            return Page();
+        }
+            
+            
+            
+        Rounds = ((TournamentInPlay)_tournamentManager.GetTournamentByID(Convert.ToInt32(TorID))).AllRounds.ToList();
         return Page();
     }
 }

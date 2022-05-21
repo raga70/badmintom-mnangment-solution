@@ -18,9 +18,17 @@ public class TournamentManager
 
     private ITournamentDB tournamentDB;
 
+    private IGameDB _gameDB;
+
     public TournamentManager(ITournamentDB passed)
     {
         tournamentDB = passed;
+    }
+    
+    public TournamentManager(ITournamentDB passed, IGameDB passedGameDb)
+    {
+        tournamentDB = passed;
+        _gameDB = passedGameDb;
     }
 
     public void UpdateAllTournaments()
@@ -73,4 +81,34 @@ public class TournamentManager
                 return t;
         return null;
     }
+    
+    ///game manangment
+    
+    
+    
+    public void SaveGame(Tournament tGame)
+    {
+        //check if badminton rules are followed corectly
+
+        ((TournamentInPlay)tGame).UpdateGame();
+        _gameDB.PushTournament(tGame, ((TournamentInPlay)tGame).AllRounds.ToList());
+        // if (tGame.TournamentSystem == TournamentSystems.SingleElimination) //REMOVE 
+        //     ((TournamentGame)tGame).CreteSchedule(((TournamentGame)tGame).AllRounds.ToList());
+    }
+
+    
+    //no point in keeping a local copy because on  each new OnPost() in razor it gets garbage collected 
+    public GameResultData GetTournamentResults(Tournament t)
+    {
+        return _gameDB.GetGameResults(t);
+    }
+
+    
+    
+    
+    
+    
+    
+    
+    
 }

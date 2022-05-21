@@ -27,8 +27,8 @@ public class Fight
             return false;
         }
 
-        else
-        {
+        else //increase player score
+        {    
             if (Player1.Score > Player2.Score)
                 Player1.Player.IncresePoints();
             else

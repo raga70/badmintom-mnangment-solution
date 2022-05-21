@@ -35,6 +35,7 @@ public class loginModel : PageModel
         var claimsss = new List<Claim>();
         claimsss.Add(new Claim(ClaimTypes.Name, user));
 
+
         var claimsIdentity = new ClaimsIdentity(claimsss, CookieAuthenticationDefaults.AuthenticationScheme);
 
 

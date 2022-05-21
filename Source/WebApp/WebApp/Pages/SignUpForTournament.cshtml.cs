@@ -22,10 +22,11 @@ public class SignUpForTournament : PageModel
         tournamentManager = new TournamentManager(_tournamentDb);
         Tournaments = tournamentManager.AllTournaments.ToList();
     }
-
+    
 
     public void OnGet()
     {
+        
         logedInPLayer = HttpContext.Session.GetObject<User>("User");
 
         if (logedInPLayer is null)

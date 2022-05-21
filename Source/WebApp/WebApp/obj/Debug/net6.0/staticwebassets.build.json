@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "yA8HtGtASJ7LCN98uGD7hx0DTFGlaM6JKUTkx7q6muc=",
+  "Hash": "yEKJ/LVaQ95yZz3Kr8K1yZX/2HwcYosnWydpGeYrc2Y=",
   "Source": "WebApp",
   "BasePath": "_content/WebApp",
   "Mode": "Default",
@@ -1069,6 +1069,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\ra408\\OneDrive\\Работен плот\\synthesisassignment-radoslavradev\\Source\\WebApp\\WebApp\\wwwroot\\logo.png",
+      "SourceId": "WebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ra408\\OneDrive\\Работен плот\\synthesisassignment-radoslavradev\\Source\\WebApp\\WebApp\\wwwroot\\",
+      "BasePath": "_content/WebApp",
+      "RelativePath": "logo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\logo.png"
     }
   ]
 }

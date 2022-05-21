@@ -68,3 +68,4 @@ C:\Users\ra408\OneDrive\Работен плот\synthesisassignment-radoslavrade
 C:\Users\ra408\OneDrive\Работен плот\synthesisassignment-radoslavradev\Source\WFA\WFA\obj\Debug\net6.0-windows\ref\WFA.dll
 C:\Users\ra408\OneDrive\Работен плот\synthesisassignment-radoslavradev\Source\WFA\WFA\bin\Debug\net6.0-windows\Microsoft.Extensions.DependencyInjection.dll
 C:\Users\ra408\OneDrive\Работен плот\synthesisassignment-radoslavradev\Source\WFA\WFA\bin\Debug\net6.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\ra408\OneDrive\Работен плот\synthesisassignment-radoslavradev\Source\WFA\WFA\obj\Debug\net6.0-windows\WFA.login.resources

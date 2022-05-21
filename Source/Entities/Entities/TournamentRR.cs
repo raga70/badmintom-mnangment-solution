@@ -1,17 +1,33 @@
-﻿using BLL;
-using Entities;
+﻿namespace Entities;
 
-namespace BLL;
-
-public class RoundRobinGenerator : TournamentSystemGenerator
+public class TournamentRR : TournamentInPlay
 {
-    public RoundRobinGenerator(Tournament t) : base(t)
+    
+    
+    
+
+    public TournamentRR(Tournament t):base()
     {
+        base.SportType = t.SportType;
+        base.StartDate = t.StartDate;
+        base.EndDate = t.EndDate;
+        base.MinPlayers = t.MinPlayers;
+        base.MaxPlayers = t.MaxPlayers;
+        base.Location = t.Location;
+        base.TournamentSystem = t.TournamentSystem;
+        base.Tournamnet_id = t.Tournamnet_id;
+        base.Description = t.Description;
+        base.Gender = t.Gender;
+        base.Players = t.Players;
     }
-
-
-    public override List<Round> CreteSchedule(List<Round> nu)
+    
+    
+     public override  List<Round> CreteSchedule(List<Round> nu)
     {
+        Initializer();
+        if (TournamentSystem != TournamentSystems.RoundRobin)
+            throw new ArgumentException("Tournament type from base class doesnt match schedule generator");
+        
         if (_players.Count() <= 1) return null;
         var rounds = new List<Round>();
         var athletes = new List<GamePlayer>();
@@ -72,5 +88,6 @@ public class RoundRobinGenerator : TournamentSystemGenerator
         }
 
         return rounds;
-    }
+    } 
+    
 }

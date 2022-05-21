@@ -5,12 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fc3a3ffb-5936-4679-81ea-e0af272adca7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../BLL/BLL/SingleEliminationGenerator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BLL/BLL/garbage/GameManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BLL/BLL/garbage/RoundRobinGenerator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BLL/BLL/garbage/SingleEliminationGenerator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BLL/BLL/garbage/TournamentSystemGenerator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Entities/Entities/TournamentInPlay.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Entities/Entities/TournamentSE.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WebApp/WebApp/Pages/playerProfiler.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WebApp/WebApp/Pages/playerProfiler.cshtml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BLL/BLL/BLL.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../BLL/BLL/BLL.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BLL/BLL/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../BLL/BLL/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BLL/BLL/ITournamentSystemManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../BLL/BLL/TournamentSystemGenerator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BLL/BLL/RoundRobin.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BLL/BLL/GameManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BLL/BLL/RoundRobinGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Entities/Entities/TournamentRR.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BLL/BLL/SingleEliminationGenerator.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../BLL/BLL/TournamentManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../BLL/BLL/TournamentManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BLL/BLL/TournamentSystemGenerator.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../BLL/BLL/UserManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../BLL/BLL/UserManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BLL/BLL/bin/Debug/net6.0/BLL.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../BLL/BLL/bin/Debug/net6.0/BLL.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BLL/BLL/bin/Debug/net6.0/BLL.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../BLL/BLL/bin/Debug/net6.0/BLL.pdb" afterDir="false" />
@@ -26,12 +34,9 @@
       <change beforePath="$PROJECT_DIR$/../BLL/BLL/obj/Debug/net6.0/refint/BLL.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../BLL/BLL/obj/Debug/net6.0/refint/BLL.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BLL/BLL/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/../BLL/BLL/obj/rider.project.restore.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BLL/BLL/passwordHashing.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../BLL/BLL/passwordHashing.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DAL/DAL/Connection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../DAL/DAL/Connection.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DAL/DAL/DAL.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../DAL/DAL/DAL.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../DAL/DAL/GameDB.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../DAL/DAL/GameDB.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DAL/DAL/Interfaces/IUserDB.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../DAL/DAL/Interfaces/IUserDB.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DAL/DAL/Interfaces/IGameDB.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../DAL/DAL/Interfaces/IGameDB.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../DAL/DAL/TournamentDB.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../DAL/DAL/TournamentDB.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DAL/DAL/UserDB.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../DAL/DAL/UserDB.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../DAL/DAL/bin/Debug/net6.0/DAL.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../DAL/DAL/bin/Debug/net6.0/DAL.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../DAL/DAL/bin/Debug/net6.0/DAL.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../DAL/DAL/bin/Debug/net6.0/DAL.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../DAL/DAL/bin/Debug/net6.0/Entities.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../DAL/DAL/bin/Debug/net6.0/Entities.dll" afterDir="false" />
@@ -39,36 +44,29 @@
       <change beforePath="$PROJECT_DIR$/../DAL/DAL/obj/Debug/net6.0/DAL.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../DAL/DAL/obj/Debug/net6.0/DAL.csproj.AssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../DAL/DAL/obj/Debug/net6.0/DAL.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../DAL/DAL/obj/Debug/net6.0/DAL.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../DAL/DAL/obj/Debug/net6.0/DAL.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../DAL/DAL/obj/Debug/net6.0/DAL.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DAL/DAL/obj/Debug/net6.0/ref/DAL.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../DAL/DAL/obj/Debug/net6.0/ref/DAL.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DAL/DAL/obj/Debug/net6.0/refint/DAL.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../DAL/DAL/obj/Debug/net6.0/refint/DAL.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../DAL/DAL/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/../DAL/DAL/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Entities/Entities/DTO/Register.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Entities/Entities/DTO/Register.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Entities/Entities/Entities.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../Entities/Entities/Entities.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Entities/Entities/Game/Fight.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Entities/Entities/Game/Fight.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Entities/Entities/Game/GamePlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Entities/Entities/Game/GamePlayer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Entities/Entities/GameResultData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Entities/Entities/GameResultData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Entities/Entities/Tournament.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Entities/Entities/Tournament.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Entities/Entities/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Entities/Entities/User.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Entities/Entities/bin/Debug/net6.0/Entities.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Entities/Entities/bin/Debug/net6.0/Entities.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Entities/Entities/bin/Debug/net6.0/Entities.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Entities/Entities/bin/Debug/net6.0/Entities.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Entities/Entities/enums/AccTypes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Entities/Entities/enums/AccTypes.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Entities/Entities/enums/TournamentSystems.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Entities/Entities/enums/TournamentSystems.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Entities/Entities/obj/Debug/net6.0/Entities.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Entities/Entities/obj/Debug/net6.0/Entities.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Entities/Entities/obj/Debug/net6.0/Entities.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Entities/Entities/obj/Debug/net6.0/Entities.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Entities/Entities/obj/Debug/net6.0/Entities.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Entities/Entities/obj/Debug/net6.0/Entities.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Entities/Entities/obj/Debug/net6.0/ref/Entities.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Entities/Entities/obj/Debug/net6.0/ref/Entities.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Entities/Entities/obj/Debug/net6.0/refint/Entities.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Entities/Entities/obj/Debug/net6.0/refint/Entities.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Entities/Entities/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/../Entities/Entities/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Main/.idea/dataSources/20e855a0-a1ca-49ed-802e-a9b6215c9008.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Main/.idea/dataSources/20e855a0-a1ca-49ed-802e-a9b6215c9008.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Main/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Main/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.vs/Main/DesignTimeBuild/.dtbcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/Main/DesignTimeBuild/.dtbcache.v2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/Main/FileContentIndex/04078928-9b24-4df4-86ff-635198eb5634.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/Main/FileContentIndex/1759fa96-0dd8-4e0a-ad96-8b3f3f7b999c.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/Main/FileContentIndex/1e1a7cac-6c32-42c8-92bd-2d8ace463174.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/Main/FileContentIndex/b4b383c3-f8fe-45ad-80bf-f664b2362dc6.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/Main/FileContentIndex/c1554600-0673-4fbc-9be3-99a135ca5fe9.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/Main/FileContentIndex/d5290a21-de45-4c2a-848b-71d2eb18524e.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/Main/FileContentIndex/e62287fb-3b5f-474a-a6f9-7d28f4b86c35.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/Main/FileContentIndex/e81005c2-e25e-44b2-be99-505aa02ff6b4.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/Main/v17/.futdcache.v1" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/Main/v17/.futdcache.v1" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.vs/Main/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/Main/v17/.suo" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.vs/ProjectEvaluation/main.metadata.v2" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/ProjectEvaluation/main.metadata.v2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.vs/ProjectEvaluation/main.projects.v2" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/ProjectEvaluation/main.projects.v2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RealizationProvider/RealizationProvider/Connection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../RealizationProvider/RealizationProvider/Connection.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RealizationProvider/RealizationProvider/RealizationProvider.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../RealizationProvider/RealizationProvider/RealizationProvider.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RealizationProvider/RealizationProvider/ServiceProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../RealizationProvider/RealizationProvider/ServiceProvider.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RealizationProvider/RealizationProvider/bin/Debug/net6.0/DAL.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../RealizationProvider/RealizationProvider/bin/Debug/net6.0/DAL.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RealizationProvider/RealizationProvider/bin/Debug/net6.0/DAL.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../RealizationProvider/RealizationProvider/bin/Debug/net6.0/DAL.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RealizationProvider/RealizationProvider/bin/Debug/net6.0/Entities.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../RealizationProvider/RealizationProvider/bin/Debug/net6.0/Entities.dll" afterDir="false" />
@@ -79,10 +77,11 @@
       <change beforePath="$PROJECT_DIR$/../RealizationProvider/RealizationProvider/obj/Debug/net6.0/RealizationProvider.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../RealizationProvider/RealizationProvider/obj/Debug/net6.0/RealizationProvider.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RealizationProvider/RealizationProvider/obj/Debug/net6.0/RealizationProvider.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../RealizationProvider/RealizationProvider/obj/Debug/net6.0/RealizationProvider.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RealizationProvider/RealizationProvider/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/../RealizationProvider/RealizationProvider/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WFA/WFA/Form1.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../WFA/WFA/Form1.Designer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../WFA/WFA/Form1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../WFA/WFA/Form1.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../WFA/WFA/Form1.resx" beforeDir="false" afterPath="$PROJECT_DIR$/../WFA/WFA/Form1.resx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../WFA/WFA/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../WFA/WFA/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../WFA/WFA/WFA.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../WFA/WFA/WFA.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WFA/WFA/WFA.csproj.user" beforeDir="false" afterPath="$PROJECT_DIR$/../WFA/WFA/WFA.csproj.user" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../WFA/WFA/bin/Debug/net6.0-windows/BLL.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../WFA/WFA/bin/Debug/net6.0-windows/BLL.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../WFA/WFA/bin/Debug/net6.0-windows/BLL.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../WFA/WFA/bin/Debug/net6.0-windows/BLL.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../WFA/WFA/bin/Debug/net6.0-windows/DAL.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../WFA/WFA/bin/Debug/net6.0-windows/DAL.dll" afterDir="false" />
@@ -94,37 +93,21 @@
       <change beforePath="$PROJECT_DIR$/../WFA/WFA/bin/Debug/net6.0-windows/WFA.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../WFA/WFA/bin/Debug/net6.0-windows/WFA.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../WFA/WFA/bin/Debug/net6.0-windows/WFA.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../WFA/WFA/bin/Debug/net6.0-windows/WFA.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../WFA/WFA/obj/Debug/net6.0-windows/WFA.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../WFA/WFA/obj/Debug/net6.0-windows/WFA.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WFA/WFA/obj/Debug/net6.0-windows/WFA.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../WFA/WFA/obj/Debug/net6.0-windows/WFA.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WFA/WFA/obj/Debug/net6.0-windows/WFA.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../WFA/WFA/obj/Debug/net6.0-windows/WFA.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WFA/WFA/obj/Debug/net6.0-windows/WFA.csproj.GenerateResource.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../WFA/WFA/obj/Debug/net6.0-windows/WFA.csproj.GenerateResource.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../WFA/WFA/obj/Debug/net6.0-windows/WFA.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../WFA/WFA/obj/Debug/net6.0-windows/WFA.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../WFA/WFA/obj/Debug/net6.0-windows/WFA.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../WFA/WFA/obj/Debug/net6.0-windows/WFA.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WFA/WFA/obj/Debug/net6.0-windows/ref/WFA.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../WFA/WFA/obj/Debug/net6.0-windows/ref/WFA.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WFA/WFA/obj/Debug/net6.0-windows/refint/WFA.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../WFA/WFA/obj/Debug/net6.0-windows/refint/WFA.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../WFA/WFA/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/../WFA/WFA/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../WebApp/WebApp/Pages/ErroDataIsEMpty.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApp/WebApp/Pages/ErroDataIsEMpty.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../WebApp/WebApp/Pages/ErroDataIsEMpty.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApp/WebApp/Pages/ErroDataIsEMpty.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../WebApp/WebApp/Pages/Error.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApp/WebApp/Pages/Error.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../WebApp/WebApp/Pages/Error.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApp/WebApp/Pages/Error.cshtml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../WebApp/WebApp/Pages/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApp/WebApp/Pages/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../WebApp/WebApp/Pages/Index.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApp/WebApp/Pages/Index.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../WebApp/WebApp/Pages/Privacy.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApp/WebApp/Pages/Privacy.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../WebApp/WebApp/Pages/Privacy.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApp/WebApp/Pages/Privacy.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../WebApp/WebApp/Pages/Register.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApp/WebApp/Pages/Register.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../WebApp/WebApp/Pages/Register.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApp/WebApp/Pages/Register.cshtml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../WebApp/WebApp/Pages/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApp/WebApp/Pages/Shared/_Layout.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../WebApp/WebApp/Pages/Shared/_Layout.cshtml.css" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApp/WebApp/Pages/Shared/_Layout.cshtml.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../WebApp/WebApp/Pages/Shared/_ValidationScriptsPartial.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApp/WebApp/Pages/Shared/_ValidationScriptsPartial.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../WebApp/WebApp/Pages/SignUpForTournament.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApp/WebApp/Pages/SignUpForTournament.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../WebApp/WebApp/Pages/SignUpForTournament.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApp/WebApp/Pages/SignUpForTournament.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../WebApp/WebApp/Pages/Tournaments.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApp/WebApp/Pages/Tournaments.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../WebApp/WebApp/Pages/Tournaments.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApp/WebApp/Pages/Tournaments.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../WebApp/WebApp/Pages/_ViewStart.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApp/WebApp/Pages/_ViewStart.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../WebApp/WebApp/Pages/login.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApp/WebApp/Pages/login.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../WebApp/WebApp/Pages/login.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApp/WebApp/Pages/login.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../WebApp/WebApp/Pages/logout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApp/WebApp/Pages/logout.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../WebApp/WebApp/Pages/logout.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApp/WebApp/Pages/logout.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../WebApp/WebApp/Pages/tResults.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApp/WebApp/Pages/tResults.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../WebApp/WebApp/Pages/tResults.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApp/WebApp/Pages/tResults.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../WebApp/WebApp/Pages/tSchedule.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApp/WebApp/Pages/tSchedule.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../WebApp/WebApp/Pages/tSchedule.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApp/WebApp/Pages/tSchedule.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../WebApp/WebApp/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApp/WebApp/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../WebApp/WebApp/SessionExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApp/WebApp/SessionExtensions.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../WebApp/WebApp/WebApp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApp/WebApp/WebApp.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../WebApp/WebApp/bin/Debug/net6.0/BLL.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApp/WebApp/bin/Debug/net6.0/BLL.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../WebApp/WebApp/bin/Debug/net6.0/BLL.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApp/WebApp/bin/Debug/net6.0/BLL.pdb" afterDir="false" />
@@ -136,33 +119,20 @@
       <change beforePath="$PROJECT_DIR$/../WebApp/WebApp/bin/Debug/net6.0/RealizationProvider.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApp/WebApp/bin/Debug/net6.0/RealizationProvider.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../WebApp/WebApp/bin/Debug/net6.0/WebApp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApp/WebApp/bin/Debug/net6.0/WebApp.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../WebApp/WebApp/bin/Debug/net6.0/WebApp.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApp/WebApp/bin/Debug/net6.0/WebApp.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WebApp/WebApp/bin/Debug/net6.0/WebApp.staticwebassets.runtime.json" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApp/WebApp/bin/Debug/net6.0/WebApp.staticwebassets.runtime.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WebApp/WebApp/obj/Debug/net6.0/WebApp.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApp/WebApp/obj/Debug/net6.0/WebApp.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../WebApp/WebApp/obj/Debug/net6.0/WebApp.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApp/WebApp/obj/Debug/net6.0/WebApp.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WebApp/WebApp/obj/Debug/net6.0/WebApp.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApp/WebApp/obj/Debug/net6.0/WebApp.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../WebApp/WebApp/obj/Debug/net6.0/WebApp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApp/WebApp/obj/Debug/net6.0/WebApp.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../WebApp/WebApp/obj/Debug/net6.0/WebApp.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApp/WebApp/obj/Debug/net6.0/WebApp.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WebApp/WebApp/obj/Debug/net6.0/project.razor.vs.json" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApp/WebApp/obj/Debug/net6.0/project.razor.vs.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../WebApp/WebApp/obj/Debug/net6.0/ref/WebApp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApp/WebApp/obj/Debug/net6.0/ref/WebApp.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../WebApp/WebApp/obj/Debug/net6.0/refint/WebApp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApp/WebApp/obj/Debug/net6.0/refint/WebApp.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../WebApp/WebApp/obj/Debug/net6.0/scopedcss/Pages/Shared/_Layout.cshtml.rz.scp.css" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApp/WebApp/obj/Debug/net6.0/scopedcss/Pages/Shared/_Layout.cshtml.rz.scp.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../WebApp/WebApp/obj/Debug/net6.0/scopedcss/bundle/WebApp.styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApp/WebApp/obj/Debug/net6.0/scopedcss/bundle/WebApp.styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../WebApp/WebApp/obj/Debug/net6.0/scopedcss/projectbundle/WebApp.bundle.scp.css" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApp/WebApp/obj/Debug/net6.0/scopedcss/projectbundle/WebApp.bundle.scp.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../WebApp/WebApp/obj/Debug/net6.0/staticwebassets.build.json" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApp/WebApp/obj/Debug/net6.0/staticwebassets.build.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WebApp/WebApp/obj/Debug/net6.0/staticwebassets.development.json" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApp/WebApp/obj/Debug/net6.0/staticwebassets.development.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../WebApp/WebApp/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApp/WebApp/obj/rider.project.restore.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../WebApp/WebApp/obj/staticwebassets.pack.sentinel" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApp/WebApp/obj/staticwebassets.pack.sentinel" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../WebApp/WebApp/wwwroot/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApp/WebApp/wwwroot/css/site.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../WebApp/WebApp/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApp/WebApp/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../WebApp/WebApp/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApp/WebApp/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../WebApp/WebApp/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApp/WebApp/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../WebApp/WebApp/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApp/WebApp/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../WebApp/WebApp/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApp/WebApp/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../WebApp/WebApp/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApp/WebApp/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../WebApp/WebApp/wwwroot/lib/bootstrap/dist/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApp/WebApp/wwwroot/lib/bootstrap/dist/css/bootstrap.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../WebApp/WebApp/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApp/WebApp/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../WebApp/WebApp/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApp/WebApp/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../WebApp/WebApp/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApp/WebApp/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../WebApp/WebApp/wwwroot/lib/bootstrap/dist/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApp/WebApp/wwwroot/lib/bootstrap/dist/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../WebApp/WebApp/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApp/WebApp/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../WebApp/WebApp/wwwroot/lib/jquery-validation/dist/additional-methods.js" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApp/WebApp/wwwroot/lib/jquery-validation/dist/additional-methods.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../WebApp/WebApp/wwwroot/lib/jquery-validation/dist/jquery.validate.js" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApp/WebApp/wwwroot/lib/jquery-validation/dist/jquery.validate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../WebApp/WebApp/wwwroot/lib/jquery/dist/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApp/WebApp/wwwroot/lib/jquery/dist/jquery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../doc/CD.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../../doc/CD.pdf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,11 +148,28 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1ac3bf8d279e4572a77c8002c0c830f1171c00/46/f7971b37/MySqlDataReader.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1ac3bf8d279e4572a77c8002c0c830f1171c00/4e/3cefcac0/ResultSet.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/0b5567882521e02aa3d40a7bce81b7235ccac4db588866e3498e614c3bc/CastHelpers.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/198a6261cebc324728dcc4c178edc5f2894123f711722c80e8557cbfd27651/ThrowHelper.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1ceba22af9b44efad111f696f5ca443014fb1174dbaec26c45eeca32b4d916/NumericUpDown.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1e7132c80e9366856451d3efe145d3a6e8cda42dda58b2288e1a99101461e/Utf16Utility.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1eda716d49c55a58af7dbb9d41a374659f6739350b774802896cd92a58948a/BitOperations.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/23d4365de333c68d9b89b2e974e97341c335b22eec7dd5d80fb7d9f9a4d199b/NonRandomizedStringEqualityComparer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2551f86b6a048726f16f233b74f918723cf10fb4513e3c9344074ec823e6557/Ordinal.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/32ca50429b143dd4887097bb82be4132c75a91b0668a93f8b139b74d4274757c/NativeWindow.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/399935fa436fb846ac62efb6d50a8d34b1034875a201574eb60f33ad5c7f4/RuntimeHelpers.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4f857b4a4ba923116a566346f88433337e738b56c8de580dc7330b6f1fef1/Application.ComponentManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/575c31ecc35a636b6f962cb71d53992552941a18982aae1c8e6c16305cc3761b/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5fead5fbf2bee3da1b9f378a09d78479a62db80dae1e1c6453efdb0bc92a8/String.Comparison.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/974fa14c57bab8fe29f1bddd39b1a6548b9cc8cf9e0ef5e670c2407a56d9/String.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a2e8a3cda4cc94b669847ecebd2186e342cd61f27e7dee795d7a3def6dce7f12/ValidationContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/adeac7e0d66070992306aba327dd9e7b487a39044c45f37cf77e9704ff721c8/Control.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c187722df013a9489b6b12b3162a6a2c8bee2d7c83ee64b4ab4d33c8f1610/ListBox.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c6ad457575d35dcbff26c9a5e3fb1d92f1d3c55f25ef6ebf475367b5d8/List.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/de7177e8a31c1e501222daf218f2e9532ff54cdb767595dc7e94cc73c8e95f1/Int32.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/efd3e9c4749621d4a53b45d7117d2a581e02a265c444a040f1387a155db/Dictionary.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f4708639776589f5ac2739f6fcbfc67343b1f9dac51cc1dbfdb003eef77cc1c/Monitor.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -201,7 +188,7 @@
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -272,7 +259,8 @@
       <workItem from="1652019637739" duration="3076000" />
       <workItem from="1652026964844" duration="299000" />
       <workItem from="1652693287558" duration="9873000" />
-      <workItem from="1652834044881" duration="27118000" />
+      <workItem from="1652834044881" duration="40413000" />
+      <workItem from="1653004292319" duration="26823000" />
     </task>
     <servers />
   </component>

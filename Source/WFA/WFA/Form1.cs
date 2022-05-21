@@ -9,13 +9,15 @@ namespace WFA;
 public partial class Form1 : Form
 {
     private TournamentManager tournamentManager;
-    private GameManager _gameManager;
+    //private GameManager _gameManager;
+    //just for easy of use
+    private TournamentInPlay _selectedTournamentInPlay;
     private IGameDB gameDB;
 
     public Form1(IUserDB userDB, IGameDB gameDB, ITournamentDB tournamentDB)
     {
         InitializeComponent();
-        tournamentManager = new TournamentManager(tournamentDB);
+        tournamentManager = new TournamentManager(tournamentDB,gameDB);
         lbTournamentUpdater();
         cbSportType.DataSource = Enum.GetValues(typeof(sportTypes));
         cbTournamentSystem.DataSource = Enum.GetValues(typeof(TournamentSystems));
@@ -75,10 +77,10 @@ public partial class Form1 : Form
         {
             if (tournamentManager.AllTournaments[lbTournaments.SelectedIndex - 1].isGameStartable())
             {
-                _gameManager = new GameManager(gameDB,
-                    tournamentManager.AllTournaments[lbTournaments.SelectedIndex - 1]);
+                // _gameManager = new GameManager(gameDB,
+                  _selectedTournamentInPlay =  (TournamentInPlay)tournamentManager.AllTournaments[lbTournaments.SelectedIndex - 1];
                 lbRound.Items.Clear();
-                foreach (var r in _gameManager.AllRounds) lbRound.Items.Add(r.RoundNumber);
+                foreach (var r in _selectedTournamentInPlay.AllRounds) lbRound.Items.Add(r.RoundNumber);
 
                 enoughPlayers = true;
             }
@@ -172,15 +174,15 @@ public partial class Form1 : Form
         lbFight.Items.Clear();
         if (lbRound.Items.Count >= 1 && lbRound.SelectedIndex != -1 && enoughPlayers == true)
         {
-            foreach (var f in _gameManager.AllRounds[lbRound.SelectedIndex].Fights)
+            foreach (var f in _selectedTournamentInPlay.AllRounds[lbRound.SelectedIndex].Fights)
                 if (f.Player1.Player is not null && f.Player2.Player is not null)
                     lbFight.Items.Add(
                         $"{f.Player1.Player.firstName},{f.Player1.Player.lastName} vs {f.Player2.Player.firstName},{f.Player2.Player.lastName}");
                 else
-                    lbFight.Items.Add(" . ");
+                    lbFight .Items.Add(" . ");
 
-            _gameManager.UpdatePlayerScore(_gameManager.AllRounds[_previouslbRoundIndx],
-                _gameManager.AllRounds[_previouslbRoundIndx].Fights[_previoslbFightsIndx],
+            _selectedTournamentInPlay.UpdatePlayerScore(_selectedTournamentInPlay.AllRounds[_previouslbRoundIndx],
+                _selectedTournamentInPlay.AllRounds[_previouslbRoundIndx].Fights[_previoslbFightsIndx],
                 Convert.ToInt32(cbPlayer1Score.Value), Convert.ToInt32(cbPlayer2Score.Value));
 
             _previouslbRoundIndx = lbRound.SelectedIndex;
@@ -196,17 +198,17 @@ public partial class Form1 : Form
     {
         if (lbFight.SelectedItem != " . " && lbFight.SelectedIndex != -1)
         {
-            labContestant1.Text = _gameManager.AllRounds[lbRound.SelectedIndex].Fights[lbFight.SelectedIndex]
+            labContestant1.Text = _selectedTournamentInPlay.AllRounds[lbRound.SelectedIndex].Fights[lbFight.SelectedIndex]
                 .Player1.Player
                 .firstName;
-            cbPlayer1Score.Value = _gameManager.AllRounds[lbRound.SelectedIndex].Fights[lbFight.SelectedIndex]
+            cbPlayer1Score.Value = _selectedTournamentInPlay.AllRounds[lbRound.SelectedIndex].Fights[lbFight.SelectedIndex]
                 .Player1
                 .Score;
 
-            labContestant2.Text = _gameManager.AllRounds[lbRound.SelectedIndex].Fights[lbFight.SelectedIndex]
+            labContestant2.Text = _selectedTournamentInPlay.AllRounds[lbRound.SelectedIndex].Fights[lbFight.SelectedIndex]
                 .Player2.Player
                 .firstName;
-            cbPlayer2Score.Value = _gameManager.AllRounds[lbRound.SelectedIndex].Fights[lbFight.SelectedIndex]
+            cbPlayer2Score.Value = _selectedTournamentInPlay.AllRounds[lbRound.SelectedIndex].Fights[lbFight.SelectedIndex]
                 .Player2
                 .Score;
             _previoslbFightsIndx = lbFight.SelectedIndex;
@@ -227,14 +229,14 @@ public partial class Form1 : Form
     private void button1_Click(object sender, EventArgs e)
     {
         var trownEX = false;
-        if (lbRound.SelectedIndex != -1)
+        if (lbRound.SelectedIndex != -1 && lbFight.SelectedIndex != -1)
         {
-            _gameManager.UpdatePlayerScore(_gameManager.AllRounds[lbRound.SelectedIndex],
-                _gameManager.AllRounds[lbRound.SelectedIndex].Fights[lbFight.SelectedIndex],
+            _selectedTournamentInPlay.UpdatePlayerScore(_selectedTournamentInPlay.AllRounds[lbRound.SelectedIndex],
+                _selectedTournamentInPlay.AllRounds[lbRound.SelectedIndex].Fights[lbFight.SelectedIndex],
                 Convert.ToInt32(cbPlayer1Score.Value), Convert.ToInt32(cbPlayer2Score.Value));
             try
             {
-                _gameManager.SaveGame();
+                tournamentManager.SaveGame(_selectedTournamentInPlay);
             }
             catch (Exception ex)
             {
@@ -246,7 +248,7 @@ public partial class Form1 : Form
                 MessageBox.Show("game Saved");
 
             lbRound.Items.Clear();
-            foreach (var r in _gameManager.AllRounds) lbRound.Items.Add(r.RoundNumber);
+            foreach (var r in _selectedTournamentInPlay.AllRounds) lbRound.Items.Add(r.RoundNumber);
         }
     }
 
@@ -256,10 +258,10 @@ public partial class Form1 : Form
         if (tabControl1.SelectedIndex == 1)
             if (tournamentManager.AllTournaments[lbTournaments.SelectedIndex - 1].isGameStartable())
             {
-                _gameManager = new GameManager(gameDB,
-                    tournamentManager.AllTournaments[lbTournaments.SelectedIndex - 1]);
+                
+                _selectedTournamentInPlay =  (TournamentInPlay)tournamentManager.AllTournaments[lbTournaments.SelectedIndex - 1];
                 lbRound.Items.Clear();
-                foreach (var r in _gameManager.AllRounds) lbRound.Items.Add(r.RoundNumber);
+                foreach (var r in _selectedTournamentInPlay.AllRounds) lbRound.Items.Add(r.RoundNumber);
             }
     }
 

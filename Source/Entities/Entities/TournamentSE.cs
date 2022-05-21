@@ -1,15 +1,32 @@
-﻿using Entities;
+﻿namespace Entities;
 
-namespace BLL;
-
-public class SingleEliminationGenerator : TournamentSystemGenerator
+public class TournamentSE : TournamentInPlay
 {
-    public SingleEliminationGenerator(Tournament t) : base(t)
+    
+    
+    
+    public TournamentSE(Tournament t):base()
     {
+        base.SportType = t.SportType;
+        base.StartDate = t.StartDate;
+        base.EndDate = t.EndDate;
+        base.MinPlayers = t.MinPlayers;
+        base.MaxPlayers = t.MaxPlayers;
+        base.Location = t.Location;
+        base.TournamentSystem = t.TournamentSystem;
+        base.Tournamnet_id = t.Tournamnet_id;
+        base.Description = t.Description;
+        base.Gender = t.Gender;
+        base.Players = t.Players;
     }
-
+    
+    
+    
+    
+    
     private Round CreteFirstRound()
     {
+        Initializer();
         var players = new List<GamePlayer>();
         players.AddRange(_players);
 
@@ -31,9 +48,11 @@ public class SingleEliminationGenerator : TournamentSystemGenerator
         return new Round() { Fights = fights, RoundNumber = 1 };
     }
 
-    public override List<Round> CreteSchedule(List<Round> rounds)
+    public override  List<Round> CreteSchedule(List<Round> rounds)
     {
-        if (rounds is null)
+        if (TournamentSystem != TournamentSystems.SingleElimination)
+            throw new ArgumentException("Tournament type from base class doesnt match schedule generator");
+        if (rounds is null || rounds.Count == 0)
         {
             rounds = new List<Round>();
             rounds.Add(CreteFirstRound());

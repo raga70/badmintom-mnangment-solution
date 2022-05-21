@@ -4,6 +4,8 @@ public class GameResultData
 {
     public Tournament tournament { get; init; }
     public List<fightData> fightsData { get; init; }
+
+    public int playerPoints { get; init; }
 }
 
 public struct fightData

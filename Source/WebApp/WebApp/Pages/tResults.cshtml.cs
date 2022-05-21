@@ -10,7 +10,7 @@ public class tResults : PageModel
 {
     public GameResultData Data { get; set; }
 
-    private GameManager _gameManager;
+   // private TournamentManager _tournamentManager;
 
     private ITournamentDB _tournamentDB;
     private IGameDB _gameDB;
@@ -25,10 +25,10 @@ public class tResults : PageModel
     public ActionResult OnGet(string TorID)
     {
         if (TorID is null) return RedirectToPage("/index");
-        var tm = new TournamentManager(_tournamentDB);
+        var tm = new TournamentManager(_tournamentDB,_gameDB);
         tm.UpdateAllTournaments();
-        _gameManager = new GameManager(_gameDB, tm.GetTournamentByID(Convert.ToInt32(TorID)));
-        Data = _gameManager.GetTournamentResults();
+        //_gameManager = new GameManager(_gameDB, tm.GetTournamentByID(Convert.ToInt32(TorID)));
+        Data = tm.GetTournamentResults(tm.GetTournamentByID(Convert.ToInt32(TorID)));
         if (Data.tournament is null || Data.fightsData is null) return RedirectToPage("/ErroDataIsEMpty");
         return Page();
     }

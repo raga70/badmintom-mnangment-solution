@@ -4,10 +4,10 @@ using System.Security.Cryptography;
 
 namespace BLL;
 
-public class passwordHashing
+public static class passwordHashing
 {
     /// the following 2 methods are from https://stackoverflow.com/questions/4181198/how-to-hash-a-password/10402129#10402129
-    public string Hash(string password)
+    public static string Hash(string password)
     {
         byte[] salt;
         new RNGCryptoServiceProvider().GetBytes(salt = new byte[16]); // fills it with 16 random bytes
@@ -26,7 +26,7 @@ public class passwordHashing
         return savedPasswordHash;
     }
 
-    public bool Validate(string password, string savedPasswordHash)
+    public static bool Validate(string password, string savedPasswordHash)
     {
         var hashBytes = Convert.FromBase64String(savedPasswordHash); //convert the string to a byte array
 

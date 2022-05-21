@@ -25,11 +25,19 @@ public class UserManager
 
 
     private IUserDB userDB;
+    private IGameDB gameDB;
 
     public UserManager(IUserDB passed)
     {
         userDB = passed;
     }
+    
+    public UserManager(IUserDB passed,IGameDB passeGameDb)
+    {
+        userDB = passed;
+        gameDB = passeGameDb;
+    }
+    
 
 
     public void UpdateAllUsers()
@@ -60,8 +68,7 @@ public class UserManager
 
     public bool Login(string username, string pass)
     {
-        var passwordHashing = new passwordHashing(); //convert ot static maybe
-
+      
         string hashedPass = null;
 
         if (users is not null)
@@ -79,4 +86,11 @@ public class UserManager
 
         return passwordHashing.Validate(pass, hashedPass);
     }
+    
+    
+    public List<GameResultData> GetPlayerProfiler(User user)
+    {
+        return gameDB.GetPlayerProfiler(user);
+    }
+
 }

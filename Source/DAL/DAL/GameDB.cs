@@ -155,4 +155,91 @@ public class GameDB : IGameDB
             mysql.Close();
         }
     }
+    
+    
+    
+    
+    
+    public List<GameResultData> GetPlayerProfiler(User user)
+    {
+        List<GameResultData> games = new List<GameResultData>();
+
+
+        var tournament = new Tournament();
+        var Players = new List<User>();
+        var fightData = new List<fightData>();
+        var mysql = new MySqlConnection(Connection.conString);
+        int tid =-1;
+        int br = 0;
+        try
+        {
+            mysql.Open();
+            var cmd_getFightResults = new MySqlCommand(
+                "SELECT gr.points as PlrPoints, t.id as tid, t.sportType as TsportType, t.startDate as TstartDate,t.endDate as TendDate,t.minPlayers as TminPlayers, t.maxPlayers as TmaxPlayers, t.location as Tlocation, t.tournamentSystem as TtournamentSystem, t.description as Tdescription,t.gender as Tgender  , g.fightScore, u.firstName AS pFname, u.lastName AS pLname,u2.firstName AS oFname, u2.lastName AS oLname  FROM gameFights g inner join tournaments t on g.tournament_id = t.id inner join users u on g.player_id = u.id left join users u2 on g.oponent_id = u2.id  LEFT JOIN gameResults gr ON gr.tournament_id = t.id WHERE u.id = @uid AND gr.player_id = u.id ORDER BY t.id ASC ",
+                mysql);
+            cmd_getFightResults.Parameters.AddWithValue("@uid", user.id);
+            var reader_fightResults = cmd_getFightResults.ExecuteReader();
+            while (reader_fightResults.Read())
+            {
+                br++;
+                if (tid == reader_fightResults.GetInt32("tid") && br != 1)
+                {
+                    fightData.Add(new fightData()
+                    {
+                        fightScore = reader_fightResults.GetString("fightScore"),
+                        playerFirstName = reader_fightResults.GetString("pFname"),
+                        playerLastName = reader_fightResults.GetString("pLname"),
+                        oponentFirstName = reader_fightResults.GetString("oFname"),
+                        oponentLastName = reader_fightResults.GetString("oLname")
+                    });
+                    tid = reader_fightResults.GetInt32("tid");
+                }
+                else
+                {
+                    
+                    
+                     tournament = new Tournament()  
+                    {
+                        SportType = Enum.Parse<sportTypes>(reader_fightResults.GetString("TsportType")),
+                        StartDate = reader_fightResults.GetDateTime("TstartDate"),
+                        EndDate = reader_fightResults.GetDateTime("TendDate"),
+                        MinPlayers = reader_fightResults.GetInt32("TminPlayers"),
+                        MaxPlayers = reader_fightResults.GetInt32("TmaxPlayers"),
+                        Location = reader_fightResults.GetString("Tlocation"),
+                        TournamentSystem = Enum.Parse<TournamentSystems>(reader_fightResults.GetString("TtournamentSystem")),
+                        Tournamnet_id = reader_fightResults.GetInt32("tid"),
+                        Description = reader_fightResults.GetString("Tdescription"),
+                        Gender = reader_fightResults.GetInt32("Tgender")
+                    };
+                    
+                    if(br != 1){
+                    games.Add(new GameResultData(){fightsData = fightData, tournament = tournament, playerPoints = reader_fightResults.GetInt32("PlrPoints")});
+                    fightData = new List<fightData>();
+                    }
+                    fightData.Add(new fightData()
+                    {
+                        fightScore = reader_fightResults.GetString("fightScore"),
+                        playerFirstName = reader_fightResults.GetString("pFname"),
+                        playerLastName = reader_fightResults.GetString("pLname"),
+                        oponentFirstName = reader_fightResults.GetString("oFname"),
+                        oponentLastName = reader_fightResults.GetString("oLname")
+                    });
+                    tid = reader_fightResults.GetInt32("tid");
+
+                    
+                    
+                    
+                    }
+            }
+            games.Add(new GameResultData(){fightsData = fightData, tournament = tournament, playerPoints = reader_fightResults.GetInt32("PlrPoints")});
+            return games;
+        }
+        finally
+        {
+            mysql.Close();
+        }
+    }
+    
+    
+    
 }
