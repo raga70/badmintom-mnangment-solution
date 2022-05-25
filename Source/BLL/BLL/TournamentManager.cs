@@ -39,7 +39,7 @@ public class TournamentManager
     public void AddTournament(Tournament tournament)
     {
         tournamentDB.AddTournament(tournament);
-        Tournaments.Add(tournament);
+        Tournaments.Add(tournament); 
     }
 
     public void DeleteTournament(Tournament tournament)

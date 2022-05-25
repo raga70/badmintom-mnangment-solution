@@ -1,6 +1,6 @@
 ﻿namespace Entities;
 
-public class GamePlayer
+public record GamePlayer
 {
     public int id { get; init; }
     public User Player { get; init; }

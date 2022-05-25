@@ -20,11 +20,12 @@ public class TournamentRR : TournamentInPlay
         base.Gender = t.Gender;
         base.Players = t.Players;
     }
-    
+
+    //public override List<Round> CreteSchedule(List<Round> nu) => CreteSchedule();
     
      public override  List<Round> CreteSchedule(List<Round> nu)
     {
-        Initializer();
+        base.Initializer();
         if (TournamentSystem != TournamentSystems.RoundRobin)
             throw new ArgumentException("Tournament type from base class doesnt match schedule generator");
         

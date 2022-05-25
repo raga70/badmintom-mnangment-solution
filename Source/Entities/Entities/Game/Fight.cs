@@ -1,6 +1,6 @@
 ﻿namespace Entities;
 
-public class Fight
+public record Fight
 {
     public int id { get; init; }
 

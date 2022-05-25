@@ -3,7 +3,7 @@
 public abstract class TournamentInPlay : Tournament
 {
     private protected int round { get; set; }
-    protected List<GamePlayer> _players = new();
+    protected List<GamePlayer> _players { get;  } = new(); //used by the initializer to prepare the players for CreteSchedule() 
     
     private List<Round> _rounds = new();
 
@@ -31,8 +31,9 @@ public abstract class TournamentInPlay : Tournament
 
     public abstract List<Round> CreteSchedule(List<Round> nu);
     
-    
-    
+
+
+
     public void UpdatePlayerScore(Round r, Fight f, int scorePL1, int scorePl2)
     {
         //exceptions might be trown if player cannot be found
