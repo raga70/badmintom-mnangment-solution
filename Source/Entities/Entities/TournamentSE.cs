@@ -25,10 +25,11 @@ public class TournamentSE : TournamentInPlay
     
     
     private Round CreteFirstRound()
-    {
+    {string errMsg = null;
         Initializer();
         var players = new List<GamePlayer>();
         players.AddRange(_players);
+        if (!ArePlayersPowerOfTwo())  errMsg = "The number of players is not power of 2 which will introduce  rotating skipping player (this may not be fare completion), if you wish you can still change the tournament type in the Manage panel ";
 
         var _isB = false;
         var fights = new List<Fight>();
@@ -45,17 +46,19 @@ public class TournamentSE : TournamentInPlay
             fights.Add(f);
         }
 
-        return new Round() { Fights = fights, RoundNumber = 1 };
+        return new Round() { Fights = fights, RoundNumber = 1,Errmsg = errMsg};
     }
 
-    public override  List<Round> CreteSchedule(List<Round> rounds)
+    protected override  List<Round> CreteSchedule(List<Round> rounds)
     {
+        string errMsg = null;
         if (TournamentSystem != TournamentSystems.SingleElimination)
             throw new ArgumentException("Tournament type from base class doesnt match schedule generator");
         if (rounds is null || rounds.Count == 0)
         {
             rounds = new List<Round>();
             rounds.Add(CreteFirstRound());
+
         }
         else
         {
@@ -93,10 +96,25 @@ public class TournamentSE : TournamentInPlay
                     fights.Add(f);
                 }
 
-                rounds.Add(new Round() { Fights = fights, RoundNumber = rounds.Count + 1 });
+                rounds.Add(new Round() { Fights = fights, RoundNumber = rounds.Count + 1,Errmsg = errMsg});
             }
         }
 
         return rounds;
     }
+    
+    bool ArePlayersPowerOfTwo()
+    {
+ 
+        
+ 
+        bool a = (int)(Math.Ceiling((Math.Log(Players.Count) /
+                                   Math.Log(2)))) ==
+               (int)(Math.Floor(((Math.Log(Players.Count) /
+                                  Math.Log(2)))));
+        return a;
+    }
+    
+    
+    
 }

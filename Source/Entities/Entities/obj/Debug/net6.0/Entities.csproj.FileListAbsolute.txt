@@ -22,3 +22,15 @@ C:\Users\ra408\OneDrive\Работен плот\synthesisassignment-radoslavrade
 C:\Users\ra408\OneDrive\Работен плот\synthesisassignment-radoslavradev\Source\Entities\Entities\obj\Debug\net6.0\refint\Entities.dll
 C:\Users\ra408\OneDrive\Работен плот\synthesisassignment-radoslavradev\Source\Entities\Entities\obj\Debug\net6.0\Entities.pdb
 C:\Users\ra408\OneDrive\Работен плот\synthesisassignment-radoslavradev\Source\Entities\Entities\obj\Debug\net6.0\ref\Entities.dll
+C:\Users\ra408\OneDrive\Работен плот\INHERITEDSYNTHESYS\synthesisassignment-radoslavradev\Source\Entities\Entities\bin\Debug\net6.0\Entities.deps.json
+C:\Users\ra408\OneDrive\Работен плот\INHERITEDSYNTHESYS\synthesisassignment-radoslavradev\Source\Entities\Entities\bin\Debug\net6.0\Entities.dll
+C:\Users\ra408\OneDrive\Работен плот\INHERITEDSYNTHESYS\synthesisassignment-radoslavradev\Source\Entities\Entities\bin\Debug\net6.0\Entities.pdb
+C:\Users\ra408\OneDrive\Работен плот\INHERITEDSYNTHESYS\synthesisassignment-radoslavradev\Source\Entities\Entities\obj\Debug\net6.0\Entities.csproj.AssemblyReference.cache
+C:\Users\ra408\OneDrive\Работен плот\INHERITEDSYNTHESYS\synthesisassignment-radoslavradev\Source\Entities\Entities\obj\Debug\net6.0\Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ra408\OneDrive\Работен плот\INHERITEDSYNTHESYS\synthesisassignment-radoslavradev\Source\Entities\Entities\obj\Debug\net6.0\Entities.AssemblyInfoInputs.cache
+C:\Users\ra408\OneDrive\Работен плот\INHERITEDSYNTHESYS\synthesisassignment-radoslavradev\Source\Entities\Entities\obj\Debug\net6.0\Entities.AssemblyInfo.cs
+C:\Users\ra408\OneDrive\Работен плот\INHERITEDSYNTHESYS\synthesisassignment-radoslavradev\Source\Entities\Entities\obj\Debug\net6.0\Entities.csproj.CoreCompileInputs.cache
+C:\Users\ra408\OneDrive\Работен плот\INHERITEDSYNTHESYS\synthesisassignment-radoslavradev\Source\Entities\Entities\obj\Debug\net6.0\Entities.dll
+C:\Users\ra408\OneDrive\Работен плот\INHERITEDSYNTHESYS\synthesisassignment-radoslavradev\Source\Entities\Entities\obj\Debug\net6.0\refint\Entities.dll
+C:\Users\ra408\OneDrive\Работен плот\INHERITEDSYNTHESYS\synthesisassignment-radoslavradev\Source\Entities\Entities\obj\Debug\net6.0\Entities.pdb
+C:\Users\ra408\OneDrive\Работен плот\INHERITEDSYNTHESYS\synthesisassignment-radoslavradev\Source\Entities\Entities\obj\Debug\net6.0\ref\Entities.dll

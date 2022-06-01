@@ -29,7 +29,7 @@ public abstract class TournamentInPlay : Tournament
     }
 
 
-    public abstract List<Round> CreteSchedule(List<Round> nu);
+    protected abstract List<Round> CreteSchedule(List<Round> nu);
     
 
 

@@ -31,12 +31,22 @@ public class tSchedule : PageModel
             typeof(TournamentSE))
         {
             ErrMsg = "This tournament uses a single-elimination TournamentSystem and cannot generate the full schedule (i didnt had enough time to implement TimeTravel :)";
-            return Page();
+           // return Page();
         }
-            
-            
-            
-        Rounds = ((TournamentInPlay)_tournamentManager.GetTournamentByID(Convert.ToInt32(TorID))).AllRounds.ToList();
+
+       
+        
+            Rounds = ((TournamentInPlay)_tournamentManager.GetTournamentByID(Convert.ToInt32(TorID))).AllRounds
+                .ToList();
+       
+
         return Page();
     }
+    
+    public ActionResult OnPostResults(string TorID)
+    {
+        return RedirectToPage("/tResults", "SOrder", new { TorID = TorID });
+    }
+    
+    
 }

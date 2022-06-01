@@ -4,6 +4,15 @@
 @{
 }
 
+<p>@Model.ErrMsg</p><br>
+@if (Model.Tournament.isActive())
+{
+    <div class="float-end">
+        <form method="post" asp-page-handler="Results">
+            <button asp-page-handler="Results" type="submit" class="btn btn-primary" asp-route-TorID="@Model.Tournament.Tournamnet_id">IntermediateResults</button>
+        </form></div>
+    <br>
+}
 <table class="table">
     <thead class="thead-dark">
     <tr>

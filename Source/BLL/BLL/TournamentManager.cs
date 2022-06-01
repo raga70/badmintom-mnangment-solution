@@ -1,4 +1,5 @@
-﻿using Entities;
+﻿using System.ComponentModel.DataAnnotations;
+using Entities;
 using DAL;
 
 namespace BLL;
@@ -38,8 +39,13 @@ public class TournamentManager
 
     public void AddTournament(Tournament tournament)
     {
-        tournamentDB.AddTournament(tournament);
-        Tournaments.Add(tournament); 
+        var results = new List<ValidationResult>();
+        var context = new ValidationContext(tournament, null, null);
+        if (Validator.TryValidateObject(tournament, context, results))
+        {
+            tournamentDB.AddTournament(tournament);
+            Tournaments.Add(tournament);
+        }
     }
 
     public void DeleteTournament(Tournament tournament)

@@ -46,8 +46,8 @@ public partial class Form1 : Form
 
                 rtbAddress.Text = "";
                 rtbDescription.Text = "";
-                cbSportType.SelectedIndex = -1;
-                cbTournamentSystem.SelectedIndex = -1;
+                cbSportType.SelectedIndex = 0;
+                cbTournamentSystem.SelectedIndex = 0;
                 dtpStartDate.Value = DateTime.Now;
                 dtpEndDate.Value = DateTime.Now;
                 cbMaxPlayers.Value = 2;
@@ -77,10 +77,17 @@ public partial class Form1 : Form
         {
             if (tournamentManager.AllTournaments[lbTournaments.SelectedIndex - 1].isGameStartable())
             {
-                // _gameManager = new GameManager(gameDB,
+                
                   _selectedTournamentInPlay =  (TournamentInPlay)tournamentManager.AllTournaments[lbTournaments.SelectedIndex - 1];
                 lbRound.Items.Clear();
-                foreach (var r in _selectedTournamentInPlay.AllRounds) lbRound.Items.Add(r.RoundNumber);
+                
+                
+                    foreach (var r in _selectedTournamentInPlay.AllRounds) lbRound.Items.Add(r.RoundNumber);
+                
+               
+                    if( _selectedTournamentInPlay.AllRounds[0].Errmsg is not null)
+                    MessageBox.Show(_selectedTournamentInPlay.AllRounds[0].Errmsg);
+                
 
                 enoughPlayers = true;
             }
@@ -101,29 +108,35 @@ public partial class Form1 : Form
         var gendr = 0;
 
         if (rbFemale.Checked) gendr = 1;
-        var newT = new Tournament()
+        try
         {
-            SportType = (sportTypes)cbSportType.SelectedItem,
-            Description = rtbDescription.Text,
-            StartDate = dtpStartDate.Value,
-            EndDate = dtpEndDate.Value,
-            MinPlayers = Convert.ToInt32(cbMinPlayers.Value),
-            MaxPlayers = Convert.ToInt32(cbMaxPlayers.Value),
-            Location = rtbAddress.Text,
-            TournamentSystem = (TournamentSystems)cbTournamentSystem.SelectedItem,
-            Gender = gendr
-        };
-        var results = new List<ValidationResult>();
-        var context = new ValidationContext(newT, null, null);
-        if (!Validator.TryValidateObject(newT, context, results))
+            var newT = new Tournament()
+            {
+                SportType = (sportTypes)cbSportType.SelectedItem,
+                Description = rtbDescription.Text,
+                StartDate = dtpStartDate.Value,
+                EndDate = dtpEndDate.Value,
+                MinPlayers = Convert.ToInt32(cbMinPlayers.Value),
+                MaxPlayers = Convert.ToInt32(cbMaxPlayers.Value),
+                Location = rtbAddress.Text,
+                TournamentSystem = (TournamentSystems)cbTournamentSystem.SelectedItem,
+                Gender = gendr
+            };
+            var results = new List<ValidationResult>();
+            var context = new ValidationContext(newT, null, null);
+            if (!Validator.TryValidateObject(newT, context, results))
+            {
+                foreach (var error in results) MessageBox.Show(error.ErrorMessage);
+            }
+            else
+            {
+                tournamentManager.AddTournament(newT);
+                MessageBox.Show("Tournament created");
+                lbTournamentUpdater();
+            }
+        }catch(Exception ex)
         {
-            foreach (var error in results) MessageBox.Show(error.ErrorMessage);
-        }
-        else
-        {
-            tournamentManager.AddTournament(newT);
-            MessageBox.Show("Tournament created");
-            lbTournamentUpdater();
+            MessageBox.Show(ex.Message);
         }
     }
 

@@ -51,7 +51,7 @@ public class Tournament
 
 
     //available after generation
-    public List<User> Players { get; init; }
+    public List<User> Players { get; init; } = new List<User>();
     public int Tournamnet_id { get; init; }
 
     public bool isActive()
@@ -106,4 +106,13 @@ public class Tournament
         if (Players.Count >= MinPlayers) return true;
         return false;
     }
+    
+    public bool isLocked()
+    {
+        if (DateTime.Now > StartDate + TimeSpan.FromDays(-7)) return true;
+        else
+            return false;
+           
+    }
+    
 }

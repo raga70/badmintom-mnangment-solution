@@ -1054,11 +1054,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ra408\\OneDrive\\Работен плот\\synthesisassignment-radoslavradev\\Source\\WebApp\\WebApp\\WebApp.csproj",
+      "projectUniqueName": "C:\\Users\\ra408\\OneDrive\\Работен плот\\INHERITEDSYNTHESYS\\synthesisassignment-radoslavradev\\Source\\WebApp\\WebApp\\WebApp.csproj",
       "projectName": "WebApp",
-      "projectPath": "C:\\Users\\ra408\\OneDrive\\Работен плот\\synthesisassignment-radoslavradev\\Source\\WebApp\\WebApp\\WebApp.csproj",
+      "projectPath": "C:\\Users\\ra408\\OneDrive\\Работен плот\\INHERITEDSYNTHESYS\\synthesisassignment-radoslavradev\\Source\\WebApp\\WebApp\\WebApp.csproj",
       "packagesPath": "C:\\Users\\ra408\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ra408\\OneDrive\\Работен плот\\synthesisassignment-radoslavradev\\Source\\WebApp\\WebApp\\obj\\",
+      "outputPath": "C:\\Users\\ra408\\OneDrive\\Работен плот\\INHERITEDSYNTHESYS\\synthesisassignment-radoslavradev\\Source\\WebApp\\WebApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ra408\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1075,14 +1075,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\ra408\\OneDrive\\Работен плот\\synthesisassignment-radoslavradev\\Source\\BLL\\BLL\\BLL.csproj": {
-              "projectPath": "C:\\Users\\ra408\\OneDrive\\Работен плот\\synthesisassignment-radoslavradev\\Source\\BLL\\BLL\\BLL.csproj"
+            "C:\\Users\\ra408\\OneDrive\\Работен плот\\INHERITEDSYNTHESYS\\synthesisassignment-radoslavradev\\Source\\BLL\\BLL\\BLL.csproj": {
+              "projectPath": "C:\\Users\\ra408\\OneDrive\\Работен плот\\INHERITEDSYNTHESYS\\synthesisassignment-radoslavradev\\Source\\BLL\\BLL\\BLL.csproj"
             },
-            "C:\\Users\\ra408\\OneDrive\\Работен плот\\synthesisassignment-radoslavradev\\Source\\Entities\\Entities\\Entities.csproj": {
-              "projectPath": "C:\\Users\\ra408\\OneDrive\\Работен плот\\synthesisassignment-radoslavradev\\Source\\Entities\\Entities\\Entities.csproj"
+            "C:\\Users\\ra408\\OneDrive\\Работен плот\\INHERITEDSYNTHESYS\\synthesisassignment-radoslavradev\\Source\\Entities\\Entities\\Entities.csproj": {
+              "projectPath": "C:\\Users\\ra408\\OneDrive\\Работен плот\\INHERITEDSYNTHESYS\\synthesisassignment-radoslavradev\\Source\\Entities\\Entities\\Entities.csproj"
             },
-            "C:\\Users\\ra408\\OneDrive\\Работен плот\\synthesisassignment-radoslavradev\\Source\\RealizationProvider\\RealizationProvider\\RealizationProvider.csproj": {
-              "projectPath": "C:\\Users\\ra408\\OneDrive\\Работен плот\\synthesisassignment-radoslavradev\\Source\\RealizationProvider\\RealizationProvider\\RealizationProvider.csproj"
+            "C:\\Users\\ra408\\OneDrive\\Работен плот\\INHERITEDSYNTHESYS\\synthesisassignment-radoslavradev\\Source\\RealizationProvider\\RealizationProvider\\RealizationProvider.csproj": {
+              "projectPath": "C:\\Users\\ra408\\OneDrive\\Работен плот\\INHERITEDSYNTHESYS\\synthesisassignment-radoslavradev\\Source\\RealizationProvider\\RealizationProvider\\RealizationProvider.csproj"
             }
           }
         }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8E2IcEWgWuubSwdDDTx33CKIHCcxWxyJA+WYSIzxc6VXJUeOZtwTE9ndbX+iNe/p/VPQm9/G8q/kWofRwqRQug==",
+  "dgSpecHash": "niYgQmKqEGUvUVJod/e/yT2l586vnZTCGsz0dRYTrory9uEoPkgHK3lUk/p+dZUq6GOvXG1gataVf7Ffj7iznQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ra408\\OneDrive\\Работен плот\\synthesisassignment-radoslavradev\\Source\\WFA\\WFA\\WFA.csproj",
+  "projectFilePath": "C:\\Users\\ra408\\OneDrive\\Работен плот\\INHERITEDSYNTHESYS\\synthesisassignment-radoslavradev\\Source\\WFA\\WFA\\WFA.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ra408\\.nuget\\packages\\bouncycastle.netcore\\1.8.5\\bouncycastle.netcore.1.8.5.nupkg.sha512",
     "C:\\Users\\ra408\\.nuget\\packages\\google.protobuf\\3.14.0\\google.protobuf.3.14.0.nupkg.sha512",

@@ -23,7 +23,7 @@ public class TournamentRR : TournamentInPlay
 
     //public override List<Round> CreteSchedule(List<Round> nu) => CreteSchedule();
     
-     public override  List<Round> CreteSchedule(List<Round> nu)
+     protected override  List<Round> CreteSchedule(List<Round> nu)
     {
         base.Initializer();
         if (TournamentSystem != TournamentSystems.RoundRobin)

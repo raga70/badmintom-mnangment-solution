@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ra408\\OneDrive\\Работен плот\\synthesisassignment-radoslavradev\\Source\\RealizationProvider\\RealizationProvider\\RealizationProvider.csproj": {}
+    "C:\\Users\\ra408\\OneDrive\\Работен плот\\INHERITEDSYNTHESYS\\synthesisassignment-radoslavradev\\Source\\RealizationProvider\\RealizationProvider\\RealizationProvider.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ra408\\OneDrive\\Работен плот\\synthesisassignment-radoslavradev\\Source\\DAL\\DAL\\DAL.csproj": {
+    "C:\\Users\\ra408\\OneDrive\\Работен плот\\INHERITEDSYNTHESYS\\synthesisassignment-radoslavradev\\Source\\DAL\\DAL\\DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ra408\\OneDrive\\Работен плот\\synthesisassignment-radoslavradev\\Source\\DAL\\DAL\\DAL.csproj",
+        "projectUniqueName": "C:\\Users\\ra408\\OneDrive\\Работен плот\\INHERITEDSYNTHESYS\\synthesisassignment-radoslavradev\\Source\\DAL\\DAL\\DAL.csproj",
         "projectName": "DAL",
-        "projectPath": "C:\\Users\\ra408\\OneDrive\\Работен плот\\synthesisassignment-radoslavradev\\Source\\DAL\\DAL\\DAL.csproj",
+        "projectPath": "C:\\Users\\ra408\\OneDrive\\Работен плот\\INHERITEDSYNTHESYS\\synthesisassignment-radoslavradev\\Source\\DAL\\DAL\\DAL.csproj",
         "packagesPath": "C:\\Users\\ra408\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ra408\\OneDrive\\Работен плот\\synthesisassignment-radoslavradev\\Source\\DAL\\DAL\\obj\\",
+        "outputPath": "C:\\Users\\ra408\\OneDrive\\Работен плот\\INHERITEDSYNTHESYS\\synthesisassignment-radoslavradev\\Source\\DAL\\DAL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ra408\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\ra408\\OneDrive\\Работен плот\\synthesisassignment-radoslavradev\\Source\\Entities\\Entities\\Entities.csproj": {
-                "projectPath": "C:\\Users\\ra408\\OneDrive\\Работен плот\\synthesisassignment-radoslavradev\\Source\\Entities\\Entities\\Entities.csproj"
+              "C:\\Users\\ra408\\OneDrive\\Работен плот\\INHERITEDSYNTHESYS\\synthesisassignment-radoslavradev\\Source\\Entities\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\ra408\\OneDrive\\Работен плот\\INHERITEDSYNTHESYS\\synthesisassignment-radoslavradev\\Source\\Entities\\Entities\\Entities.csproj"
               }
             }
           }
@@ -68,14 +68,14 @@
         }
       }
     },
-    "C:\\Users\\ra408\\OneDrive\\Работен плот\\synthesisassignment-radoslavradev\\Source\\Entities\\Entities\\Entities.csproj": {
+    "C:\\Users\\ra408\\OneDrive\\Работен плот\\INHERITEDSYNTHESYS\\synthesisassignment-radoslavradev\\Source\\Entities\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ra408\\OneDrive\\Работен плот\\synthesisassignment-radoslavradev\\Source\\Entities\\Entities\\Entities.csproj",
+        "projectUniqueName": "C:\\Users\\ra408\\OneDrive\\Работен плот\\INHERITEDSYNTHESYS\\synthesisassignment-radoslavradev\\Source\\Entities\\Entities\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "C:\\Users\\ra408\\OneDrive\\Работен плот\\synthesisassignment-radoslavradev\\Source\\Entities\\Entities\\Entities.csproj",
+        "projectPath": "C:\\Users\\ra408\\OneDrive\\Работен плот\\INHERITEDSYNTHESYS\\synthesisassignment-radoslavradev\\Source\\Entities\\Entities\\Entities.csproj",
         "packagesPath": "C:\\Users\\ra408\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ra408\\OneDrive\\Работен плот\\synthesisassignment-radoslavradev\\Source\\Entities\\Entities\\obj\\",
+        "outputPath": "C:\\Users\\ra408\\OneDrive\\Работен плот\\INHERITEDSYNTHESYS\\synthesisassignment-radoslavradev\\Source\\Entities\\Entities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ra408\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -122,14 +122,14 @@
         }
       }
     },
-    "C:\\Users\\ra408\\OneDrive\\Работен плот\\synthesisassignment-radoslavradev\\Source\\RealizationProvider\\RealizationProvider\\RealizationProvider.csproj": {
+    "C:\\Users\\ra408\\OneDrive\\Работен плот\\INHERITEDSYNTHESYS\\synthesisassignment-radoslavradev\\Source\\RealizationProvider\\RealizationProvider\\RealizationProvider.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ra408\\OneDrive\\Работен плот\\synthesisassignment-radoslavradev\\Source\\RealizationProvider\\RealizationProvider\\RealizationProvider.csproj",
+        "projectUniqueName": "C:\\Users\\ra408\\OneDrive\\Работен плот\\INHERITEDSYNTHESYS\\synthesisassignment-radoslavradev\\Source\\RealizationProvider\\RealizationProvider\\RealizationProvider.csproj",
         "projectName": "RealizationProvider",
-        "projectPath": "C:\\Users\\ra408\\OneDrive\\Работен плот\\synthesisassignment-radoslavradev\\Source\\RealizationProvider\\RealizationProvider\\RealizationProvider.csproj",
+        "projectPath": "C:\\Users\\ra408\\OneDrive\\Работен плот\\INHERITEDSYNTHESYS\\synthesisassignment-radoslavradev\\Source\\RealizationProvider\\RealizationProvider\\RealizationProvider.csproj",
         "packagesPath": "C:\\Users\\ra408\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ra408\\OneDrive\\Работен плот\\synthesisassignment-radoslavradev\\Source\\RealizationProvider\\RealizationProvider\\obj\\",
+        "outputPath": "C:\\Users\\ra408\\OneDrive\\Работен плот\\INHERITEDSYNTHESYS\\synthesisassignment-radoslavradev\\Source\\RealizationProvider\\RealizationProvider\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ra408\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -146,8 +146,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\ra408\\OneDrive\\Работен плот\\synthesisassignment-radoslavradev\\Source\\DAL\\DAL\\DAL.csproj": {
-                "projectPath": "C:\\Users\\ra408\\OneDrive\\Работен плот\\synthesisassignment-radoslavradev\\Source\\DAL\\DAL\\DAL.csproj"
+              "C:\\Users\\ra408\\OneDrive\\Работен плот\\INHERITEDSYNTHESYS\\synthesisassignment-radoslavradev\\Source\\DAL\\DAL\\DAL.csproj": {
+                "projectPath": "C:\\Users\\ra408\\OneDrive\\Работен плот\\INHERITEDSYNTHESYS\\synthesisassignment-radoslavradev\\Source\\DAL\\DAL\\DAL.csproj"
               }
             }
           }

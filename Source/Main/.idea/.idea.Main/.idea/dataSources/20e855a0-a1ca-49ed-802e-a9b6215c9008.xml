@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="synthesys-remotesql">
   <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.39">
-    <root id="1">
-      <DefaultCasing>exact</DefaultCasing>
-      <DefaultEngine>InnoDB</DefaultEngine>
-      <DefaultTmpEngine>InnoDB</DefaultTmpEngine>
-      <Grants>3dzxuKGkH2|schema||3dzxuKGkH2||ALTER|G
-3dzxuKGkH2|schema||3dzxuKGkH2||CREATE|G
-3dzxuKGkH2|schema||3dzxuKGkH2||DELETE|G
-3dzxuKGkH2|schema||3dzxuKGkH2||DROP|G
-3dzxuKGkH2|schema||3dzxuKGkH2||INDEX|G
-3dzxuKGkH2|schema||3dzxuKGkH2||INSERT|G
-3dzxuKGkH2|schema||3dzxuKGkH2||REFERENCES|G
-3dzxuKGkH2|schema||3dzxuKGkH2||SELECT|G
-3dzxuKGkH2|schema||3dzxuKGkH2||UPDATE|G</Grants>
-      <ServerVersion>8.0.13</ServerVersion>
-    </root>
+    <root id="1"/>
     <collation id="2" parent="1" name="armscii8_bin">
       <Charset>armscii8</Charset>
     </collation>
