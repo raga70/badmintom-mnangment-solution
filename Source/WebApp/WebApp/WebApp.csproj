@@ -7,13 +7,13 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\BLL\BLL\BLL.csproj" />
-        <ProjectReference Include="..\..\Entities\Entities\Entities.csproj" />
-        <ProjectReference Include="..\..\RealizationProvider\RealizationProvider\RealizationProvider.csproj" />
+        <ProjectReference Include="..\..\BLL\BLL\BLL.csproj"/>
+        <ProjectReference Include="..\..\Entities\Entities\Entities.csproj"/>
+        <ProjectReference Include="..\..\RealizationProvider\RealizationProvider\RealizationProvider.csproj"/>
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.1"/>
     </ItemGroup>
 
 </Project>

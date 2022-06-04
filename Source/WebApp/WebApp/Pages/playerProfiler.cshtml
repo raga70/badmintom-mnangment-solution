@@ -1,10 +1,11 @@
 ﻿@page
-@model WebApp.Pages.playerProfiler
+@model playerProfiler
 
 <br/>
 <p>Name: @Model.logedInPLayer.firstName - @Model.logedInPLayer.lastName </p>
-<p>Gender: 
-    @if (@Model.logedInPLayer.gender == 0)
+<p>
+    Gender:
+    @if (Model.logedInPLayer.gender == 0)
     {
         <a>Male</a>
     }
@@ -19,18 +20,18 @@
 
 <br/>
 
-    @foreach (var t in Model.Data)
-    {
-        <table class="table">
-            <thead class="thead-dark">
-            <tr>
-                <th scope="col">Sport</th>
-                <th scope="col">Description</th>
-                <th scope="col">TournamentSystem</th>
-                <th scope="col">Location</th>
-            </tr>
-            </thead>
-            <tbody>           
+@foreach (var t in Model.Data)
+{
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">Sport</th>
+            <th scope="col">Description</th>
+            <th scope="col">TournamentSystem</th>
+            <th scope="col">Location</th>
+        </tr>
+        </thead>
+        <tbody>
 
 
         <tr>
@@ -39,34 +40,32 @@
             <td>@t.tournament.TournamentSystem</td>
             <td>@t.tournament.Location</td>
         </tr>
-        
-                </tbody>
-            </table>
-            
-            <table class="table table-bordered">
-            <thead>
+
+        </tbody>
+    </table>
+
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+
+            <th scope="col">Player</th>
+            <th scope="col">Result</th>
+            <th scope="col">Oponent</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var fd in t.fightsData)
+        {
             <tr>
-
-                <th scope="col">Player</th>
-                <th scope="col">Result</th>
-                <th scope="col">Oponent</th>
+                <td>@fd.playerFirstName @fd.playerLastName</td>
+                <td>@fd.fightScore</td>
+                <td>@fd.oponentFirstName @fd.oponentLastName</td>
             </tr>
-            </thead>
-            <tbody>
-            @foreach (var fd in t.fightsData)
-            {
-                <tr>
-                    <td>@fd.playerFirstName @fd.playerLastName</td>
-                    <td>@fd.fightScore</td>
-                    <td>@fd.oponentFirstName @fd.oponentLastName</td>
-                </tr>
-            }
+        }
 
-            </tbody>
-        </table>
-        <br>
-        <br>
-        <br>
-    }
-
-
+        </tbody>
+    </table>
+    <br>
+    <br>
+    <br>
+}

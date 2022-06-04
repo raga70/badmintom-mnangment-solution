@@ -9,11 +9,8 @@ namespace WebApp.Pages;
 [Authorize]
 public class SignUpForTournament : PageModel
 {
-    public TournamentManager tournamentManager;
-    public List<Tournament> Tournaments { get; set; }
-    public User logedInPLayer { get; set; }
-
     private IUserDB _userDb;
+    public TournamentManager tournamentManager;
 
     public SignUpForTournament(ITournamentDB _tournamentDb, IUserDB _userDb)
 
@@ -22,11 +19,13 @@ public class SignUpForTournament : PageModel
         tournamentManager = new TournamentManager(_tournamentDb);
         Tournaments = tournamentManager.AllTournaments.ToList();
     }
-    
+
+    public List<Tournament> Tournaments { get; set; }
+    public User logedInPLayer { get; set; }
+
 
     public void OnGet()
     {
-        
         logedInPLayer = HttpContext.Session.GetObject<User>("User");
 
         if (logedInPLayer is null)

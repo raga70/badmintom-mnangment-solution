@@ -1,28 +1,29 @@
 using System.Security.Claims;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Entities.DTO;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authentication.Cookies;
 using BLL;
 using DAL;
 using Entities;
+using Entities.DTO;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace WebApp.Pages;
 
 public class RegisterModel : PageModel
 {
     private UserManager userManager;
+
+    public RegisterModel(IUserDB _userDb)
+    {
+        userManager = new UserManager(_userDb);
+    }
+
     [BindProperty] public Register bRegister { get; set; }
     public string errMsg { get; private set; }
 
     public void OnGet()
     {
-    }
-
-    public RegisterModel(IUserDB _userDb)
-    {
-        userManager = new UserManager(_userDb);
     }
 
     public async void Auth(string user)

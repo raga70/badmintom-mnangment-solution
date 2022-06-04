@@ -1,5 +1,5 @@
 ﻿@page
-@model WebApp.Pages.tSchedule
+@model tSchedule
 
 @{
 }
@@ -10,7 +10,8 @@
     <div class="float-end">
         <form method="post" asp-page-handler="Results">
             <button asp-page-handler="Results" type="submit" class="btn btn-primary" asp-route-TorID="@Model.Tournament.Tournamnet_id">IntermediateResults</button>
-        </form></div>
+        </form>
+    </div>
     <br>
 }
 <table class="table">

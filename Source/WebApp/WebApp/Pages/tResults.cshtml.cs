@@ -8,12 +8,11 @@ namespace WebApp.Pages;
 
 public class tResults : PageModel
 {
-    public GameResultData Data { get; set; }
+    private IGameDB _gameDB;
 
-   // private TournamentManager _tournamentManager;
+    // private TournamentManager _tournamentManager;
 
     private ITournamentDB _tournamentDB;
-    private IGameDB _gameDB;
 
     public tResults(ITournamentDB _tournamentDb, IGameDB _gameDb)
     {
@@ -22,10 +21,12 @@ public class tResults : PageModel
         _tournamentDB = _tournamentDb;
     }
 
+    public GameResultData Data { get; set; }
+
     public ActionResult OnGet(string TorID)
     {
         if (TorID is null) return RedirectToPage("/index");
-        var tm = new TournamentManager(_tournamentDB,_gameDB);
+        var tm = new TournamentManager(_tournamentDB, _gameDB);
         tm.UpdateAllTournaments();
         //_gameManager = new GameManager(_gameDB, tm.GetTournamentByID(Convert.ToInt32(TorID)));
         Data = tm.GetTournamentResults(tm.GetTournamentByID(Convert.ToInt32(TorID)));

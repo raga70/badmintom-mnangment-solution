@@ -1,5 +1,5 @@
-﻿using MySql.Data.MySqlClient;
-using Entities;
+﻿using Entities;
+using MySql.Data.MySqlClient;
 using RealizationProvider;
 
 namespace DAL;
@@ -66,9 +66,7 @@ public class TournamentDB : ITournamentDB
         try
         {
             mysql.Open();
-            var cmd = new MySqlCommand(
-                "DELETE FROM tournaments WHERE id = @id",
-                mysql);
+            var cmd = new MySqlCommand("DELETE FROM tournaments WHERE id = @id", mysql);
             cmd.Parameters.AddWithValue("@id", tournament.Tournamnet_id);
             cmd.ExecuteNonQuery();
         }
@@ -89,22 +87,17 @@ public class TournamentDB : ITournamentDB
             mysql.Open();
 
 
-            var cmd_getTournament = new MySqlCommand(
-                "SELECT * FROM tournaments t",
-                mysql);
+            var cmd_getTournament = new MySqlCommand("SELECT * FROM tournaments t", mysql);
             var reader_tournaments = cmd_getTournament.ExecuteReader();
             while (reader_tournaments.Read())
             {
                 Players = GetAllPlayerPerTournament(reader_tournaments.GetInt32("id"));
 
 
-                TournamentSystems TournamentType = Enum.Parse<TournamentSystems>(reader_tournaments.GetString("tournamentSystem"));
+                var TournamentType = Enum.Parse<TournamentSystems>(reader_tournaments.GetString("tournamentSystem"));
 
-                
-                
-                
-                
-                Tournament t = new Tournament()  
+
+                var t = new Tournament
                 {
                     SportType = Enum.Parse<sportTypes>(reader_tournaments.GetString("sportType")),
                     StartDate = reader_tournaments.GetDateTime("startDate"),
@@ -118,12 +111,50 @@ public class TournamentDB : ITournamentDB
                     Gender = reader_tournaments.GetInt32("gender"),
                     Players = Players
                 };
-                if(t.TournamentSystem == TournamentSystems.RoundRobin) tournaments.Add(new TournamentRR(t));
-                else if(t.TournamentSystem == TournamentSystems.SingleElimination) tournaments.Add(new TournamentSE(t));
+                if (t.TournamentSystem == TournamentSystems.RoundRobin) tournaments.Add(new TournamentRR(t));
+                else if (t.TournamentSystem == TournamentSystems.SingleElimination)
+                    tournaments.Add(new TournamentSE(t));
                 else throw new ArgumentException("tournamentSystem unrecognized");
-                }
+            }
 
             return tournaments;
+        }
+        finally
+        {
+            mysql.Close();
+        }
+    }
+
+
+    public void AddPlayerToTournament(Tournament tournament, User player)
+    {
+        var mysql = new MySqlConnection(Connection.conString);
+        try
+        {
+            mysql.Open();
+            var cmd_addPlayer = new MySqlCommand(
+                "INSERT INTO tournaments_users (tournaments_id, users_id) VALUES (@tournament_id, @player_id)", mysql);
+            cmd_addPlayer.Parameters.AddWithValue("@tournament_id", tournament.Tournamnet_id);
+            cmd_addPlayer.Parameters.AddWithValue("@player_id", player.id);
+            cmd_addPlayer.ExecuteNonQuery();
+        }
+        finally
+        {
+            mysql.Close();
+        }
+    }
+
+    public void RemovePlayerFromTournament(Tournament tournament, User player)
+    {
+        var mysql = new MySqlConnection(Connection.conString);
+        try
+        {
+            mysql.Open();
+            var cmd_removePlayer = new MySqlCommand(
+                "DELETE FROM tournaments_users WHERE tournaments_id = @tournament_id AND users_id = @player_id", mysql);
+            cmd_removePlayer.Parameters.AddWithValue("@tournament_id", tournament.Tournamnet_id);
+            cmd_removePlayer.Parameters.AddWithValue("@player_id", player.id);
+            cmd_removePlayer.ExecuteNonQuery();
         }
         finally
         {
@@ -167,44 +198,5 @@ public class TournamentDB : ITournamentDB
         }
 
         return Players;
-    }
-
-
-    public void AddPlayerToTournament(Tournament tournament, User player)
-    {
-        var mysql = new MySqlConnection(Connection.conString);
-        try
-        {
-            mysql.Open();
-            var cmd_addPlayer = new MySqlCommand(
-                "INSERT INTO tournaments_users (tournaments_id, users_id) VALUES (@tournament_id, @player_id)",
-                mysql);
-            cmd_addPlayer.Parameters.AddWithValue("@tournament_id", tournament.Tournamnet_id);
-            cmd_addPlayer.Parameters.AddWithValue("@player_id", player.id);
-            cmd_addPlayer.ExecuteNonQuery();
-        }
-        finally
-        {
-            mysql.Close();
-        }
-    }
-
-    public void RemovePlayerFromTournament(Tournament tournament, User player)
-    {
-        var mysql = new MySqlConnection(Connection.conString);
-        try
-        {
-            mysql.Open();
-            var cmd_removePlayer = new MySqlCommand(
-                "DELETE FROM tournaments_users WHERE tournaments_id = @tournament_id AND users_id = @player_id",
-                mysql);
-            cmd_removePlayer.Parameters.AddWithValue("@tournament_id", tournament.Tournamnet_id);
-            cmd_removePlayer.Parameters.AddWithValue("@player_id", player.id);
-            cmd_removePlayer.ExecuteNonQuery();
-        }
-        finally
-        {
-            mysql.Close();
-        }
     }
 }

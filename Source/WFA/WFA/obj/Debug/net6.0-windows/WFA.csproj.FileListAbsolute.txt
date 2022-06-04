@@ -106,3 +106,4 @@ C:\Users\ra408\OneDrive\Работен плот\INHERITEDSYNTHESYS\synthesisassi
 C:\Users\ra408\OneDrive\Работен плот\INHERITEDSYNTHESYS\synthesisassignment-radoslavradev\Source\WFA\WFA\obj\Debug\net6.0-windows\WFA.pdb
 C:\Users\ra408\OneDrive\Работен плот\INHERITEDSYNTHESYS\synthesisassignment-radoslavradev\Source\WFA\WFA\obj\Debug\net6.0-windows\WFA.genruntimeconfig.cache
 C:\Users\ra408\OneDrive\Работен плот\INHERITEDSYNTHESYS\synthesisassignment-radoslavradev\Source\WFA\WFA\obj\Debug\net6.0-windows\ref\WFA.dll
+C:\Users\ra408\OneDrive\Работен плот\INHERITEDSYNTHESYS\synthesisassignment-radoslavradev\Source\WFA\WFA\obj\Debug\net6.0-windows\WFA.Properties.Resources.resources

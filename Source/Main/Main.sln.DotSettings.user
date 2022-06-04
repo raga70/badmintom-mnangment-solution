@@ -1,5 +1,8 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
 	<s:String x:Key="/Default/Environment/Highlighting/HighlightingSourceSnapshotLocation/@EntryValue">C:\Users\ra408\AppData\Local\JetBrains\Rider2022.1\resharper-host\temp\Rider\vAny\CoverageData\_Main.701512952\Snapshot\snapshot.utdcvr</s:String>
+	
+	
+	
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=7a8d928d_002D450a_002D4056_002D9549_002D633c631e6e6e/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="UpdateGame" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;MSTest::C4A677AB-3E7A-4F23-9A15-E7B8FEA7F721::net6.0::Testing.TournamentExecutionTests.UpdateGame&lt;/TestId&gt;&#xD;
@@ -15,7 +18,7 @@
     &lt;TestId&gt;MSTest::C4A677AB-3E7A-4F23-9A15-E7B8FEA7F721::net6.0::Testing.TournamentExecutionTests.UpdateGame&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=913718d0_002D0f6f_002D450f_002Da996_002D3679562aba8d/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="UpdateGame #3" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=913718d0_002D0f6f_002D450f_002Da996_002D3679562aba8d/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="UpdateGame #3" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;Project Location="C:\Users\ra408\OneDrive\Работен плот\INHERITEDSYNTHESYS\synthesisassignment-radoslavradev\Source\Main\Testing" Presentation="&amp;lt;Testing&amp;gt;" /&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=94474ece_002D45fb_002D4a96_002D927a_002D07c0f7d5e50e/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="All tests from &amp;lt;Testing&amp;gt;" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
@@ -26,17 +29,11 @@
     &lt;TestId&gt;MSTest::C4A677AB-3E7A-4F23-9A15-E7B8FEA7F721::net6.0::Testing.RoundRobinTests.TestEvenPlayers&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=c2f18aed_002D8417_002D46c9_002D99af_002Daeb7ea5a36fc/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="testPlayersOnThePowerOf2_secondRound" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;MSTest::C4A677AB-3E7A-4F23-9A15-E7B8FEA7F721::net6.0::Testing.SingleEliminationTests.testPlayersOnThePowerOf2_secondRound&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=c2f18aed_002D8417_002D46c9_002D99af_002Daeb7ea5a36fc/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="testPlayersOnThePowerOf2_secondRound" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Solution /&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=df6de0bb_002Db9da_002D4e48_002D9a95_002D317ba6d81023/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="testPlayersOnThePowerOf2_secondRound #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;MSTest::C4A677AB-3E7A-4F23-9A15-E7B8FEA7F721::net6.0::Testing.SingleEliminationTests.testPlayersOnThePowerOf2_secondRound&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;MSTest::C4A677AB-3E7A-4F23-9A15-E7B8FEA7F721::net6.0::Testing.TournamentExecutionTests.UpdatePlayerScore&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;MSTest::C4A677AB-3E7A-4F23-9A15-E7B8FEA7F721::net6.0::Testing.TournamentExecutionTests.UpdateGame&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
+  &lt;Solution /&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	
 	</wpf:ResourceDictionary>

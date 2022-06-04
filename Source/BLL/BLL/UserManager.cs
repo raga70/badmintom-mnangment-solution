@@ -1,18 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
-using DAL;
+﻿using DAL;
 using Entities;
 
 namespace BLL;
 
 public class UserManager
 {
+    private readonly IGameDB gameDB;
+
+
+    private readonly IUserDB userDB;
     private List<User> users = new();
+
+    public UserManager(IUserDB passed)
+    {
+        userDB = passed;
+    }
+
+    public UserManager(IUserDB passed, IGameDB passeGameDb)
+    {
+        userDB = passed;
+        gameDB = passeGameDb;
+    }
 
     public IList<User> AllUsers
     {
@@ -22,22 +30,6 @@ public class UserManager
             return users.AsReadOnly();
         }
     }
-
-
-    private IUserDB userDB;
-    private IGameDB gameDB;
-
-    public UserManager(IUserDB passed)
-    {
-        userDB = passed;
-    }
-    
-    public UserManager(IUserDB passed,IGameDB passeGameDb)
-    {
-        userDB = passed;
-        gameDB = passeGameDb;
-    }
-    
 
 
     public void UpdateAllUsers()
@@ -68,7 +60,6 @@ public class UserManager
 
     public bool Login(string username, string pass)
     {
-      
         string hashedPass = null;
 
         if (users is not null)
@@ -86,11 +77,10 @@ public class UserManager
 
         return passwordHashing.Validate(pass, hashedPass);
     }
-    
-    
+
+
     public List<GameResultData> GetPlayerProfiler(User user)
     {
         return gameDB.GetPlayerProfiler(user);
     }
-
 }

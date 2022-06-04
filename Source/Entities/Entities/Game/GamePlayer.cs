@@ -2,12 +2,6 @@
 
 public record GamePlayer
 {
-    public int id { get; init; }
-    public User Player { get; init; }
-    public int Score { get; set; }
-    public bool isB { get; init; }
-
-
     public GamePlayer()
     {
     }
@@ -21,4 +15,9 @@ public record GamePlayer
         Score = passed.Score;
         isB = passed.isB;
     }
+
+    public int id { get; init; }
+    public User Player { get; init; }
+    public int Score { get; set; }
+    public bool isB { get; init; }
 }

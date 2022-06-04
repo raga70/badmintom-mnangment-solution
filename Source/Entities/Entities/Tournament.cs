@@ -1,20 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Entities;
 
 public class Tournament
 {
+    [Required] private readonly DateTime _endDate;
+
+    [Required] [Range(0, 100)] private readonly int _MaxPlayers;
     [Required] public sportTypes SportType { get; init; }
     [Required] public string Description { get; init; }
     [Required] public DateTime StartDate { get; init; }
-
-    [Required] private DateTime _endDate;
 
     public DateTime EndDate
     {
@@ -23,13 +18,11 @@ public class Tournament
         {
             if (value <= StartDate)
                 throw new ArgumentException("the tournament cannot end before it starts");
-            else _endDate = value;
+            _endDate = value;
         }
     }
 
     [Required] [Range(2, 100)] public int MinPlayers { get; init; }
-
-    [Required] [Range(0, 100)] private int _MaxPlayers;
 
     public int MaxPlayers
     {
@@ -38,8 +31,7 @@ public class Tournament
         {
             if (value <= MinPlayers)
                 throw new ArgumentException("the number of maxPlayers must be greater than minPlayers");
-            else
-                _MaxPlayers = value;
+            _MaxPlayers = value;
         }
     }
 
@@ -51,29 +43,27 @@ public class Tournament
 
 
     //available after generation
-    public List<User> Players { get; init; } = new List<User>();
+    public List<User> Players { get; init; } = new();
     public int Tournamnet_id { get; init; }
 
     public bool isActive()
     {
         if (DateTime.Now > StartDate && DateTime.Now < EndDate)
             return true;
-        else
-            return false;
+        return false;
     }
 
     public bool isEnded()
     {
         if (DateTime.Now < EndDate)
             return false;
-        else
-            return true;
+        return true;
     }
 
     public bool isGameStartable()
     {
         if (MinPlayers <= Players.Count) return true;
-        else return false;
+        return false;
     }
 
 
@@ -91,13 +81,13 @@ public class Tournament
     //asp tournament displyment options
     public bool TournamentWasCancelled()
     {
-        if (Players.Count < MinPlayers && isEnded() == true) return true;
+        if (Players.Count < MinPlayers && isEnded()) return true;
         return false;
     }
 
     public bool ResultsAreAvailable()
     {
-        if (isEnded() == true) return true;
+        if (isEnded()) return true;
         return false;
     }
 
@@ -106,13 +96,10 @@ public class Tournament
         if (Players.Count >= MinPlayers) return true;
         return false;
     }
-    
+
     public bool isLocked()
     {
         if (DateTime.Now > StartDate + TimeSpan.FromDays(-7)) return true;
-        else
-            return false;
-           
+        return false;
     }
-    
 }

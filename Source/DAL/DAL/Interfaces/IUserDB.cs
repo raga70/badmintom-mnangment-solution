@@ -1,6 +1,6 @@
-﻿namespace DAL;
+﻿using Entities;
 
-using Entities;
+namespace DAL;
 
 public interface IUserDB
 {

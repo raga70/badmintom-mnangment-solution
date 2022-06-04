@@ -65,9 +65,7 @@ public class GameDB : IGameDB
             mysql.Open();
 
 
-            var cmd_getTournament = new MySqlCommand(
-                "SELECT * FROM tournaments t WHERE t.id = @tournament_id",
-                mysql);
+            var cmd_getTournament = new MySqlCommand("SELECT * FROM tournaments t WHERE t.id = @tournament_id", mysql);
             cmd_getTournament.Parameters.AddWithValue("@tournament_id", tt.Tournamnet_id);
             var reader_tournaments = cmd_getTournament.ExecuteReader();
             if (reader_tournaments.Read())
@@ -105,7 +103,7 @@ public class GameDB : IGameDB
                     THISISATERIBLEIDEA.Close();
                 }
 
-                tournament = new Tournament()
+                tournament = new Tournament
                 {
                     SportType = Enum.Parse<sportTypes>(reader_tournaments.GetString("sportType")),
                     StartDate = reader_tournaments.GetDateTime("startDate"),
@@ -138,7 +136,7 @@ public class GameDB : IGameDB
             cmd_getFightResults.Parameters.AddWithValue("@tournament_id", tournament.Tournamnet_id);
             var reader_fightResults = cmd_getFightResults.ExecuteReader();
             while (reader_fightResults.Read())
-                fightData.Add(new fightData()
+                fightData.Add(new fightData
                 {
                     fightScore = reader_fightResults.GetString("fightScore"),
                     playerFirstName = reader_fightResults.GetString("pFname"),
@@ -148,29 +146,26 @@ public class GameDB : IGameDB
                 });
 
 
-            return new GameResultData() { fightsData = fightData, tournament = tournament };
+            return new GameResultData { fightsData = fightData, tournament = tournament };
         }
         finally
         {
             mysql.Close();
         }
     }
-    
-    
-    
-    
-    
+
+
     public List<GameResultData> GetPlayerProfiler(User user)
     {
-        List<GameResultData> games = new List<GameResultData>();
+        var games = new List<GameResultData>();
 
 
         var tournament = new Tournament();
         var Players = new List<User>();
         var fightData = new List<fightData>();
         var mysql = new MySqlConnection(Connection.conString);
-        int tid =-1;
-        int br = 0;
+        var tid = -1;
+        var br = 0;
         try
         {
             mysql.Open();
@@ -184,7 +179,7 @@ public class GameDB : IGameDB
                 br++;
                 if (tid == reader_fightResults.GetInt32("tid") && br != 1)
                 {
-                    fightData.Add(new fightData()
+                    fightData.Add(new fightData
                     {
                         fightScore = reader_fightResults.GetString("fightScore"),
                         playerFirstName = reader_fightResults.GetString("pFname"),
@@ -196,9 +191,7 @@ public class GameDB : IGameDB
                 }
                 else
                 {
-                    
-                    
-                     tournament = new Tournament()  
+                    tournament = new Tournament
                     {
                         SportType = Enum.Parse<sportTypes>(reader_fightResults.GetString("TsportType")),
                         StartDate = reader_fightResults.GetDateTime("TstartDate"),
@@ -206,17 +199,24 @@ public class GameDB : IGameDB
                         MinPlayers = reader_fightResults.GetInt32("TminPlayers"),
                         MaxPlayers = reader_fightResults.GetInt32("TmaxPlayers"),
                         Location = reader_fightResults.GetString("Tlocation"),
-                        TournamentSystem = Enum.Parse<TournamentSystems>(reader_fightResults.GetString("TtournamentSystem")),
+                        TournamentSystem =
+                            Enum.Parse<TournamentSystems>(reader_fightResults.GetString("TtournamentSystem")),
                         Tournamnet_id = reader_fightResults.GetInt32("tid"),
                         Description = reader_fightResults.GetString("Tdescription"),
                         Gender = reader_fightResults.GetInt32("Tgender")
                     };
-                    
-                    if(br != 1){
-                    games.Add(new GameResultData(){fightsData = fightData, tournament = tournament, playerPoints = reader_fightResults.GetInt32("PlrPoints")});
-                    fightData = new List<fightData>();
+
+                    if (br != 1)
+                    {
+                        games.Add(new GameResultData
+                        {
+                            fightsData = fightData, tournament = tournament,
+                            playerPoints = reader_fightResults.GetInt32("PlrPoints")
+                        });
+                        fightData = new List<fightData>();
                     }
-                    fightData.Add(new fightData()
+
+                    fightData.Add(new fightData
                     {
                         fightScore = reader_fightResults.GetString("fightScore"),
                         playerFirstName = reader_fightResults.GetString("pFname"),
@@ -225,13 +225,14 @@ public class GameDB : IGameDB
                         oponentLastName = reader_fightResults.GetString("oLname")
                     });
                     tid = reader_fightResults.GetInt32("tid");
-
-                    
-                    
-                    
-                    }
+                }
             }
-            games.Add(new GameResultData(){fightsData = fightData, tournament = tournament, playerPoints = reader_fightResults.GetInt32("PlrPoints")});
+
+            games.Add(new GameResultData
+            {
+                fightsData = fightData, tournament = tournament,
+                playerPoints = reader_fightResults.GetInt32("PlrPoints")
+            });
             return games;
         }
         finally
@@ -239,7 +240,4 @@ public class GameDB : IGameDB
             mysql.Close();
         }
     }
-    
-    
-    
 }

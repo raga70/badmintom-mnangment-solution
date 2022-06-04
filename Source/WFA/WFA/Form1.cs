@@ -1,5 +1,4 @@
 using System.ComponentModel.DataAnnotations;
-using System.Security.AccessControl;
 using BLL;
 using DAL;
 using Entities;
@@ -8,16 +7,23 @@ namespace WFA;
 
 public partial class Form1 : Form
 {
-    private TournamentManager tournamentManager;
+    private readonly TournamentManager tournamentManager;
+    private int _previoslbFightsIndx;
+    private int _previouslbRoundIndx;
+
+    private bool _rChangedBFN;
+
     //private GameManager _gameManager;
     //just for easy of use
     private TournamentInPlay _selectedTournamentInPlay;
+
+    private bool enoughPlayers;
     private IGameDB gameDB;
 
     public Form1(IUserDB userDB, IGameDB gameDB, ITournamentDB tournamentDB)
     {
         InitializeComponent();
-        tournamentManager = new TournamentManager(tournamentDB,gameDB);
+        tournamentManager = new TournamentManager(tournamentDB, gameDB);
         lbTournamentUpdater();
         cbSportType.DataSource = Enum.GetValues(typeof(sportTypes));
         cbTournamentSystem.DataSource = Enum.GetValues(typeof(TournamentSystems));
@@ -59,8 +65,8 @@ public partial class Form1 : Form
                 btUpdate.Visible = true;
                 btDelete.Visible = true;
 
-                cbSportType.SelectedItem =
-                    tournamentManager.AllTournaments[lbTournaments.SelectedIndex - 1].SportType.ToString();
+                cbSportType.SelectedItem = tournamentManager.AllTournaments[lbTournaments.SelectedIndex - 1].SportType
+                    .ToString();
                 rtbDescription.Text = tournamentManager.AllTournaments[lbTournaments.SelectedIndex - 1].Description;
                 dtpStartDate.Value = tournamentManager.AllTournaments[lbTournaments.SelectedIndex - 1].StartDate;
                 dtpEndDate.Value = tournamentManager.AllTournaments[lbTournaments.SelectedIndex - 1].EndDate;
@@ -69,6 +75,8 @@ public partial class Form1 : Form
                 rtbAddress.Text = tournamentManager.AllTournaments[lbTournaments.SelectedIndex - 1].Location;
                 cbTournamentSystem.SelectedItem = tournamentManager.AllTournaments[lbTournaments.SelectedIndex - 1]
                     .TournamentSystem.ToString();
+                _previoslbFightsIndx = -1;
+                _previouslbRoundIndx = -1;
             }
         }
 
@@ -77,17 +85,17 @@ public partial class Form1 : Form
         {
             if (tournamentManager.AllTournaments[lbTournaments.SelectedIndex - 1].isGameStartable())
             {
-                
-                  _selectedTournamentInPlay =  (TournamentInPlay)tournamentManager.AllTournaments[lbTournaments.SelectedIndex - 1];
+                _selectedTournamentInPlay =
+                    (TournamentInPlay)tournamentManager.AllTournaments[lbTournaments.SelectedIndex - 1];
                 lbRound.Items.Clear();
-                
-                
-                    foreach (var r in _selectedTournamentInPlay.AllRounds) lbRound.Items.Add(r.RoundNumber);
-                
-               
-                    if( _selectedTournamentInPlay.AllRounds[0].Errmsg is not null)
+
+
+                foreach (var r in _selectedTournamentInPlay.AllRounds) lbRound.Items.Add(r.RoundNumber);
+
+
+                if (_selectedTournamentInPlay.AllRounds[0].Errmsg is not null)
                     MessageBox.Show(_selectedTournamentInPlay.AllRounds[0].Errmsg);
-                
+
 
                 enoughPlayers = true;
             }
@@ -101,8 +109,6 @@ public partial class Form1 : Form
         }
     }
 
-    private bool enoughPlayers;
-
     private void btCreate_Click(object sender, EventArgs e)
     {
         var gendr = 0;
@@ -110,7 +116,7 @@ public partial class Form1 : Form
         if (rbFemale.Checked) gendr = 1;
         try
         {
-            var newT = new Tournament()
+            var newT = new Tournament
             {
                 SportType = (sportTypes)cbSportType.SelectedItem,
                 Description = rtbDescription.Text,
@@ -134,7 +140,8 @@ public partial class Form1 : Form
                 MessageBox.Show("Tournament created");
                 lbTournamentUpdater();
             }
-        }catch(Exception ex)
+        }
+        catch (Exception ex)
         {
             MessageBox.Show(ex.Message);
         }
@@ -155,7 +162,7 @@ public partial class Form1 : Form
 
         if (rbFemale.Checked) gendr = 1;
 
-        var newT = new Tournament()
+        var newT = new Tournament
         {
             SportType = (sportTypes)cbSportType.SelectedItem,
             Description = rtbDescription.Text,
@@ -185,45 +192,38 @@ public partial class Form1 : Form
     private void lbRound_SelectedIndexChanged(object sender, EventArgs e)
     {
         lbFight.Items.Clear();
-        if (lbRound.Items.Count >= 1 && lbRound.SelectedIndex != -1 && enoughPlayers == true)
+        if (lbRound.Items.Count >= 1 && lbRound.SelectedIndex != -1 && enoughPlayers)
         {
             foreach (var f in _selectedTournamentInPlay.AllRounds[lbRound.SelectedIndex].Fights)
                 if (f.Player1.Player is not null && f.Player2.Player is not null)
                     lbFight.Items.Add(
                         $"{f.Player1.Player.firstName},{f.Player1.Player.lastName} vs {f.Player2.Player.firstName},{f.Player2.Player.lastName}");
                 else
-                    lbFight .Items.Add(" . ");
+                    lbFight.Items.Add(" . ");
 
-            _selectedTournamentInPlay.UpdatePlayerScore(_selectedTournamentInPlay.AllRounds[_previouslbRoundIndx],
-                _selectedTournamentInPlay.AllRounds[_previouslbRoundIndx].Fights[_previoslbFightsIndx],
-                Convert.ToInt32(cbPlayer1Score.Value), Convert.ToInt32(cbPlayer2Score.Value));
+            if (_previouslbRoundIndx != -1 && _previoslbFightsIndx != -1)
+                _selectedTournamentInPlay.UpdatePlayerScore(_selectedTournamentInPlay.AllRounds[_previouslbRoundIndx],
+                    _selectedTournamentInPlay.AllRounds[_previouslbRoundIndx].Fights[_previoslbFightsIndx],
+                    Convert.ToInt32(cbPlayer1Score.Value), Convert.ToInt32(cbPlayer2Score.Value));
 
             _previouslbRoundIndx = lbRound.SelectedIndex;
             _rChangedBFN = true;
         }
     }
 
-    private int _previoslbFightsIndx;
-    private int _previouslbRoundIndx;
-    private bool _rChangedBFN = false;
-
     private void lbFight_SelectedIndexChanged(object sender, EventArgs e)
     {
-        if (lbFight.SelectedItem != " . " && lbFight.SelectedIndex != -1)
+        if (lbFight.SelectedItem != " . " && lbFight.SelectedIndex != -1 && lbRound.SelectedIndex != -1)
         {
-            labContestant1.Text = _selectedTournamentInPlay.AllRounds[lbRound.SelectedIndex].Fights[lbFight.SelectedIndex]
-                .Player1.Player
-                .firstName;
-            cbPlayer1Score.Value = _selectedTournamentInPlay.AllRounds[lbRound.SelectedIndex].Fights[lbFight.SelectedIndex]
-                .Player1
-                .Score;
+            labContestant1.Text = _selectedTournamentInPlay.AllRounds[lbRound.SelectedIndex]
+                .Fights[lbFight.SelectedIndex].Player1.Player.firstName;
+            cbPlayer1Score.Value = _selectedTournamentInPlay.AllRounds[lbRound.SelectedIndex]
+                .Fights[lbFight.SelectedIndex].Player1.Score;
 
-            labContestant2.Text = _selectedTournamentInPlay.AllRounds[lbRound.SelectedIndex].Fights[lbFight.SelectedIndex]
-                .Player2.Player
-                .firstName;
-            cbPlayer2Score.Value = _selectedTournamentInPlay.AllRounds[lbRound.SelectedIndex].Fights[lbFight.SelectedIndex]
-                .Player2
-                .Score;
+            labContestant2.Text = _selectedTournamentInPlay.AllRounds[lbRound.SelectedIndex]
+                .Fights[lbFight.SelectedIndex].Player2.Player.firstName;
+            cbPlayer2Score.Value = _selectedTournamentInPlay.AllRounds[lbRound.SelectedIndex]
+                .Fights[lbFight.SelectedIndex].Player2.Score;
             _previoslbFightsIndx = lbFight.SelectedIndex;
         }
         else
@@ -271,8 +271,8 @@ public partial class Form1 : Form
         if (tabControl1.SelectedIndex == 1)
             if (tournamentManager.AllTournaments[lbTournaments.SelectedIndex - 1].isGameStartable())
             {
-                
-                _selectedTournamentInPlay =  (TournamentInPlay)tournamentManager.AllTournaments[lbTournaments.SelectedIndex - 1];
+                _selectedTournamentInPlay =
+                    (TournamentInPlay)tournamentManager.AllTournaments[lbTournaments.SelectedIndex - 1];
                 lbRound.Items.Clear();
                 foreach (var r in _selectedTournamentInPlay.AllRounds) lbRound.Items.Add(r.RoundNumber);
             }
@@ -281,5 +281,16 @@ public partial class Form1 : Form
 
     private void tabPage2_Click(object sender, EventArgs e)
     {
+    }
+
+    //btnManage
+    private void button1_Click_1(object sender, EventArgs e)
+    {
+        tabControl1.SelectedTab = tabPage1;
+    }
+
+    private void btPlay_Click(object sender, EventArgs e)
+    {
+        tabControl1.SelectedTab = tabPage2;
     }
 }

@@ -31,9 +31,10 @@ builder.Services.AddSession(options =>
 });
 
 
-builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-    .AddCookie(options => { options.LoginPath = new PathString("/login"); }
-    );
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options =>
+{
+    options.LoginPath = new PathString("/login");
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

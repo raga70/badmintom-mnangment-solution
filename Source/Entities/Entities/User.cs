@@ -4,28 +4,8 @@ namespace Entities;
 
 public class User
 {
-    public string username { get; init; }
-    public string password { get; init; }
-    public string firstName { get; init; }
-    public string lastName { get; init; }
-    public DateTime birthdayDate { get; init; }
-    public int gender { get; init; }
-    public string email { get; init; }
-    public string phoneNumber { get; init; }
-
-    public AccTypes accType { get; init; }
-
-
-    public int id { get; init; }
-
     //only used for game 
     private int _points;
-
-    public int points
-    {
-        get => _points;
-        init => _points = value;
-    }
 
     public User()
     {
@@ -44,6 +24,26 @@ public class User
         email = r.email;
         phoneNumber = r.phoneNumber;
         accType = AccTypes.Athlete;
+    }
+
+    public string username { get; init; }
+    public string password { get; init; }
+    public string firstName { get; init; }
+    public string lastName { get; init; }
+    public DateTime birthdayDate { get; init; }
+    public int gender { get; init; }
+    public string email { get; init; }
+    public string phoneNumber { get; init; }
+
+    public AccTypes accType { get; init; }
+
+
+    public int id { get; init; }
+
+    public int points
+    {
+        get => _points;
+        init => _points = value;
     }
 
     public void IncresePoints()

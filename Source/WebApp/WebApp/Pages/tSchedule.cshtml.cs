@@ -9,17 +9,17 @@ namespace WebApp.Pages;
 public class tSchedule : PageModel
 {
     private TournamentManager _tournamentManager;
+
+    public tSchedule(IGameDB gameDb, ITournamentDB tournamentDb)
+    {
+        _tournamentManager = new TournamentManager(tournamentDb, gameDb);
+    }
+
     //private GameManager _gameManager;
     public Tournament Tournament { get; set; }
     public List<Round> Rounds { get; set; }
 
     public string ErrMsg { get; set; }
-
-    public tSchedule(IGameDB gameDb, ITournamentDB tournamentDb)
-    {
-       
-        _tournamentManager = new TournamentManager(tournamentDb,gameDb);
-    }
 
     public ActionResult OnGet(string TorID)
     {
@@ -29,24 +29,19 @@ public class tSchedule : PageModel
         _tournamentManager.UpdateAllTournaments();
         if (((TournamentInPlay)_tournamentManager.GetTournamentByID(Convert.ToInt32(TorID))).GetType() ==
             typeof(TournamentSE))
-        {
-            ErrMsg = "This tournament uses a single-elimination TournamentSystem and cannot generate the full schedule (i didnt had enough time to implement TimeTravel :)";
-           // return Page();
-        }
+            ErrMsg =
+                "This tournament uses a single-elimination TournamentSystem and cannot generate the full schedule (i didnt had enough time to implement TimeTravel :)";
+        // return Page();
 
-       
-        
-            Rounds = ((TournamentInPlay)_tournamentManager.GetTournamentByID(Convert.ToInt32(TorID))).AllRounds
-                .ToList();
-       
+
+        Rounds = ((TournamentInPlay)_tournamentManager.GetTournamentByID(Convert.ToInt32(TorID))).AllRounds.ToList();
+
 
         return Page();
     }
-    
+
     public ActionResult OnPostResults(string TorID)
     {
-        return RedirectToPage("/tResults", "SOrder", new { TorID = TorID });
+        return RedirectToPage("/tResults", "SOrder", new { TorID });
     }
-    
-    
 }

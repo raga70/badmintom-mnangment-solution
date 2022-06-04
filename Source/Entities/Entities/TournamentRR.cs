@@ -2,33 +2,29 @@
 
 public class TournamentRR : TournamentInPlay
 {
-    
-    
-    
-
-    public TournamentRR(Tournament t):base()
+    public TournamentRR(Tournament t)
     {
-        base.SportType = t.SportType;
-        base.StartDate = t.StartDate;
-        base.EndDate = t.EndDate;
-        base.MinPlayers = t.MinPlayers;
-        base.MaxPlayers = t.MaxPlayers;
-        base.Location = t.Location;
-        base.TournamentSystem = t.TournamentSystem;
-        base.Tournamnet_id = t.Tournamnet_id;
-        base.Description = t.Description;
-        base.Gender = t.Gender;
-        base.Players = t.Players;
+        SportType = t.SportType;
+        StartDate = t.StartDate;
+        EndDate = t.EndDate;
+        MinPlayers = t.MinPlayers;
+        MaxPlayers = t.MaxPlayers;
+        Location = t.Location;
+        TournamentSystem = t.TournamentSystem;
+        Tournamnet_id = t.Tournamnet_id;
+        Description = t.Description;
+        Gender = t.Gender;
+        Players = t.Players;
     }
 
     //public override List<Round> CreteSchedule(List<Round> nu) => CreteSchedule();
-    
-     protected override  List<Round> CreteSchedule(List<Round> nu)
+
+    protected override List<Round> CreteSchedule(List<Round> nu)
     {
-        base.Initializer();
+        Initializer();
         if (TournamentSystem != TournamentSystems.RoundRobin)
             throw new ArgumentException("Tournament type from base class doesnt match schedule generator");
-        
+
         if (_players.Count() <= 1) return null;
         var rounds = new List<Round>();
         var athletes = new List<GamePlayer>();
@@ -38,7 +34,7 @@ public class TournamentRR : TournamentInPlay
         //round
         for (var i = 0; i < _players.Count - 1; i++)
         {
-            var r = new Round()
+            var r = new Round
             {
                 RoundNumber = i + 1,
                 Fights = new List<Fight>()
@@ -53,7 +49,7 @@ public class TournamentRR : TournamentInPlay
             else
             {
                 firstFightIsB = false;
-                r.Fights.Add(new Fight()
+                r.Fights.Add(new Fight
                 {
                     id = 0, isB = firstFightIsB, Player1 = new GamePlayer(athletes[playerIdx]),
                     Player2 = new GamePlayer(_players[0])
@@ -64,11 +60,8 @@ public class TournamentRR : TournamentInPlay
             for (var j = 1; j < _players.Count / 2; j++)
             {
                 var
-                    firstFighterIndex =
-                        (i + j) % athletes
-                            .Count; //round + iteration shifts the positions in increasing direction with one, the integer leftover division loops over to the first one when we go out of range of the collection  
-                var secondFighterIndex =
-                    (i + athletes.Count - j) % athletes.Count; // direction is reversed (decreasing)
+                    firstFighterIndex = (i + j) % athletes.Count; //round + iteration shifts the positions in increasing direction with one, the integer leftover division loops over to the first one when we go out of range of the collection  
+                var secondFighterIndex = (i + athletes.Count - j) % athletes.Count; // direction is reversed (decreasing)
                 bool fighthIsB;
                 if (athletes[firstFighterIndex].isB || athletes[secondFighterIndex].isB)
                 {
@@ -77,7 +70,7 @@ public class TournamentRR : TournamentInPlay
                 else
                 {
                     fighthIsB = false;
-                    r.Fights.Add(new Fight()
+                    r.Fights.Add(new Fight
                     {
                         id = j, isB = fighthIsB, Player1 = athletes[firstFighterIndex],
                         Player2 = athletes[secondFighterIndex]
@@ -89,6 +82,5 @@ public class TournamentRR : TournamentInPlay
         }
 
         return rounds;
-    } 
-    
+    }
 }

@@ -1,6 +1,5 @@
 ﻿@page
-@using Entities
-@model WebApp.Pages.Tournaments
+@model Tournaments
 @{
 }
 <table class="table">
@@ -40,7 +39,6 @@
             }
             else if (t.ScheduleIsAvailable())
             {
-                
                 <th scope="row">
                     <form method="post" asp-page-handler="Schedule">
                         <button asp-page-handler="Schedule" type="submit" class="btn btn-primary" asp-route-TorID="@t.Tournamnet_id">Schedule</button>
