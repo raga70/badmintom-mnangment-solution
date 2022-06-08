@@ -44,7 +44,20 @@ public class Tournament
 
     //available after generation
     public List<User> Players { get; init; } = new();
-    public int Tournamnet_id { get; init; }
+    private int? _id;
+    public int? Tournamnet_id
+    {
+        get { return _id;}
+        init { _id = value; }
+    }
+
+    public void updateIdOnCreation(int id)
+    {
+        if (Players.Count == 0)
+        {
+            _id = id;
+        }
+    }
 
     public bool isActive()
     {

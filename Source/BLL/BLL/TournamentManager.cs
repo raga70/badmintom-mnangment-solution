@@ -42,8 +42,9 @@ public class TournamentManager
         var context = new ValidationContext(tournament, null, null);
         if (Validator.TryValidateObject(tournament, context, results))
         {
-            tournamentDB.AddTournament(tournament);
-            Tournaments.Add(tournament);
+           int newId =   tournamentDB.AddTournament(tournament);
+           if(tournament.Tournamnet_id is null) tournament.updateIdOnCreation(newId);
+           Tournaments.Add(tournament);
         }
     }
 

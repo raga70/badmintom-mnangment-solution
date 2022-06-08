@@ -1,5 +1,28 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
 	<s:String x:Key="/Default/Environment/Highlighting/HighlightingSourceSnapshotLocation/@EntryValue">C:\Users\ra408\AppData\Local\JetBrains\Rider2022.1\resharper-host\temp\Rider\vAny\CoverageData\_Main.701512952\Snapshot\snapshot.utdcvr</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=14f6a229_002De004_002D4915_002Dab43_002Dc88a53cac6ae/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GetTournamentByIDTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;MSTest::C4A677AB-3E7A-4F23-9A15-E7B8FEA7F721::net6.0::Testing.TornamentManagerTests.GetTournamentByIDTest&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=154f04e8_002D1093_002D47d4_002Dbbf3_002D57ff003ab3d1/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="DeleteTournamentTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;MSTest::C4A677AB-3E7A-4F23-9A15-E7B8FEA7F721::net6.0::Testing.TornamentManagerTests.DeleteTournamentTest&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=36c8a4fb_002D5420_002D4fa8_002Db72c_002Df1bee9bfefb6/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="All tests from Solution" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Solution /&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=39fe3afd_002Dd094_002D43de_002Db945_002D80a0d036478d/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="UpdateTournamentTest #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;MSTest::C4A677AB-3E7A-4F23-9A15-E7B8FEA7F721::net6.0::Testing.TornamentManagerTests.UpdateTournamentTest&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=77e90eb0_002D920d_002D4ddb_002Da6ab_002D991c5d613a3a/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="UpdateTournamentTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;MSTest::C4A677AB-3E7A-4F23-9A15-E7B8FEA7F721::net6.0::Testing.TornamentManagerTests.UpdateTournamentTest&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
 	
 	
 	
@@ -29,7 +52,7 @@
     &lt;TestId&gt;MSTest::C4A677AB-3E7A-4F23-9A15-E7B8FEA7F721::net6.0::Testing.RoundRobinTests.TestEvenPlayers&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=c2f18aed_002D8417_002D46c9_002D99af_002Daeb7ea5a36fc/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="testPlayersOnThePowerOf2_secondRound" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=c2f18aed_002D8417_002D46c9_002D99af_002Daeb7ea5a36fc/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="testPlayersOnThePowerOf2_secondRound" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;Solution /&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=df6de0bb_002Db9da_002D4e48_002D9a95_002D317ba6d81023/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="testPlayersOnThePowerOf2_secondRound #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;

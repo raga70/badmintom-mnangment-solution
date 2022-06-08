@@ -6,8 +6,9 @@ namespace DAL;
 
 public class TournamentDB : ITournamentDB
 {
-    public void AddTournament(Tournament tournament)
+    public int AddTournament(Tournament tournament)
     {
+        int id;
         var mysql = new MySqlConnection(Connection.conString);
         try
         {
@@ -26,11 +27,15 @@ public class TournamentDB : ITournamentDB
             cmd.Parameters.AddWithValue("@description", tournament.Description);
             cmd.Parameters.AddWithValue("@gender", tournament.Gender);
             cmd.ExecuteNonQuery();
+            id =  Convert.ToInt32(cmd.LastInsertedId);
         }
         finally
         {
             mysql.Close();
         }
+
+        return id;
+
     }
 
     public void UpdateTournament(Tournament tournament)
@@ -84,7 +89,16 @@ public class TournamentDB : ITournamentDB
         var mysql = new MySqlConnection(Connection.conString);
         try
         {
-            mysql.Open();
+            try
+            {
+                mysql.Open();
+
+            }
+            catch (Exception e)
+            {
+                throw new AggregateException("CONNECT THE VPN!!!");
+                
+            }
 
 
             var cmd_getTournament = new MySqlCommand("SELECT * FROM tournaments t", mysql);

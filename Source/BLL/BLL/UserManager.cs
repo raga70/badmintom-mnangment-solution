@@ -42,7 +42,14 @@ public class UserManager
     //this method is created to not over-query the database unnecessarily on each OnPost/OnGet
     public User GetUser(string username)
     {
-        return userDB.GetUser(username);
+        if(users.FirstOrDefault(x => x.username == username) is { } user)
+        {
+            return user;
+        }
+        else
+        {
+            return userDB.GetUser(username);
+        }
     }
 
     public bool RegisterUser(User user)

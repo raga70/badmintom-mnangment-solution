@@ -2,5 +2,5 @@
 
 public class Connection
 {
-    public static string conString => "server=remotemysql.com;database=3dzxuKGkH2;uid=3dzxuKGkH2;pwd=ykG9bjTRta;";
+    public static string conString => "Server=studmysql01.fhict.local;Uid=dbi491245;Database=dbi491245;Pwd=Kurvata123;";
 }

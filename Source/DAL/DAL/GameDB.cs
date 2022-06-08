@@ -166,6 +166,7 @@ public class GameDB : IGameDB
         var mysql = new MySqlConnection(Connection.conString);
         var tid = -1;
         var br = 0;
+        int playerPoints=0;
         try
         {
             mysql.Open();
@@ -226,12 +227,14 @@ public class GameDB : IGameDB
                     });
                     tid = reader_fightResults.GetInt32("tid");
                 }
+
+                playerPoints = reader_fightResults.GetInt32("PlrPoints");
             }
 
             games.Add(new GameResultData
             {
                 fightsData = fightData, tournament = tournament,
-                playerPoints = reader_fightResults.GetInt32("PlrPoints")
+                playerPoints = playerPoints
             });
             return games;
         }

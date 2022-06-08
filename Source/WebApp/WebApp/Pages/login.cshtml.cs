@@ -1,6 +1,7 @@
 using System.Security.Claims;
 using BLL;
 using DAL;
+using Entities;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
@@ -49,11 +50,17 @@ public class loginModel : PageModel
         var pass = Request.Form["pass"];
         if (um.Login(user, pass))
         {
-            Auth(user);
-            return RedirectToPage("/index");
+            if (um.GetUser(user).accType == AccTypes.Athlete)
+            {
+                Auth(user);
+                return RedirectToPage("/index");
+            }
         }
 
         errMsg = "Wrong Credentials";
         return Page();
     }
 }
+
+
+

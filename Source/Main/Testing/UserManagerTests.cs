@@ -42,4 +42,19 @@ public class UserManagerTests
         Assert.IsTrue(um.Login(sampleUser.username, "1234")); //test the login method with the right pass
         Assert.IsFalse(um.Login(sampleUser.username, "123")); //test the login method with the wrong pass
     }
+
+    [TestMethod]
+    public void GetUser()
+    {
+        um.RegisterUser(sampleUser);
+        var r = um.GetUser("toni");
+        Assert.AreEqual(r,sampleUser);
+        Assert.IsTrue(um.GetUser("pow") == null);//it will go to the mock db and null will be returned
+    }
+
+
+    
+    
+    
+    
 }

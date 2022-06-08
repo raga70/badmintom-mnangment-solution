@@ -47,7 +47,16 @@ public class UserDB : IUserDB
 
         try
         {
+            try
+            {
             mysql.Open();
+
+            }
+            catch (Exception e)
+            {
+                throw new AggregateException("CONNECT THE VPN!!!");
+                
+            }
             var cmd1 = mysql.CreateCommand();
             var command = mysql.CreateCommand();
             command.CommandText = "SELECT * FROM users WHERE username = @username";

@@ -1,0 +1,80 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = WebApp
+build_property.RootNamespace = WebApp
+build_property.ProjectDir = C:\Users\ra408\OneDrive\Работен плот\INHERITEDSYNTHESYS\synthesisassignment-radoslavradev\Source\WebApp\WebApp\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\ra408\OneDrive\Работен плот\INHERITEDSYNTHESYS\synthesisassignment-radoslavradev\Source\WebApp\WebApp
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/ra408/OneDrive/Работен плот/INHERITEDSYNTHESYS/synthesisassignment-radoslavradev/Source/WebApp/WebApp/Pages/ErroDataIsEMpty.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb0RhdGFJc0VNcHR5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ra408/OneDrive/Работен плот/INHERITEDSYNTHESYS/synthesisassignment-radoslavradev/Source/WebApp/WebApp/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ra408/OneDrive/Работен плот/INHERITEDSYNTHESYS/synthesisassignment-radoslavradev/Source/WebApp/WebApp/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ra408/OneDrive/Работен плот/INHERITEDSYNTHESYS/synthesisassignment-radoslavradev/Source/WebApp/WebApp/Pages/login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcbG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ra408/OneDrive/Работен плот/INHERITEDSYNTHESYS/synthesisassignment-radoslavradev/Source/WebApp/WebApp/Pages/logout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcbG9nb3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ra408/OneDrive/Работен плот/INHERITEDSYNTHESYS/synthesisassignment-radoslavradev/Source/WebApp/WebApp/Pages/playerProfiler.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNccGxheWVyUHJvZmlsZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ra408/OneDrive/Работен плот/INHERITEDSYNTHESYS/synthesisassignment-radoslavradev/Source/WebApp/WebApp/Pages/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ra408/OneDrive/Работен плот/INHERITEDSYNTHESYS/synthesisassignment-radoslavradev/Source/WebApp/WebApp/Pages/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ra408/OneDrive/Работен плот/INHERITEDSYNTHESYS/synthesisassignment-radoslavradev/Source/WebApp/WebApp/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ra408/OneDrive/Работен плот/INHERITEDSYNTHESYS/synthesisassignment-radoslavradev/Source/WebApp/WebApp/Pages/SignUpForTournament.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2lnblVwRm9yVG91cm5hbWVudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ra408/OneDrive/Работен плот/INHERITEDSYNTHESYS/synthesisassignment-radoslavradev/Source/WebApp/WebApp/Pages/Tournaments.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVG91cm5hbWVudHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ra408/OneDrive/Работен плот/INHERITEDSYNTHESYS/synthesisassignment-radoslavradev/Source/WebApp/WebApp/Pages/tResults.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdFJlc3VsdHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ra408/OneDrive/Работен плот/INHERITEDSYNTHESYS/synthesisassignment-radoslavradev/Source/WebApp/WebApp/Pages/tSchedule.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdFNjaGVkdWxlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ra408/OneDrive/Работен плот/INHERITEDSYNTHESYS/synthesisassignment-radoslavradev/Source/WebApp/WebApp/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ra408/OneDrive/Работен плот/INHERITEDSYNTHESYS/synthesisassignment-radoslavradev/Source/WebApp/WebApp/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ra408/OneDrive/Работен плот/INHERITEDSYNTHESYS/synthesisassignment-radoslavradev/Source/WebApp/WebApp/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-1lnhnt7yf2

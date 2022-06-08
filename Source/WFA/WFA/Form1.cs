@@ -13,7 +13,7 @@ public partial class Form1 : Form
 
     private bool _rChangedBFN;
 
-    //private GameManager _gameManager;
+
     //just for easy of use
     private TournamentInPlay _selectedTournamentInPlay;
 
@@ -158,34 +158,43 @@ public partial class Form1 : Form
 
     private void btUpdate_Click(object sender, EventArgs e)
     {
-        var gendr = 0;
+        if (lbTournaments.SelectedIndex != -1)
+        {
+            var gendr = 0;
 
-        if (rbFemale.Checked) gendr = 1;
-
-        var newT = new Tournament
-        {
-            SportType = (sportTypes)cbSportType.SelectedItem,
-            Description = rtbDescription.Text,
-            StartDate = dtpStartDate.Value,
-            EndDate = dtpEndDate.Value,
-            MinPlayers = Convert.ToInt32(cbMinPlayers.Value),
-            MaxPlayers = Convert.ToInt32(cbMaxPlayers.Value),
-            Location = rtbAddress.Text,
-            TournamentSystem = (TournamentSystems)cbTournamentSystem.SelectedItem,
-            Tournamnet_id = tournamentManager.AllTournaments[lbTournaments.SelectedIndex - 1].Tournamnet_id,
-            Gender = gendr
-        };
-        var results = new List<ValidationResult>();
-        var context = new ValidationContext(newT, null, null);
-        if (!Validator.TryValidateObject(newT, context, results))
-        {
-            foreach (var error in results) MessageBox.Show(error.ErrorMessage);
-        }
-        else
-        {
-            tournamentManager.UpdateTournament(newT);
-            MessageBox.Show("Tournament updated");
-            lbTournamentUpdater();
+            if (rbFemale.Checked) gendr = 1;
+            try
+            {
+                var newT = new Tournament
+                {
+                    SportType = (sportTypes)cbSportType.SelectedItem,
+                    Description = rtbDescription.Text,
+                    StartDate = dtpStartDate.Value,
+                    EndDate = dtpEndDate.Value,
+                    MinPlayers = Convert.ToInt32(cbMinPlayers.Value),
+                    MaxPlayers = Convert.ToInt32(cbMaxPlayers.Value),
+                    Location = rtbAddress.Text,
+                    TournamentSystem = (TournamentSystems)cbTournamentSystem.SelectedItem,
+                    Tournamnet_id = tournamentManager.AllTournaments[lbTournaments.SelectedIndex - 1].Tournamnet_id,
+                    Gender = gendr
+                };
+                var results = new List<ValidationResult>();
+                var context = new ValidationContext(newT, null, null);
+                if (!Validator.TryValidateObject(newT, context, results))
+                {
+                    foreach (var error in results) MessageBox.Show(error.ErrorMessage);
+                }
+                else
+                {
+                    tournamentManager.UpdateTournament(newT);
+                    MessageBox.Show("Tournament updated");
+                    lbTournamentUpdater();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 

@@ -4,8 +4,9 @@ using Entities;
 
 public class tournamentDBMock : ITournamentDB
 {
-    public void AddTournament(Tournament tournament)
+    public int AddTournament(Tournament tournament)
     {
+        return 0;
     }
 
     public void UpdateTournament(Tournament tournament)
